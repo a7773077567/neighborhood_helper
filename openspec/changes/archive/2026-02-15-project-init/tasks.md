@@ -28,4 +28,4 @@
 ## 6. Git 初始化
 
 - [x] 6.1 初始化 Git、確認 .gitignore 正確
-- [ ] 6.2 建立第一次 commit
+- [x] 6.2 建立第一次 commit
