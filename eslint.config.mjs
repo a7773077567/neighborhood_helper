@@ -1,0 +1,14 @@
+import antfu from '@antfu/eslint-config'
+
+export default antfu({
+  react: true,
+  typescript: true,
+  nextjs: true,
+  test: false,
+  ignores: [
+    '.agent/**',
+    '.claude/**',
+    '**/*.md',
+    'openspec/**',
+  ],
+})
