@@ -19,11 +19,11 @@
 
 ## 4. Route Group Layout 設定
 
-- [ ] 4.1 更新 Root Layout（`app/layout.tsx`）：metadata、字型、Toaster provider
-- [ ] 4.2 建立 `(public)` Route Group layout：引用 Header（public variant）+ Footer
-- [ ] 4.3 建立 `(auth)` Route Group layout：簡潔 Header（只有 Logo）
-- [ ] 4.4 建立 `(dashboard)` Route Group layout：引用 Header（dashboard variant）+ Footer
-- [ ] 4.5 建立 `(admin)` Route Group layout：引用 Header（admin variant）+ Footer
+- [x] 4.1 更新 Root Layout（`app/layout.tsx`）：metadata、字型、Toaster provider
+- [x] 4.2 建立 `(public)` Route Group layout：引用 Header（public variant）+ Footer
+- [x] 4.3 建立 `(auth)` Route Group layout：簡潔 Header（只有 Logo）
+- [x] 4.4 建立 `(dashboard)` Route Group layout：引用 Header（dashboard variant）+ Footer
+- [x] 4.5 建立 `(admin)` Route Group layout：引用 Header（admin variant）+ Footer
 
 ## 5. 頁面實作
 
