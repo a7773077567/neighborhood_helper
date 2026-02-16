@@ -14,8 +14,8 @@
 
 - [x] 3.1 建立 Header 元件（`components/features/layout/header.tsx`），支援 variant prop
 - [x] 3.2 建立 Mobile Navigation 元件（`components/features/layout/mobile-nav.tsx`），使用 Sheet
-- [ ] 3.3 建立 User Menu 元件（`components/features/layout/user-menu.tsx`），使用 DropdownMenu + Avatar
-- [ ] 3.4 建立 Footer 元件（`components/features/layout/footer.tsx`）
+- [x] 3.3 建立 User Menu 元件（`components/features/layout/user-menu.tsx`），使用 DropdownMenu + Avatar
+- [x] 3.4 建立 Footer 元件（`components/features/layout/footer.tsx`）
 
 ## 4. Route Group Layout 設定
 

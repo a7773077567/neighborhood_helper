@@ -1,7 +1,8 @@
 import { Header } from '@/components/features/layout/header'
+import { Footer } from '@/components/features/layout/footer'
 
 /**
- * 暫時的預覽頁面 — 用來驗證 Header 三種變體的視覺效果。
+ * 暫時的預覽頁面 — 用來驗證 Header + Footer 的視覺效果。
  * Task 5.1 會替換成正式的 Landing Page。
  */
 export default function Home(): React.ReactElement {
@@ -29,6 +30,14 @@ export default function Home(): React.ReactElement {
           variant=&quot;admin&quot;（組織者）
         </p>
         <Header variant="admin" />
+      </section>
+
+      {/* Footer 預覽 */}
+      <section>
+        <p className="bg-surface-muted px-6 py-2 font-mono text-sm text-ink-secondary">
+          Footer
+        </p>
+        <Footer />
       </section>
     </div>
   )
