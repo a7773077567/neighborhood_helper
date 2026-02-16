@@ -1,4 +1,4 @@
-# Neighborhood Helper 視覺風格規範
+# 雞婆鄰里互助會 視覺風格規範
 
 > **風格定位**：暖橘 Neobrutalism — 社群感、手繪質感、活潑但不雜亂
 > **更新日期**：2026-02-15
@@ -31,9 +31,9 @@
 ### 基底色
 
 ```
-暖白:       #FFFDF7    — 頁面主背景（帶微暖色調）
-暖灰米:     #F5F0EB    — 區塊背景（Features 等段落）
-淡橘:       #FFF3E8    — 次要區塊背景（CTA 等）
+奶油白:     #F9F6F0    — 頁面主背景（統一底色，柔和不刺眼）
+暖灰米:     #F5F0EB    — 保留供元件內部使用
+淡橘:       #FFF3E8    — 保留供元件內部使用
 ```
 
 ### 中性色
@@ -51,12 +51,13 @@ Footer灰:   #8A7E72    — Footer 版權文字
 ### 色彩使用原則
 
 ```
-✅ 大區塊用柔和暖色（暖白、暖灰米、淡橘）
-✅ 色彩集中在小元素（badge、按鈕、icon）
+✅ 全頁統一底色（#F9F6F0），不用多種背景色區分區塊
+✅ 色彩集中在小元素（badge、按鈕、icon、卡片邊框）
+✅ 區塊區分靠內容和間距，不靠背景色
 ✅ 同色系做區別（橘 / 暖黃 / 深橘），不引入太多色相
 ❌ 不要整個大區塊用高飽和度色（避免視覺疲勞）
 ❌ 不要用純黑 #000000（用 #1A1A1A 或 #2A2520）
-❌ 不要用純白 #FFFFFF 當背景（用 #FFFDF7）
+❌ 不要用純白 #FFFFFF 當背景（用 #F9F6F0）
 ```
 
 ---
@@ -114,12 +115,15 @@ Badge/標籤:    12px      Space Mono, 600
             shadow-[3px_3px_0px_#FF7A3D]     — 特殊強調（如登入按鈕）
 ```
 
-### 互動狀態
+### 互動狀態（Gumroad 風格：平面預設，hover 浮起）
 
 ```
-預設:        shadow-[4px_4px_0px_#1A1A1A]
-hover:       shadow-[6px_6px_0px_#1A1A1A] + translate(-2px, -2px)
-active:      shadow-none + translate(4px, 4px)  — 「按下去」的觸感
+預設:        無陰影（平面）
+hover:       shadow-[4px_4px_0px_#1A1A1A] + translate(-2px, -2px)  — 「浮起來」
+active:      shadow-none + translate(2px, 2px)  — 「按下去」的觸感
+
+注意：按鈕和 Badge 預設不帶陰影，只有 hover 時才出現。
+      卡片（Card）例外，卡片預設保留陰影。
 ```
 
 ---
@@ -143,30 +147,30 @@ Badge/Tag:   rounded-full         — 藥丸形
   背景: #FF7A3D
   文字: #FFFFFF (Space Mono, 600)
   邊框: 2px solid #1A1A1A
-  陰影: 4px 4px 0 #1A1A1A
+  陰影: 無（hover 時 4px 4px 0 #1A1A1A）
   圓角: 8px
 
 次要按鈕:
-  背景: #FFFDF7
+  背景: #F9F6F0
   文字: #1A1A1A (Space Mono, 600)
   邊框: 2px solid #1A1A1A
-  陰影: 4px 4px 0 #1A1A1A
+  陰影: 無（hover 時 4px 4px 0 #1A1A1A）
   圓角: 8px
 
 深色按鈕:
   背景: #1A1A1A
   文字: #FFFFFF (Space Mono, 600)
   邊框: 2px solid #1A1A1A
-  陰影: 3px 3px 0 #FF7A3D（彩色陰影）
+  陰影: 無（hover 時 3px 3px 0 #FF7A3D）
   圓角: 8px
 ```
 
 ### 卡片
 
 ```
-背景: #FFFDF7
+背景: #F9F6F0
 邊框: 2px solid #1A1A1A
-陰影: 4px 4px 0 #1A1A1A
+陰影: 4px 4px 0 #1A1A1A（卡片預設保留陰影）
 圓角: 8px
 內距: 28px
 Icon 方塊: 48x48, 圓角 8px, 邊框 2px
@@ -179,7 +183,7 @@ Icon 方塊: 48x48, 圓角 8px, 邊框 2px
   背景: #FF7A3D
   文字: #FFFFFF
   邊框: 2px solid #1A1A1A
-  陰影: 3px 3px 0 #1A1A1A
+  陰影: 無（hover 時 3px 3px 0 #1A1A1A）
   圓角: full (藥丸形)
 
 狀態 Tag:
@@ -192,12 +196,22 @@ Icon 方塊: 48x48, 圓角 8px, 邊框 2px
 ### 跑馬燈 (Marquee)
 
 ```
-背景: #1A1A1A
-高度: 48px
-文字: Space Mono, 600, 13px
-文字顏色: 橘 #FF7A3D 和暖黃 #FFD23F 交替
-動態: 無限水平滾動（react-fast-marquee 或 CSS animation）
-風格參考: Gumroad / Hack Club 的跑馬燈
+背景: #F9F6F0（與頁面統一）
+結構: 3 列水平無限滾動（react-fast-marquee）
+  Row 1: 向左, speed=40
+  Row 2: 向右, speed=30
+  Row 3: 向左, speed=35
+
+每個 item:
+  Lucide icon（彩色，各自不同色）+ 白色藥丸按鈕
+  藥丸: bg white, border 1px #E0E0E0, rounded-full, px-6 py-2.5
+  陰影: 無（hover 時 3px 3px 0 #1A1A1A）
+
+共用設定:
+  pauseOnHover: true
+  autoFill: true（自動填滿寬度）
+
+風格參考: Gumroad 首頁的 tag 跑馬燈區塊
 ```
 
 ---
@@ -246,15 +260,17 @@ Icon 庫:     Lucide（專案已安裝）
 
 ## 區塊背景策略
 
-頁面不同區塊使用柔和的暖色調區隔，不用高飽和度的大色塊：
+全頁統一底色，區塊靠內容和間距區分，不靠背景色：
 
 ```
-Header:      #FFFDF7（暖白）
-Hero:        #FFFDF7（暖白，色彩集中在 badge 和按鈕）
-Marquee:     #1A1A1A（黑，作為視覺節奏分隔）
-Features:    #F5F0EB（暖灰米）
-CTA:         #FFF3E8（淡橘）
-Footer:      #2A2520（深暖褐）
+全頁統一:    #F9F6F0（奶油白）
+Footer:      #2A2520（深暖褐，唯一深色區塊）
+
+設計原則:
+  ✅ 區塊間用大間距（120-160px padding）自然分隔
+  ✅ 色彩留給元素本身（按鈕、icon、卡片邊框）
+  ✅ 參考 Gumroad：大部分區塊同底色，靠內容區分
+  ❌ 不要給每個區塊不同背景色
 ```
 
 ---
@@ -271,9 +287,9 @@ colors: {
     'deep-orange': '#D4764E',
   },
   surface: {
-    warm: '#FFFDF7',
-    muted: '#F5F0EB',
-    'light-orange': '#FFF3E8',
+    warm: '#F9F6F0',       // 頁面統一底色（原 #FFFDF7）
+    muted: '#F5F0EB',      // 保留供元件內部使用
+    'light-orange': '#FFF3E8', // 保留供元件內部使用
     footer: '#2A2520',
   },
   ink: {
@@ -288,4 +304,4 @@ colors: {
 
 ---
 
-**最後更新**：2026-02-15
+**最後更新**：2026-02-16
