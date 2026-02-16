@@ -22,7 +22,7 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Neighborhood Helper — GDG Tainan 社群活動平台',
+  title: '雞婆鄰里互助會 — GDG Tainan 社群活動平台',
   description: '挖掘在地講者、鼓勵社群參與、串連台南科技社群',
 }
 

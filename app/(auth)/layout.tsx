@@ -47,7 +47,7 @@ export default function AuthLayout({
         <Link href="/" className="flex items-center gap-1.5 md:gap-2">
           <Bird className="size-6 text-brand-orange md:size-7" />
           <span className="font-mono text-base font-bold text-ink-primary md:text-lg">
-            Neighborhood Helper
+            雞婆鄰里互助會
           </span>
         </Link>
       </header>

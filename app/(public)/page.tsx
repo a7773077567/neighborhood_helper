@@ -11,7 +11,7 @@ export default function Home(): React.ReactElement {
   return (
     <div className="flex flex-col items-center justify-center gap-4 py-24">
       <h1 className="font-mono text-2xl font-bold text-ink-primary">
-        Neighborhood Helper
+        雞婆鄰里互助會
       </h1>
       <p className="text-ink-body">
         首頁 Landing Page — 即將實作

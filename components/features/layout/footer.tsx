@@ -25,10 +25,10 @@ const FOOTER_LINKS = [
  * 對照 Pencil 設計（節點 0PRG0）：
  *
  * 桌面版（≥ 768px）：
- *   [📍 GDG Tainan — Neighborhood Helper]  .....  [關於我們] [聯絡方式] [© 2026]
+ *   [📍 GDG Tainan — 雞婆鄰里互助會]  .....  [關於我們] [聯絡方式] [© 2026]
  *
  * 手機版（< 768px）：Pencil 設計（節點 CKnvx）
- *   [📍 GDG Tainan — Neighborhood Helper]
+ *   [📍 GDG Tainan — 雞婆鄰里互助會]
  *   [關於我們] [聯絡方式]
  *   [© 2026]
  *
@@ -66,7 +66,7 @@ export function Footer(): React.ReactElement {
          * text-ink-footer-light → currentColor 變成 #D4C8BC
          */}
         <span className="font-mono text-[13px] text-ink-footer-light">
-          GDG Tainan — Neighborhood Helper
+          GDG Tainan — 雞婆鄰里互助會
         </span>
         {/*
          * font-mono → Space Mono（layout.tsx 已設定 --font-mono）

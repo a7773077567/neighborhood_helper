@@ -176,7 +176,7 @@ export function MobileNav({ variant = 'public' }: MobileNavProps): React.ReactEl
              */}
             <Bird className="size-6 text-brand-orange" />
             <span className="font-mono text-sm font-bold">
-              Neighborhood Helper
+              雞婆鄰里互助會
             </span>
           </SheetTitle>
           <Button
