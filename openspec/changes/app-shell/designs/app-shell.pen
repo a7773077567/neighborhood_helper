@@ -53,7 +53,7 @@
                   "id": "eP7PN",
                   "name": "logoText1",
                   "fill": "$--ink-primary",
-                  "content": "Neighborhood Helper",
+                  "content": "雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 18,
                   "fontWeight": "700"
@@ -180,6 +180,223 @@
     },
     {
       "type": "frame",
+      "id": "gV2OW",
+      "x": 442,
+      "y": 5847,
+      "name": "User Menu (下拉選單)",
+      "width": 224,
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "zBbth",
+          "name": "Trigger - Avatar",
+          "width": 36,
+          "height": 36,
+          "fill": "$--brand-orange",
+          "cornerRadius": 9999,
+          "stroke": {
+            "thickness": 2,
+            "fill": "$--ink-primary"
+          },
+          "layout": "vertical",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "4h6cO",
+              "name": "triggerText",
+              "fill": "#FFFFFF",
+              "content": "PJ",
+              "textAlign": "center",
+              "fontFamily": "Space Mono",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hdRDf",
+          "name": "Dropdown Content",
+          "width": 224,
+          "fill": "$--surface-warm",
+          "cornerRadius": 8,
+          "stroke": {
+            "thickness": 1,
+            "fill": "$--ink-primary"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000015",
+            "offset": {
+              "x": 2,
+              "y": 2
+            },
+            "blur": 8
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "vmedL",
+              "name": "User Label",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 2,
+              "padding": [
+                8,
+                12
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "GF4dL",
+                  "name": "labelName",
+                  "fill": "$--ink-primary",
+                  "content": "PJ",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "4wkgO",
+                  "name": "labelEmail",
+                  "fill": "$--ink-secondary",
+                  "content": "pj@example.com",
+                  "fontFamily": "Inter",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "Kw2y3",
+              "name": "Separator",
+              "fill": "#E5E0DB",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "SNItW",
+              "name": "MenuItem - 個人資料",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                8,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "HWdHd",
+                  "name": "icon1",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "user",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--ink-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "kwSxe",
+                  "name": "text1",
+                  "fill": "$--ink-primary",
+                  "content": "個人資料",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SRiC1",
+              "name": "MenuItem - 設定",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                8,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "8U2RS",
+                  "name": "icon2",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "settings",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--ink-secondary"
+                },
+                {
+                  "type": "text",
+                  "id": "mPId9",
+                  "name": "text2",
+                  "fill": "$--ink-primary",
+                  "content": "設定",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "rectangle",
+              "id": "Nglrx",
+              "name": "Separator",
+              "fill": "#E5E0DB",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "ulkg5",
+              "name": "MenuItem - 登出",
+              "width": "fill_container",
+              "gap": 8,
+              "padding": [
+                8,
+                12
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Eb8ZH",
+                  "name": "icon3",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "log-out",
+                  "iconFontFamily": "lucide",
+                  "fill": "#DC2626"
+                },
+                {
+                  "type": "text",
+                  "id": "7ndmr",
+                  "name": "text3",
+                  "fill": "#DC2626",
+                  "content": "登出",
+                  "fontFamily": "Inter",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
       "id": "2bmzE",
       "x": -50,
       "y": 3060,
@@ -230,7 +447,7 @@
                   "id": "mvtJV",
                   "name": "logoText2",
                   "fill": "$--ink-primary",
-                  "content": "Neighborhood Helper",
+                  "content": "雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 18,
                   "fontWeight": "700"
@@ -374,7 +591,7 @@
                   "id": "IbnFj",
                   "name": "logoText3",
                   "fill": "$--ink-primary",
-                  "content": "Neighborhood Helper",
+                  "content": "雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 18,
                   "fontWeight": "700"
@@ -538,7 +755,7 @@
                   "id": "qjxBF",
                   "name": "mobileLogoText",
                   "fill": "$--ink-primary",
-                  "content": "Neighborhood Helper",
+                  "content": "雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 16,
                   "fontWeight": "700"
@@ -700,7 +917,7 @@
                       "id": "9oYIL",
                       "name": "sheetLogoText",
                       "fill": "$--ink-primary",
-                      "content": "Neighborhood Helper",
+                      "content": "雞婆鄰里互助會",
                       "fontFamily": "Space Mono",
                       "fontSize": 14,
                       "fontWeight": "700"
@@ -899,13 +1116,6 @@
               ]
             }
           ]
-        },
-        {
-          "type": "prompt",
-          "id": "2oR0Z",
-          "width": 250,
-          "height": 219,
-          "content": "Nav Item 的間距是否略小，在手機版好點擊嗎？由你判斷需不需要修改"
         }
       ]
     },
@@ -954,7 +1164,7 @@
               "id": "OKgse",
               "name": "footerText",
               "fill": "$--ink-footer-light",
-              "content": "GDG Tainan — Neighborhood Helper",
+              "content": "GDG Tainan — 雞婆鄰里互助會",
               "fontFamily": "Space Mono",
               "fontSize": 13,
               "fontWeight": "normal"
@@ -1063,7 +1273,7 @@
                       "id": "Se4Rd",
                       "name": "lhLogoText",
                       "fill": "$--ink-primary",
-                      "content": "Neighborhood Helper",
+                      "content": "雞婆鄰里互助會",
                       "fontFamily": "Space Mono",
                       "fontSize": 18,
                       "fontWeight": "700"
@@ -1119,15 +1329,6 @@
                     "align": "outside",
                     "thickness": 2,
                     "fill": "$--ink-primary"
-                  },
-                  "effect": {
-                    "type": "shadow",
-                    "shadowType": "outer",
-                    "color": "$--ink-primary",
-                    "offset": {
-                      "x": 4,
-                      "y": 4
-                    }
                   },
                   "gap": 6,
                   "padding": [
@@ -1193,10 +1394,11 @@
           "id": "nSuDK",
           "name": "Hero Section",
           "width": "fill_container",
+          "fill": "#FFFDF7",
           "layout": "vertical",
           "gap": 32,
           "padding": [
-            80,
+            160,
             24
           ],
           "justifyContent": "center",
@@ -1208,84 +1410,86 @@
               "name": "Hero Content",
               "width": 640,
               "layout": "vertical",
-              "gap": 16,
+              "gap": 40,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
-                  "id": "hzm8x",
-                  "name": "Icon Badge",
-                  "fill": "$--brand-orange",
-                  "cornerRadius": "$--radius-pill",
-                  "stroke": {
-                    "align": "outside",
-                    "thickness": 2,
-                    "fill": "$--ink-primary"
-                  },
-                  "effect": {
-                    "type": "shadow",
-                    "shadowType": "outer",
-                    "color": "$--ink-primary",
-                    "offset": {
-                      "x": 3,
-                      "y": 3
-                    }
-                  },
-                  "gap": 8,
-                  "padding": [
-                    8,
-                    16
-                  ],
+                  "id": "DdO3g",
+                  "name": "textGroup",
+                  "width": 640,
+                  "layout": "vertical",
+                  "gap": 16,
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "icon_font",
-                      "id": "6jVix",
-                      "name": "gdgLogo",
-                      "width": 20,
-                      "height": 20,
-                      "iconFontName": "hexagon",
-                      "iconFontFamily": "lucide",
-                      "fill": "#FFFFFF"
+                      "type": "frame",
+                      "id": "hzm8x",
+                      "name": "Icon Badge",
+                      "fill": "$--brand-orange",
+                      "cornerRadius": "$--radius-pill",
+                      "stroke": {
+                        "align": "outside",
+                        "thickness": 2,
+                        "fill": "$--ink-primary"
+                      },
+                      "gap": 8,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "6jVix",
+                          "name": "gdgLogo",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "hexagon",
+                          "iconFontFamily": "lucide",
+                          "fill": "#FFFFFF"
+                        },
+                        {
+                          "type": "text",
+                          "id": "YpQRU",
+                          "name": "heroIconText",
+                          "fill": "#FFFFFF",
+                          "content": "GDG Tainan 社群平台",
+                          "fontFamily": "Space Mono",
+                          "fontSize": 13,
+                          "fontWeight": "600"
+                        }
+                      ]
                     },
                     {
                       "type": "text",
-                      "id": "YpQRU",
-                      "name": "heroIconText",
-                      "fill": "#FFFFFF",
-                      "content": "GDG Tainan 社群平台",
+                      "id": "ubLRO",
+                      "name": "heroTitle",
+                      "fill": "$--ink-primary",
+                      "textGrowth": "fixed-width",
+                      "width": 640,
+                      "content": "讓科技成為這片土地的養分",
+                      "textAlign": "center",
                       "fontFamily": "Space Mono",
-                      "fontSize": 13,
-                      "fontWeight": "600"
+                      "fontSize": 40,
+                      "fontWeight": "700"
+                    },
+                    {
+                      "type": "text",
+                      "id": "CdttF",
+                      "name": "heroSubtitle",
+                      "fill": "$--ink-body",
+                      "textGrowth": "fixed-width",
+                      "width": 520,
+                      "content": "挖掘在地講者、鼓勵社群參與、串連台南社群。\n一場小聚、一次分享。\n累積起來就是改變的開始。",
+                      "lineHeight": 1.6,
+                      "textAlign": "center",
+                      "fontFamily": "Inter",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "ubLRO",
-                  "name": "heroTitle",
-                  "fill": "$--ink-primary",
-                  "textGrowth": "fixed-width",
-                  "width": 640,
-                  "content": "讓科技成為這片土地的養分",
-                  "textAlign": "center",
-                  "fontFamily": "Space Mono",
-                  "fontSize": 40,
-                  "fontWeight": "700"
-                },
-                {
-                  "type": "text",
-                  "id": "CdttF",
-                  "name": "heroSubtitle",
-                  "fill": "$--ink-body",
-                  "textGrowth": "fixed-width",
-                  "width": 520,
-                  "content": "挖掘在地講者、鼓勵社群參與、串連台南科技社群。\n一場小聚、一次分享。\n累積起來就是改變的開始。",
-                  "lineHeight": 1.6,
-                  "textAlign": "center",
-                  "fontFamily": "Inter",
-                  "fontSize": 16,
-                  "fontWeight": "normal"
                 },
                 {
                   "type": "frame",
@@ -1305,15 +1509,6 @@
                         "align": "outside",
                         "thickness": 2,
                         "fill": "$--ink-primary"
-                      },
-                      "effect": {
-                        "type": "shadow",
-                        "shadowType": "outer",
-                        "color": "$--ink-primary",
-                        "offset": {
-                          "x": 4,
-                          "y": 4
-                        }
                       },
                       "gap": 6,
                       "padding": [
@@ -1382,15 +1577,6 @@
                         "thickness": 2,
                         "fill": "$--ink-primary"
                       },
-                      "effect": {
-                        "type": "shadow",
-                        "shadowType": "outer",
-                        "color": "$--ink-primary",
-                        "offset": {
-                          "x": 4,
-                          "y": 4
-                        }
-                      },
                       "gap": 6,
                       "padding": [
                         12,
@@ -1424,94 +1610,1028 @@
           "name": "Marquee",
           "clip": true,
           "width": "fill_container",
-          "height": 48,
-          "fill": "$--ink-primary",
-          "gap": 32,
+          "height": 260,
+          "fill": "#F0EEEB",
+          "layout": "vertical",
           "padding": [
-            0,
-            24
+            40,
+            0
           ],
+          "justifyContent": "center",
           "alignItems": "center",
           "children": [
             {
-              "type": "text",
-              "id": "4h3dz",
-              "name": "mq1",
-              "fill": "$--brand-orange",
-              "content": "🐔 挖掘在地講者",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
-            },
-            {
-              "type": "text",
-              "id": "72szE",
-              "name": "mq2",
-              "fill": "$--brand-yellow",
-              "content": "★ 鼓勵社群參與",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
-            },
-            {
-              "type": "text",
-              "id": "cn7as",
-              "name": "mq3",
-              "fill": "$--brand-orange",
-              "content": "🐔 串連台南科技社群",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
-            },
-            {
-              "type": "text",
-              "id": "y7B01",
-              "name": "mq4",
-              "fill": "$--brand-yellow",
-              "content": "★ 累積社群資產",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
-            },
-            {
-              "type": "text",
-              "id": "10CLz",
-              "name": "mq5",
-              "fill": "$--brand-orange",
-              "content": "🐔 在地知識共享",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
-            },
-            {
-              "type": "text",
-              "id": "laIg6",
-              "name": "mq6",
-              "fill": "$--brand-yellow",
-              "content": "★ 遊戲化社群經驗",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
-            },
-            {
-              "type": "text",
-              "id": "Tlctl",
-              "name": "mq7",
-              "fill": "$--brand-orange",
-              "content": "🐔 一起 Build Together",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
-            },
-            {
-              "type": "text",
-              "id": "Lrgoe",
-              "name": "mq8",
-              "fill": "$--brand-yellow",
-              "content": "★ GDG Tainan",
-              "fontFamily": "Space Mono",
-              "fontSize": 13,
-              "fontWeight": "600"
+              "type": "frame",
+              "id": "lSnbW",
+              "name": "Marquee Band",
+              "width": 1600,
+              "fill": "#F0EEEB",
+              "layout": "vertical",
+              "gap": 12,
+              "padding": [
+                16,
+                20
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "g9uoD",
+                  "name": "Row 1",
+                  "gap": 40,
+                  "padding": [
+                    4,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "haaVg",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "GfNsB",
+                          "name": "ic1",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FF7A3D"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "lG25S",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "qVxlf",
+                              "name": "tx1",
+                              "fill": "#1A1A1A",
+                              "content": "挖掘在地講者",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "UZ3AW",
+                      "name": "Item Hover",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "mHhHH",
+                          "name": "ic2",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FFD23F"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "zNJsy",
+                          "name": "Pill Hover",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "XzJWe",
+                              "name": "tx2",
+                              "fill": "#1A1A1A",
+                              "content": "遊戲化參與",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IOa0Z",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "xRJcu",
+                          "name": "ic3",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#4ECDC4"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "b9qGP",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "d7l5m",
+                              "name": "tx3",
+                              "fill": "#1A1A1A",
+                              "content": "串連社群",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BYkNW",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "Nzcq3",
+                          "name": "ic4",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FF6B6B"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "4s3mG",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "p8GBA",
+                              "name": "tx4",
+                              "fill": "#1A1A1A",
+                              "content": "在地知識共享",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "7GeSo",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "SAUNj",
+                          "name": "ic5",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#8B5CF6"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "5KEPD",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Px3f6",
+                              "name": "tx5",
+                              "fill": "#1A1A1A",
+                              "content": "社群活動",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "luyUX",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "V2ZtW",
+                          "name": "ic6",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#14B8A6"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "qyP0c",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "JQpkr",
+                              "name": "tx6",
+                              "fill": "#1A1A1A",
+                              "content": "交流討論",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KfrNF",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "0aUCs",
+                          "name": "ic7",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#D946EF"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "8yAjK",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "y4RHk",
+                              "name": "tx7",
+                              "fill": "#1A1A1A",
+                              "content": "知識共享",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ZKMRf",
+                  "name": "Row 2",
+                  "gap": 40,
+                  "padding": [
+                    4,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "NisB9",
+                      "name": "Spacer",
+                      "width": 80,
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "KkeCg",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "X0QTh",
+                          "name": "r2ic1",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FF1493"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "sNNQG",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "f9jM3",
+                              "name": "r2tx1",
+                              "fill": "#1A1A1A",
+                              "content": "累積社群資產",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Edo36",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "yfEIu",
+                          "name": "r2ic2",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#7C3AED"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "dGf7h",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "i4beK",
+                              "name": "r2tx2",
+                              "fill": "#1A1A1A",
+                              "content": "技術分享",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "oVhet",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "sol2v",
+                          "name": "r2ic3",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#10B981"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Bht9o",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "AUJWk",
+                              "name": "r2tx3",
+                              "fill": "#1A1A1A",
+                              "content": "台南在地",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "luHzQ",
+                      "name": "Item Hover",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "q5qK3",
+                          "name": "r2ic4",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#3B82F6"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "mVp1d",
+                          "name": "Pill Hover",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "48U0h",
+                              "name": "r2tx4",
+                              "fill": "#1A1A1A",
+                              "content": "Build Together",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "K0nYL",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "KGD8k",
+                          "name": "r2ic5",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#F97316"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "we3VL",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "8QxSZ",
+                              "name": "r2tx5",
+                              "fill": "#1A1A1A",
+                              "content": "目標達成",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QFwh4",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "I3Mrb",
+                          "name": "r2ic6",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#A855F7"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "31u2k",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "UDgyi",
+                              "name": "r2tx6",
+                              "fill": "#1A1A1A",
+                              "content": "成就解鎖",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vBODQ",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "PQzM3",
+                          "name": "r2ic7",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#059669"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tMWBQ",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "25dMk",
+                              "name": "r2tx7",
+                              "fill": "#1A1A1A",
+                              "content": "經驗分享",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "4udpQ",
+                  "name": "Row 3",
+                  "gap": 40,
+                  "padding": [
+                    4,
+                    0
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "MBFx2",
+                      "name": "Spacer",
+                      "width": 30,
+                      "height": 1
+                    },
+                    {
+                      "type": "frame",
+                      "id": "VoIsJ",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "SqKOE",
+                          "name": "r3ic1",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#F59E0B"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "kwfpF",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "aky6o",
+                              "name": "r3tx1",
+                              "fill": "#1A1A1A",
+                              "content": "GDG Tainan",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QUgW8",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "gUWyA",
+                          "name": "r3ic2",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#EC4899"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Vfla5",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "EjQXZ",
+                              "name": "r3tx2",
+                              "fill": "#1A1A1A",
+                              "content": "一起成長",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "frU8H",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "c27AZ",
+                          "name": "r3ic3",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#06B6D4"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oC5d4",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "XLJky",
+                              "name": "r3tx3",
+                              "fill": "#1A1A1A",
+                              "content": "開放社群",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EEE33",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "lPGkz",
+                          "name": "r3ic4",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#EF4444"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "2QSqD",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "OqPER",
+                              "name": "r3tx4",
+                              "fill": "#1A1A1A",
+                              "content": "激發創意",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qTUoU",
+                      "name": "Item Hover",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "2Oq7X",
+                          "name": "r3ic5",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#92400E"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SlvWL",
+                          "name": "Pill Hover",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "HV7pP",
+                              "name": "r3tx5",
+                              "fill": "#1A1A1A",
+                              "content": "咖啡聊天",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Jpar3",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "W2KEy",
+                          "name": "r3ic6",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#DC2626"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "YJNkT",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "OkrqD",
+                              "name": "r3tx6",
+                              "fill": "#1A1A1A",
+                              "content": "創意激盪",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "0HOtO",
+                      "name": "Item",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "b2ckz",
+                          "name": "r3ic7",
+                          "width": 32,
+                          "height": 32,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#2563EB"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "tMtzL",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            10,
+                            24
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "lvsII",
+                              "name": "r3tx7",
+                              "fill": "#1A1A1A",
+                              "content": "問題解決",
+                              "fontFamily": "Inter",
+                              "fontSize": 16,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -1520,11 +2640,11 @@
           "id": "eiukF",
           "name": "Features Section",
           "width": "fill_container",
-          "fill": "$--surface-muted",
+          "fill": "#FFFDF7",
           "layout": "vertical",
           "gap": 40,
           "padding": [
-            60,
+            120,
             80
           ],
           "alignItems": "center",
@@ -1534,7 +2654,7 @@
               "id": "SlbAg",
               "name": "ftTitle",
               "fill": "$--ink-primary",
-              "content": "為什麼選擇 Neighborhood Helper？",
+              "content": "我們正在做的事",
               "textAlign": "center",
               "fontFamily": "Space Mono",
               "fontSize": 28,
@@ -1618,7 +2738,7 @@
                       "fill": "$--ink-body",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "發掘隱藏在台南各角落的技術人才，讓每個人都有機會站上舞台分享。",
+                      "content": "每個人的經驗都是養分。踩過的坑、學到的事，我們想讓這些故事被更多人聽見。",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
                       "fontSize": 14,
@@ -1697,7 +2817,7 @@
                       "fill": "$--ink-body",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "積分、排行榜、成就系統，讓每次參與社群都像闖關一樣有趣。",
+                      "content": "參加活動、分享筆記、幫忙場佈——每一次參與都會被記住，不只是簽到而已。",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
                       "fontSize": 14,
@@ -1776,7 +2896,7 @@
                       "fill": "$--ink-body",
                       "textGrowth": "fixed-width",
                       "width": "fill_container",
-                      "content": "連結台南各領域的技術社群，打破同溫層，一起成長茁壯。",
+                      "content": "台南有好多不同社群，各自精彩。串在一起，可能性就完全不一樣了。",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
                       "fontSize": 14,
@@ -1793,11 +2913,11 @@
           "id": "HdZYG",
           "name": "CTA Section",
           "width": "fill_container",
-          "fill": "$--surface-light-orange",
+          "fill": "#FFFDF7",
           "layout": "vertical",
           "gap": 20,
           "padding": [
-            60,
+            120,
             80
           ],
           "alignItems": "center",
@@ -1835,15 +2955,6 @@
                 "align": "outside",
                 "thickness": 2,
                 "fill": "$--ink-primary"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "$--ink-primary",
-                "offset": {
-                  "x": 4,
-                  "y": 4
-                }
               },
               "padding": [
                 12,
@@ -1909,7 +3020,7 @@
                   "id": "4ZtVU",
                   "name": "footerText",
                   "fill": "$--ink-footer-light",
-                  "content": "GDG Tainan — Neighborhood Helper",
+                  "content": "GDG Tainan — 雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -1963,7 +3074,7 @@
       "type": "frame",
       "id": "qvgaW",
       "x": -50,
-      "y": 5620,
+      "y": 5801,
       "name": "Empty State 元件",
       "width": 400,
       "fill": "$--surface-warm",
@@ -2123,8 +3234,8 @@
     {
       "type": "frame",
       "id": "jTw37",
-      "x": 1430,
-      "y": 2946,
+      "x": -1130,
+      "y": -395,
       "name": "Color Test - Landing Page",
       "clip": true,
       "width": 1440,
@@ -2174,7 +3285,7 @@
                       "id": "2SPh8",
                       "name": "logoText",
                       "fill": "#1A1A1A",
-                      "content": "Neighborhood Helper",
+                      "content": "雞婆鄰里互助會",
                       "fontFamily": "Space Mono",
                       "fontSize": 16,
                       "fontWeight": "700"
@@ -2291,7 +3402,7 @@
               "id": "z1QOG",
               "name": "heroTitle",
               "fill": "#1A1A1A",
-              "content": "Neighborhood\nHelper",
+              "content": "雞婆\n鄰里互助會",
               "lineHeight": 1,
               "textAlign": "center",
               "fontFamily": "Space Mono",
@@ -2789,7 +3900,7 @@
                   "id": "MOfkk",
                   "name": "footerName",
                   "fill": "#FFFFFF",
-                  "content": "Neighborhood Helper",
+                  "content": "雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -2813,8 +3924,8 @@
     {
       "type": "frame",
       "id": "Zteqh",
-      "x": 3070,
-      "y": 2946,
+      "x": 510,
+      "y": -395,
       "name": "Color Test 2 - Warm Orange",
       "clip": true,
       "width": 1440,
@@ -2864,7 +3975,7 @@
                       "id": "Ng00L",
                       "name": "logoT",
                       "fill": "#1A1A1A",
-                      "content": "Neighborhood Helper",
+                      "content": "雞婆鄰里互助會",
                       "fontFamily": "Space Mono",
                       "fontSize": 16,
                       "fontWeight": "700"
@@ -2998,7 +4109,7 @@
               "id": "xwkBi",
               "name": "title",
               "fill": "#FFFDF7",
-              "content": "Neighborhood\nHelper",
+              "content": "雞婆\n鄰里互助會",
               "lineHeight": 1,
               "textAlign": "center",
               "fontFamily": "Space Mono",
@@ -3583,7 +4694,7 @@
                   "id": "dQpph",
                   "name": "ftN",
                   "fill": "#FFFFFF",
-                  "content": "Neighborhood Helper",
+                  "content": "雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -3607,8 +4718,8 @@
     {
       "type": "frame",
       "id": "w05Oq",
-      "x": 4710,
-      "y": 2946,
+      "x": 2150,
+      "y": -395,
       "name": "Color Test 3 - Mixed",
       "clip": true,
       "width": 1440,
@@ -3658,7 +4769,7 @@
                       "id": "PbIG2",
                       "name": "lgT",
                       "fill": "#1A1A1A",
-                      "content": "Neighborhood Helper",
+                      "content": "雞婆鄰里互助會",
                       "fontFamily": "Space Mono",
                       "fontSize": 16,
                       "fontWeight": "700"
@@ -3801,7 +4912,7 @@
               "id": "vbh6t",
               "name": "ttl",
               "fill": "#1A1A1A",
-              "content": "Neighborhood\nHelper",
+              "content": "雞婆\n鄰里互助會",
               "lineHeight": 1,
               "textAlign": "center",
               "fontFamily": "Space Mono",
@@ -4384,7 +5495,7 @@
                   "id": "Qj0P5",
                   "name": "ftN",
                   "fill": "#D4C8BC",
-                  "content": "Neighborhood Helper",
+                  "content": "雞婆鄰里互助會",
                   "fontFamily": "Space Mono",
                   "fontSize": 14,
                   "fontWeight": "600"
@@ -4404,6 +5515,1314 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "CKnvx",
+      "x": 1380,
+      "y": 4038,
+      "name": "Mobile Footer",
+      "width": 375,
+      "fill": "$--surface-footer",
+      "stroke": {
+        "align": "inside",
+        "thickness": {
+          "top": 2
+        },
+        "fill": "$--ink-primary"
+      },
+      "layout": "vertical",
+      "gap": 12,
+      "padding": 16,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "OGBON",
+          "name": "Footer Brand",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "UYObT",
+              "name": "footerLogo",
+              "width": 16,
+              "height": 16,
+              "iconFontName": "map-pin",
+              "iconFontFamily": "lucide",
+              "fill": "$--ink-footer-light"
+            },
+            {
+              "type": "text",
+              "id": "8ngoF",
+              "name": "footerText",
+              "fill": "$--ink-footer-light",
+              "content": "GDG Tainan — 雞婆鄰里互助會",
+              "fontFamily": "Space Mono",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "U9m1t",
+          "name": "Footer Links",
+          "gap": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "TrXx3",
+              "name": "footerLink1",
+              "fill": "$--ink-footer-light",
+              "content": "關於我們",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "61qBT",
+              "name": "footerLink2",
+              "fill": "$--ink-footer-light",
+              "content": "聯絡方式",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "22NDe",
+          "name": "footerCopyright",
+          "fill": "$--ink-footer-muted",
+          "content": "© 2026",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "d2EUx",
+      "x": -74,
+      "y": 6259,
+      "name": "Auth Header (Desktop)",
+      "width": 1280,
+      "height": 64,
+      "fill": "$--surface-warm",
+      "stroke": {
+        "align": "inside",
+        "thickness": {
+          "bottom": 2
+        },
+        "fill": "$--ink-primary"
+      },
+      "padding": [
+        0,
+        24
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "DKXIW",
+          "name": "Auth Logo",
+          "gap": 8,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "OErV7",
+              "name": "authBird",
+              "width": 28,
+              "height": 28,
+              "iconFontName": "bird",
+              "iconFontFamily": "lucide",
+              "fill": "$--brand-orange"
+            },
+            {
+              "type": "text",
+              "id": "FH0Wx",
+              "name": "authBrandName",
+              "fill": "$--ink-primary",
+              "content": "雞婆鄰里互助會",
+              "fontFamily": "Space Mono",
+              "fontSize": 18,
+              "fontWeight": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "hJ6Gj",
+      "x": 1246,
+      "y": 6259,
+      "name": "Auth Header (Mobile)",
+      "width": 375,
+      "height": 56,
+      "fill": "$--surface-warm",
+      "stroke": {
+        "align": "inside",
+        "thickness": {
+          "bottom": 2
+        },
+        "fill": "$--ink-primary"
+      },
+      "padding": [
+        0,
+        16
+      ],
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "9Hn2w",
+          "name": "Auth Logo",
+          "gap": 6,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "kvVnE",
+              "name": "authBird",
+              "width": 24,
+              "height": 24,
+              "iconFontName": "bird",
+              "iconFontFamily": "lucide",
+              "fill": "$--brand-orange"
+            },
+            {
+              "type": "text",
+              "id": "w81zI",
+              "name": "authBrandName",
+              "fill": "$--ink-primary",
+              "content": "雞婆鄰里互助會",
+              "fontFamily": "Space Mono",
+              "fontSize": 16,
+              "fontWeight": "bold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "MIbbS",
+      "x": 1380,
+      "y": 4218,
+      "name": "Landing Page Mobile (首頁)",
+      "clip": true,
+      "width": 375,
+      "fill": "$--surface-warm",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "SIvbc",
+          "name": "Hero Section",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 20,
+          "padding": [
+            48,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "u73C6",
+              "name": "Badge",
+              "fill": "$--brand-orange",
+              "cornerRadius": 999,
+              "stroke": {
+                "thickness": 2,
+                "fill": "$--ink-primary"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "$--ink-primary",
+                "offset": {
+                  "x": 3,
+                  "y": 3
+                }
+              },
+              "padding": [
+                6,
+                14
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "LNpLs",
+                  "name": "badgeTxt",
+                  "fill": "#FFFFFF",
+                  "content": "GDG Tainan 社群平台",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 11,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "sdBt0",
+              "name": "title",
+              "fill": "$--ink-primary",
+              "content": "讓科技成為這片土地的養分",
+              "textAlign": "center",
+              "fontFamily": "Space Mono",
+              "fontSize": 24,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "JANyk",
+              "name": "subtitle",
+              "fill": "$--ink-body",
+              "content": "挖掘在地講者、鼓勵社群參與、串連台南科技社群。一場小聚、一次分享，就開始改變這個鄰里的節奏。",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "JBC9R",
+              "name": "CTA Buttons",
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "UTvqX",
+                  "name": "Primary CTA",
+                  "fill": "$--brand-orange",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "$--ink-primary"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "$--ink-primary",
+                    "offset": {
+                      "x": 4,
+                      "y": 4
+                    }
+                  },
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "zei0F",
+                      "name": "btn1Txt",
+                      "fill": "#FFFFFF",
+                      "content": "瀏覽活動",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "HA3VM",
+                  "name": "Secondary CTA",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "$--ink-primary"
+                  },
+                  "padding": [
+                    12,
+                    24
+                  ],
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "CHMuf",
+                      "name": "btn2Txt",
+                      "fill": "$--ink-primary",
+                      "content": "了解更多",
+                      "fontFamily": "Inter",
+                      "fontSize": 15,
+                      "fontWeight": "600"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "GlXZa",
+          "name": "Marquee Section",
+          "clip": true,
+          "width": "fill_container",
+          "height": 180,
+          "fill": "#F4F4F0",
+          "layout": "vertical",
+          "padding": [
+            24,
+            0
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "0m1Em",
+              "name": "Marquee Band",
+              "width": 550,
+              "fill": "#F4F4F0",
+              "layout": "vertical",
+              "gap": 10,
+              "padding": [
+                4,
+                12
+              ],
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "gEe3k",
+                  "name": "Row 1",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "HW5iD",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "jkp84",
+                          "name": "m1ai",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FF7A3D"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "mqALC",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "gVHR1",
+                              "name": "m1at",
+                              "fill": "#1A1A1A",
+                              "content": "在地講者",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "7ypa6",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "cFaqi",
+                          "name": "m1bi",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FFD23F"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Nq9SM",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "ja0vS",
+                              "name": "m1bt",
+                              "fill": "#1A1A1A",
+                              "content": "遊戲化參與",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "SAJiR",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "PDz6Y",
+                          "name": "m1ci",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#4ECDC4"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ZpZSh",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "38qbq",
+                              "name": "m1ct",
+                              "fill": "#1A1A1A",
+                              "content": "串連社群",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "daZF7",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "MrtPO",
+                          "name": "m1di",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FF6B6B"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "I3laQ",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "BZuis",
+                              "name": "m1dt",
+                              "fill": "#1A1A1A",
+                              "content": "知識共享",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "vwM5s",
+                  "name": "Row 2",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "7nlEi",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "D9UhQ",
+                          "name": "m2ai",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#FF1493"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "1TXxo",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "x1t1x",
+                              "name": "m2at",
+                              "fill": "#1A1A1A",
+                              "content": "累積資產",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4XWSr",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "x7GNf",
+                          "name": "m2bi",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#7C3AED"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "I96C7",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "LKxei",
+                              "name": "m2bt",
+                              "fill": "#1A1A1A",
+                              "content": "技術分享",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Mc7K8",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "IVZNU",
+                          "name": "m2ci",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#10B981"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ihdD5",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Ce0kL",
+                              "name": "m2ct",
+                              "fill": "#1A1A1A",
+                              "content": "台南在地",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6cSiU",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "smjCl",
+                          "name": "m2di",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#3B82F6"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "rVFBD",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "E3aDL",
+                              "name": "m2dt",
+                              "fill": "#1A1A1A",
+                              "content": "Build Together",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fTUAP",
+                  "name": "Row 3",
+                  "gap": 20,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "QuZAF",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "ZQk41",
+                          "name": "m3ai",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#F59E0B"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "TOpNy",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "yia0M",
+                              "name": "m3at",
+                              "fill": "#1A1A1A",
+                              "content": "GDG Tainan",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "oeELq",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "C7gDI",
+                          "name": "m3bi",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#EC4899"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "aRqcj",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "JRuE5",
+                              "name": "m3bt",
+                              "fill": "#1A1A1A",
+                              "content": "一起成長",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LbuuJ",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "HOiPI",
+                          "name": "m3ci",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#06B6D4"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "IHCo7",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jr4i2",
+                              "name": "m3ct",
+                              "fill": "#1A1A1A",
+                              "content": "開放社群",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "dqzoK",
+                      "name": "Item",
+                      "gap": 6,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "fAslC",
+                          "name": "m3di",
+                          "width": 22,
+                          "height": 22,
+                          "iconFontFamily": "Material Symbols Rounded",
+                          "fill": "#EF4444"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "6vljF",
+                          "name": "Pill",
+                          "fill": "#FFFFFF",
+                          "cornerRadius": 999,
+                          "stroke": {
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          },
+                          "padding": [
+                            6,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "HfpnE",
+                              "name": "m3dt",
+                              "fill": "#1A1A1A",
+                              "content": "激發創意",
+                              "fontFamily": "Inter",
+                              "fontSize": 13,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NlpBD",
+          "name": "Features Section",
+          "width": "fill_container",
+          "fill": "$--surface-muted",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            48,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "Ls4DG",
+              "name": "featT",
+              "fill": "$--ink-primary",
+              "content": "我們正在做的事",
+              "textAlign": "center",
+              "fontFamily": "Space Mono",
+              "fontSize": 20,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "flNdf",
+              "name": "Card 1",
+              "width": "fill_container",
+              "fill": "$--surface-warm",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "outside",
+                "thickness": 2,
+                "fill": "$--ink-primary"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "$--ink-primary",
+                "offset": {
+                  "x": 4,
+                  "y": 4
+                }
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "s84fM",
+                  "name": "Icon Box",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "$--brand-orange",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "outside",
+                    "thickness": 2,
+                    "fill": "$--ink-primary"
+                  },
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "3F9LI",
+                      "name": "c1i",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontFamily": "Material Symbols Rounded",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "37sNL",
+                  "name": "c1t",
+                  "fill": "$--ink-primary",
+                  "content": "挖掘在地講者",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "sSbBP",
+                  "name": "c1d",
+                  "fill": "$--ink-body",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "每個人的經驗都是養分。踩過的坑、學到的事，我們想讓這些故事被更多人聽見。",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dxBau",
+              "name": "Card 2",
+              "width": "fill_container",
+              "fill": "$--surface-warm",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "outside",
+                "thickness": 2,
+                "fill": "$--ink-primary"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "$--ink-primary",
+                "offset": {
+                  "x": 4,
+                  "y": 4
+                }
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "g45Kc",
+                  "name": "Icon Box",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "$--brand-yellow",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "outside",
+                    "thickness": 2,
+                    "fill": "$--ink-primary"
+                  },
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "ygapW",
+                      "name": "c2i",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontFamily": "Material Symbols Rounded",
+                      "fill": "$--ink-primary"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "QW8i2",
+                  "name": "c2t",
+                  "fill": "$--ink-primary",
+                  "content": "遊戲化參與",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "1H93f",
+                  "name": "c2d",
+                  "fill": "$--ink-body",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "參加活動、分享筆記、幫忙場佈——每一次參與都會被記住，不只是簽到而已。",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "QOMG7",
+              "name": "Card 3",
+              "width": "fill_container",
+              "fill": "$--surface-warm",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "outside",
+                "thickness": 2,
+                "fill": "$--ink-primary"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "$--ink-primary",
+                "offset": {
+                  "x": 4,
+                  "y": 4
+                }
+              },
+              "layout": "vertical",
+              "gap": 10,
+              "padding": 20,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "R2tTD",
+                  "name": "Icon Box",
+                  "width": 40,
+                  "height": 40,
+                  "fill": "$--brand-deep-orange",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "align": "outside",
+                    "thickness": 2,
+                    "fill": "$--ink-primary"
+                  },
+                  "layout": "vertical",
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "rkB2E",
+                      "name": "c3i",
+                      "width": 20,
+                      "height": 20,
+                      "iconFontFamily": "Material Symbols Rounded",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "qus9g",
+                  "name": "c3t",
+                  "fill": "$--ink-primary",
+                  "content": "串連社群",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "7Cfeq",
+                  "name": "c3d",
+                  "fill": "$--ink-body",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "台南有好多不同社群，各自精彩。串在一起，可能性就完全不一樣了。",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "hxwFG",
+          "name": "CTA Section",
+          "width": "fill_container",
+          "fill": "$--surface-light-orange",
+          "layout": "vertical",
+          "gap": 16,
+          "padding": [
+            48,
+            20
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "wE2xh",
+              "name": "ctaT",
+              "fill": "$--ink-primary",
+              "content": "準備好加入了嗎？",
+              "textAlign": "center",
+              "fontFamily": "Space Mono",
+              "fontSize": 22,
+              "fontWeight": "700"
+            },
+            {
+              "type": "text",
+              "id": "zLfBV",
+              "name": "ctaD",
+              "fill": "$--ink-body",
+              "content": "和台南的開發者們一起，打造更好的社群。",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "S2jeB",
+              "name": "CTA Button",
+              "fill": "$--brand-orange",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "outside",
+                "thickness": 2,
+                "fill": "$--ink-primary"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "$--ink-primary",
+                "offset": {
+                  "x": 4,
+                  "y": 4
+                }
+              },
+              "padding": [
+                12,
+                32
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Q2pG1",
+                  "name": "ctaBtnT",
+                  "fill": "#FFFFFF",
+                  "content": "立即瀏覽活動",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "id": "vhr9a",
+      "x": -447,
+      "y": 4672,
+      "name": "note1",
+      "width": 280,
+      "height": 0,
+      "content": "⚡ 動態行為：跑馬燈（Marquee）\n\n使用 react-fast-marquee 套件\n\n• Row 1：向左滾動，speed=40\n• Row 2：向右滾動，speed=30\n• Row 3：向左滾動，speed=35\n• pauseOnHover: true\n• autoFill: true（自動填滿寬度）\n\n設計稿顯示的是靜態排列，\n實際會無限水平滾動。"
     }
   ],
   "themes": {

@@ -93,13 +93,40 @@ Header 根據三種狀態顯示不同內容：
 
 ### 5. 首頁設計
 
-首頁是簡單的 Landing Page，包含：
-- Hero 區塊：標題「Neighborhood Helper」+ 副標題 + CTA 按鈕（前往活動列表）
-- 簡要介紹 GDG Tainan 社群
+首頁 Landing Page，包含四個區塊：
+- **Hero**：品牌 badge + 標題「讓科技成為這片土地的養分」+ 副標題 + CTA 按鈕
+- **Marquee（跑馬燈）**：3 列無限滾動 pill items，展示社群關鍵字
+- **Features**：「我們正在做的事」3 張特色卡片
+- **CTA**：底部號召行動「準備好加入了嗎？」
 
 **決策**：首頁使用 `(public)` layout，不建立獨立 layout。
 
 **理由**：首頁和其他公開頁面共用相同的 Header/Footer，沒有特殊 layout 需求。
+
+### 7. 動態行為規格（非靜態設計）
+
+Pencil 設計稿是靜態的，以下元件有動態行為，需搭配程式碼實作：
+
+#### Marquee 跑馬燈
+
+```
+套件：react-fast-marquee
+結構：3 列水平無限滾動
+
+Row 1：向左滾動，speed=40
+Row 2：向右滾動，speed=30（Spacer 80px 製造錯落感）
+Row 3：向左滾動，speed=35（Spacer 30px 製造錯落感）
+
+共用設定：
+  pauseOnHover: true（滑鼠移入暫停）
+  autoFill: true（自動填滿寬度，不留空白）
+
+背景：#F4F4F0（淺暖灰）
+每個 item：Lucide icon（彩色）+ 白色藥丸按鈕
+部分 item 有 hover 陰影效果（3px 3px 0 #1A1A1A）
+```
+
+> 設計稿中 Marquee Band 寬度 1600px > 容器 1280px，搭配 clip: true 模擬邊緣裁切效果。實際實作用 `overflow-hidden` + `react-fast-marquee` 的 `autoFill` 即可。
 
 ### 6. 元件目錄結構
 
