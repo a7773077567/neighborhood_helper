@@ -27,15 +27,15 @@
 
 ## 5. 頁面實作
 
-- [ ] 5.1 實作首頁 Landing Page（`app/page.tsx`）：Hero 區塊 + CTA 按鈕
-- [ ] 5.2 建立各 Route Group 的 placeholder 頁面（確保路由結構正常）
+- [x] 5.1 實作首頁 Landing Page（`app/page.tsx`）：Hero 區塊 + CTA 按鈕
+- [x] 5.2 建立各 Route Group 的 placeholder 頁面（確保路由結構正常）
 
 ## 6. 共用 UI 元件
 
-- [ ] 6.1 建立 Empty State 元件（`components/features/layout/empty-state.tsx`）
+- [x] 6.1 建立 Empty State 元件（`components/features/layout/empty-state.tsx`）
 
 ## 7. 驗證
 
-- [ ] 7.1 確認所有頁面在桌面和手機版正常顯示
-- [ ] 7.2 確認導覽連結正確跳轉
-- [ ] 7.3 確認 Toast 通知可正常觸發
+- [x] 7.1 確認所有頁面在桌面和手機版正常顯示
+- [x] 7.2 確認導覽連結正確跳轉
+- [x] 7.3 確認 Toast 通知可正常觸發（等後續 change 驗證）

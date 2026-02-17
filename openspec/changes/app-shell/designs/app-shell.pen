@@ -3059,6 +3059,7 @@
       "y": 6500,
       "name": "Empty State 元件",
       "width": 400,
+      "height": 264,
       "fill": "#F9F6F0",
       "cornerRadius": 8,
       "stroke": {
