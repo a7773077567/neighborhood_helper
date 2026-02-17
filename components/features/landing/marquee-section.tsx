@@ -59,7 +59,7 @@ interface MarqueeItemData {
   iconColor: string
 }
 
-/** Row 1 — 對照 Pencil 節點 g9uoD */
+/** Row 1 */
 const ROW_1_ITEMS: MarqueeItemData[] = [
   { label: '挖掘在地講者', icon: Mic, iconColor: '#FF7A3D' },
   { label: '遊戲化參與', icon: Gamepad2, iconColor: '#FFD23F' },
@@ -70,7 +70,7 @@ const ROW_1_ITEMS: MarqueeItemData[] = [
   { label: '知識共享', icon: Lightbulb, iconColor: '#D946EF' },
 ]
 
-/** Row 2 — 對照 Pencil 節點 ZKMRf */
+/** Row 2 */
 const ROW_2_ITEMS: MarqueeItemData[] = [
   { label: '累積社群資產', icon: TrendingUp, iconColor: '#FF1493' },
   { label: '技術分享', icon: Code, iconColor: '#7C3AED' },
@@ -81,7 +81,7 @@ const ROW_2_ITEMS: MarqueeItemData[] = [
   { label: '經驗分享', icon: Share2, iconColor: '#059669' },
 ]
 
-/** Row 3 — 對照 Pencil 節點 4udpQ */
+/** Row 3 */
 const ROW_3_ITEMS: MarqueeItemData[] = [
   { label: 'GDG Tainan', icon: Hexagon, iconColor: '#F59E0B' },
   { label: '一起成長', icon: Sprout, iconColor: '#EC4899' },
@@ -138,7 +138,7 @@ export function MarqueeSection(): React.ReactElement {
       onMouseEnter={() => setPlay(false)}
       onMouseLeave={() => setPlay(true)}
     >
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-2">
         {/* Row 1 */}
         <Marquee speed={35} direction="left" play={play} autoFill>
           <div className="flex items-center gap-10 px-5 py-2">
@@ -148,18 +148,18 @@ export function MarqueeSection(): React.ReactElement {
           </div>
         </Marquee>
 
-        {/* Row 2 */}
+        {/* Row 2 — translateX 錯開起始位置 */}
         <Marquee speed={35} direction="left" play={play} autoFill>
-          <div className="flex items-center gap-10 px-5 py-2">
+          <div className="flex -translate-x-25 items-center gap-10 px-5 py-2">
             {ROW_2_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />
             ))}
           </div>
         </Marquee>
 
-        {/* Row 3 */}
+        {/* Row 3 — translateX 錯開起始位置 */}
         <Marquee speed={35} direction="left" play={play} autoFill>
-          <div className="flex items-center gap-10 px-5 py-2">
+          <div className="flex -translate-x-50 items-center gap-10 px-5 py-2">
             {ROW_3_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />
             ))}
