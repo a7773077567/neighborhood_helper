@@ -11,17 +11,16 @@
  *   │  Row 2  ← ← ← ← ← ← ← ← ← ← ←           │
  *   │  Row 3  ← ← ← ← ← ← ← ← ← ← ←           │
  *   └──────────────────────────────────────────────┘
- *   每 20 秒全部反轉方向（Gumroad 風格）
+ *   3 列同方向、同速度持續滾動，hover 全部一起暫停。
  *
  * 每個 item = 彩色 icon + 白色藥丸按鈕
- * 3 列同方向滾動，速度不同製造層次感，定時反轉增加動態。
  *
  * 為什麼是 Client Component？
  *   react-fast-marquee 內部用 useRef + useEffect 來計算滾動動畫，
- *   必須在瀏覽器執行。方向反轉也需要 useState。
+ *   必須在瀏覽器執行。hover 暫停需要 useState。
  */
 
-import { useEffect, useState } from 'react'
+import type { LucideIcon } from 'lucide-react'
 
 import {
   Award,
@@ -46,9 +45,9 @@ import {
   Wrench,
   Zap,
 } from 'lucide-react'
-import Marquee from 'react-fast-marquee'
+import { useState } from 'react'
 
-import type { LucideIcon } from 'lucide-react'
+import Marquee from 'react-fast-marquee'
 
 /* ─────────────────────────────────────────────
  * 型別 & 資料定義
@@ -60,14 +59,10 @@ interface MarqueeItemData {
   iconColor: string
 }
 
-/**
- * Row 1：向左滾動，speed=40
- *
- * 對照 Pencil 節點 g9uoD
- */
+/** Row 1 — 對照 Pencil 節點 g9uoD */
 const ROW_1_ITEMS: MarqueeItemData[] = [
   { label: '挖掘在地講者', icon: Mic, iconColor: '#FF7A3D' },
-  { label: '遊戲化參與', icon: Gamepad2, iconColor: '#FFD23F'},
+  { label: '遊戲化參與', icon: Gamepad2, iconColor: '#FFD23F' },
   { label: '串連社群', icon: Users, iconColor: '#4ECDC4' },
   { label: '在地知識共享', icon: BookOpen, iconColor: '#FF6B6B' },
   { label: '社群活動', icon: Calendar, iconColor: '#8B5CF6' },
@@ -75,32 +70,24 @@ const ROW_1_ITEMS: MarqueeItemData[] = [
   { label: '知識共享', icon: Lightbulb, iconColor: '#D946EF' },
 ]
 
-/**
- * Row 2：向右滾動，speed=30
- *
- * 對照 Pencil 節點 ZKMRf（含 80px spacer 製造錯落感）
- */
+/** Row 2 — 對照 Pencil 節點 ZKMRf */
 const ROW_2_ITEMS: MarqueeItemData[] = [
   { label: '累積社群資產', icon: TrendingUp, iconColor: '#FF1493' },
   { label: '技術分享', icon: Code, iconColor: '#7C3AED' },
   { label: '台南在地', icon: MapPin, iconColor: '#10B981' },
-  { label: 'Build Together', icon: Hammer, iconColor: '#3B82F6'},
+  { label: 'Build Together', icon: Hammer, iconColor: '#3B82F6' },
   { label: '目標達成', icon: Target, iconColor: '#F97316' },
   { label: '成就解鎖', icon: Award, iconColor: '#A855F7' },
   { label: '經驗分享', icon: Share2, iconColor: '#059669' },
 ]
 
-/**
- * Row 3：向左滾動，speed=35
- *
- * 對照 Pencil 節點 4udpQ（含 30px spacer 製造錯落感）
- */
+/** Row 3 — 對照 Pencil 節點 4udpQ */
 const ROW_3_ITEMS: MarqueeItemData[] = [
   { label: 'GDG Tainan', icon: Hexagon, iconColor: '#F59E0B' },
   { label: '一起成長', icon: Sprout, iconColor: '#EC4899' },
   { label: '開放社群', icon: Globe, iconColor: '#06B6D4' },
   { label: '激發創意', icon: Sparkles, iconColor: '#EF4444' },
-  { label: '咖啡聊天', icon: Coffee, iconColor: '#92400E'},
+  { label: '咖啡聊天', icon: Coffee, iconColor: '#92400E' },
   { label: '創意激盪', icon: Zap, iconColor: '#DC2626' },
   { label: '問題解決', icon: Wrench, iconColor: '#2563EB' },
 ]
@@ -129,14 +116,6 @@ function MarqueeItem({ label, icon: Icon, iconColor }: MarqueeItemData): React.R
 }
 
 /* ─────────────────────────────────────────────
- * 方向反轉間隔（毫秒）
- *
- * Gumroad 風格：全部同方向滾動，定時反轉。
- * 20 秒是個不會太頻繁、又能注意到的節奏。
- * ───────────────────────────────────────────── */
-const REVERSE_INTERVAL_MS = 20_000
-
-/* ─────────────────────────────────────────────
  * MarqueeSection 主元件
  *
  * 對照 Pencil 設計：
@@ -144,28 +123,24 @@ const REVERSE_INTERVAL_MS = 20_000
  *   Band (lSnbW): 3 列，gap-4 (16px)
  *
  * react-fast-marquee 設定：
+ *   speed: 35（3 列統一）
+ *   direction: left（固定向左）
  *   autoFill: 自動填滿寬度（不留空白）
- *   pauseOnHover: 滑鼠移入暫停
- *
- * 動態行為（見 design.md §7）：
- *   3 列同方向，每 20 秒反轉
+ *   play: hover 外層容器時全部一起暫停
  * ───────────────────────────────────────────── */
 
 export function MarqueeSection(): React.ReactElement {
-  const [direction, setDirection] = useState<'left' | 'right'>('left')
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setDirection(prev => (prev === 'left' ? 'right' : 'left'))
-    }, REVERSE_INTERVAL_MS)
-    return () => clearInterval(timer)
-  }, [])
+  const [play, setPlay] = useState(true)
 
   return (
-    <section className="overflow-hidden py-8 md:py-10">
+    <section
+      className="overflow-hidden py-8 md:py-10"
+      onMouseEnter={() => setPlay(false)}
+      onMouseLeave={() => setPlay(true)}
+    >
       <div className="flex flex-col gap-4">
-        {/* Row 1：speed=40 */}
-        <Marquee speed={40} direction={direction} pauseOnHover autoFill>
+        {/* Row 1 */}
+        <Marquee speed={35} direction="left" play={play} autoFill>
           <div className="flex items-center gap-10 px-5 py-2">
             {ROW_1_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />
@@ -173,8 +148,8 @@ export function MarqueeSection(): React.ReactElement {
           </div>
         </Marquee>
 
-        {/* Row 2：speed=30 */}
-        <Marquee speed={30} direction={direction} pauseOnHover autoFill>
+        {/* Row 2 */}
+        <Marquee speed={35} direction="left" play={play} autoFill>
           <div className="flex items-center gap-10 px-5 py-2">
             {ROW_2_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />
@@ -182,8 +157,8 @@ export function MarqueeSection(): React.ReactElement {
           </div>
         </Marquee>
 
-        {/* Row 3：speed=35 */}
-        <Marquee speed={35} direction={direction} pauseOnHover autoFill>
+        {/* Row 3 */}
+        <Marquee speed={35} direction="left" play={play} autoFill>
           <div className="flex items-center gap-10 px-5 py-2">
             {ROW_3_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />

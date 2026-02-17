@@ -113,14 +113,12 @@ Pencil 設計稿是靜態的，以下元件有動態行為，需搭配程式碼�
 套件：react-fast-marquee
 結構：3 列水平無限滾動
 
-Row 1：speed=40
-Row 2：speed=30
-Row 3：speed=35
-方向：3 列同方向，每 20 秒全部反轉（Gumroad 風格）
+speed: 35（3 列統一）
+direction: left（固定向左，不反轉）
 
 共用設定：
-  pauseOnHover: true（滑鼠移入暫停）
   autoFill: true（自動填滿寬度，不留空白）
+  hover 外層容器時全部一起暫停（非逐列暫停）
 
 背景：#F9F6F0（與頁面統一底色）
 每個 item：Lucide icon（彩色）+ 白色藥丸按鈕

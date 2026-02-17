@@ -198,10 +198,8 @@ Icon 方塊: 48x48, 圓角 8px, 邊框 2px
 ```
 背景: #F9F6F0（與頁面統一）
 結構: 3 列水平無限滾動（react-fast-marquee）
-  Row 1: speed=40
-  Row 2: speed=30
-  Row 3: speed=35
-  方向: 3 列同方向，每 20 秒全部反轉（Gumroad 風格）
+  speed: 35（3 列統一）
+  direction: left（固定向左，不反轉）
 
 每個 item:
   Lucide icon（彩色，各自不同色）+ 白色藥丸按鈕
@@ -209,8 +207,8 @@ Icon 方塊: 48x48, 圓角 8px, 邊框 2px
   陰影: 無（hover 時 3px 3px 0 #1A1A1A）
 
 共用設定:
-  pauseOnHover: true
   autoFill: true（自動填滿寬度）
+  hover 外層容器時全部一起暫停（非逐列暫停）
 
 風格參考: Gumroad 首頁的 tag 跑馬燈區塊
 ```
