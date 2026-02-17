@@ -9,7 +9,7 @@
       "name": "Header - Public (未登入)",
       "width": 1280,
       "height": 64,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -110,15 +110,6 @@
                 "thickness": 2,
                 "fill": "$--ink-primary"
               },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "$--ink-primary",
-                "offset": {
-                  "x": 4,
-                  "y": 4
-                }
-              },
               "gap": 6,
               "padding": [
                 10,
@@ -181,8 +172,8 @@
     {
       "type": "frame",
       "id": "gV2OW",
-      "x": 442,
-      "y": 5847,
+      "x": 500,
+      "y": 6500,
       "name": "User Menu (下拉選單)",
       "width": 224,
       "layout": "vertical",
@@ -221,7 +212,7 @@
           "id": "hdRDf",
           "name": "Dropdown Content",
           "width": 224,
-          "fill": "$--surface-warm",
+          "fill": "#F9F6F0",
           "cornerRadius": 8,
           "stroke": {
             "thickness": 1,
@@ -403,7 +394,7 @@
       "name": "Header - Dashboard (已登入)",
       "width": 1280,
       "height": 64,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -547,7 +538,7 @@
       "name": "Header - Admin (組織者)",
       "width": 1280,
       "height": 64,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -701,7 +692,7 @@
       "name": "Header - Mobile",
       "width": 390,
       "height": 56,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -783,15 +774,6 @@
                 "thickness": 2,
                 "fill": "$--ink-primary"
               },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "$--ink-primary",
-                "offset": {
-                  "x": 3,
-                  "y": 3
-                }
-              },
               "gap": 6,
               "padding": [
                 8,
@@ -867,7 +849,7 @@
           "name": "Sheet Panel",
           "width": 280,
           "height": "fill_container",
-          "fill": "$--surface-warm",
+          "fill": "#F9F6F0",
           "stroke": {
             "align": "outside",
             "thickness": {
@@ -1220,7 +1202,7 @@
       "name": "Landing Page (首頁)",
       "clip": true,
       "width": 1280,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "layout": "vertical",
       "children": [
         {
@@ -1229,7 +1211,7 @@
           "name": "Header",
           "width": "fill_container",
           "height": 64,
-          "fill": "$--surface-warm",
+          "fill": "#F9F6F0",
           "stroke": {
             "align": "inside",
             "thickness": {
@@ -1394,7 +1376,7 @@
           "id": "nSuDK",
           "name": "Hero Section",
           "width": "fill_container",
-          "fill": "#FFFDF7",
+          "fill": "#F9F6F0",
           "layout": "vertical",
           "gap": 32,
           "padding": [
@@ -1611,7 +1593,7 @@
           "clip": true,
           "width": "fill_container",
           "height": 260,
-          "fill": "#F0EEEB",
+          "fill": "#F9F6F0",
           "layout": "vertical",
           "padding": [
             40,
@@ -1625,7 +1607,7 @@
               "id": "lSnbW",
               "name": "Marquee Band",
               "width": 1600,
-              "fill": "#F0EEEB",
+              "fill": "#F9F6F0",
               "layout": "vertical",
               "gap": 12,
               "padding": [
@@ -2640,7 +2622,7 @@
           "id": "eiukF",
           "name": "Features Section",
           "width": "fill_container",
-          "fill": "#FFFDF7",
+          "fill": "#F9F6F0",
           "layout": "vertical",
           "gap": 40,
           "padding": [
@@ -2913,7 +2895,7 @@
           "id": "HdZYG",
           "name": "CTA Section",
           "width": "fill_container",
-          "fill": "#FFFDF7",
+          "fill": "#F9F6F0",
           "layout": "vertical",
           "gap": 20,
           "padding": [
@@ -3074,10 +3056,10 @@
       "type": "frame",
       "id": "qvgaW",
       "x": -50,
-      "y": 5801,
+      "y": 6500,
       "name": "Empty State 元件",
       "width": 400,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "cornerRadius": 8,
       "stroke": {
         "align": "outside",
@@ -3164,15 +3146,6 @@
             "align": "outside",
             "thickness": 2,
             "fill": "$--ink-primary"
-          },
-          "effect": {
-            "type": "shadow",
-            "shadowType": "outer",
-            "color": "$--ink-primary",
-            "offset": {
-              "x": 3,
-              "y": 3
-            }
           },
           "gap": 6,
           "padding": [
@@ -5614,7 +5587,7 @@
       "name": "Auth Header (Desktop)",
       "width": 1280,
       "height": 64,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -5668,7 +5641,7 @@
       "name": "Auth Header (Mobile)",
       "width": 375,
       "height": 56,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -5722,7 +5695,7 @@
       "name": "Landing Page Mobile (首頁)",
       "clip": true,
       "width": 375,
-      "fill": "$--surface-warm",
+      "fill": "#F9F6F0",
       "layout": "vertical",
       "children": [
         {
@@ -5733,7 +5706,7 @@
           "layout": "vertical",
           "gap": 20,
           "padding": [
-            48,
+            64,
             20
           ],
           "alignItems": "center",
@@ -5747,15 +5720,6 @@
               "stroke": {
                 "thickness": 2,
                 "fill": "$--ink-primary"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "$--ink-primary",
-                "offset": {
-                  "x": 3,
-                  "y": 3
-                }
               },
               "padding": [
                 6,
@@ -5790,7 +5754,7 @@
               "id": "JANyk",
               "name": "subtitle",
               "fill": "$--ink-body",
-              "content": "挖掘在地講者、鼓勵社群參與、串連台南科技社群。一場小聚、一次分享，就開始改變這個鄰里的節奏。",
+              "content": "挖掘在地講者、鼓勵社群參與、串連台南社群。一場小聚、一次分享，就開始改變這個鄰里的節奏。",
               "textAlign": "center",
               "fontFamily": "Inter",
               "fontSize": 14,
@@ -5812,15 +5776,6 @@
                   "stroke": {
                     "thickness": 2,
                     "fill": "$--ink-primary"
-                  },
-                  "effect": {
-                    "type": "shadow",
-                    "shadowType": "outer",
-                    "color": "$--ink-primary",
-                    "offset": {
-                      "x": 4,
-                      "y": 4
-                    }
                   },
                   "padding": [
                     12,
@@ -5845,7 +5800,7 @@
                   "type": "frame",
                   "id": "HA3VM",
                   "name": "Secondary CTA",
-                  "fill": "#FFFFFF",
+                  "fill": "#F9F6F0",
                   "cornerRadius": 8,
                   "stroke": {
                     "thickness": 2,
@@ -5881,10 +5836,10 @@
           "clip": true,
           "width": "fill_container",
           "height": 180,
-          "fill": "#F4F4F0",
+          "fill": "#F9F6F0",
           "layout": "vertical",
           "padding": [
-            24,
+            32,
             0
           ],
           "justifyContent": "center",
@@ -5895,7 +5850,7 @@
               "id": "0m1Em",
               "name": "Marquee Band",
               "width": 550,
-              "fill": "#F4F4F0",
+              "fill": "#F9F6F0",
               "layout": "vertical",
               "gap": 10,
               "padding": [
@@ -6479,11 +6434,11 @@
           "id": "NlpBD",
           "name": "Features Section",
           "width": "fill_container",
-          "fill": "$--surface-muted",
+          "fill": "#F9F6F0",
           "layout": "vertical",
           "gap": 28,
           "padding": [
-            48,
+            64,
             20
           ],
           "alignItems": "center",
@@ -6740,11 +6695,11 @@
           "id": "hxwFG",
           "name": "CTA Section",
           "width": "fill_container",
-          "fill": "$--surface-light-orange",
+          "fill": "#F9F6F0",
           "layout": "vertical",
           "gap": 16,
           "padding": [
-            48,
+            64,
             20
           ],
           "alignItems": "center",
@@ -6781,15 +6736,6 @@
                 "align": "outside",
                 "thickness": 2,
                 "fill": "$--ink-primary"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "$--ink-primary",
-                "offset": {
-                  "x": 4,
-                  "y": 4
-                }
               },
               "padding": [
                 12,

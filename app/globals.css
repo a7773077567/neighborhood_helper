@@ -16,7 +16,7 @@
   --color-brand-deep-orange: #D4764E;
 
   /* ===== 表面色（區塊背景） ===== */
-  --color-surface-warm: #FFFDF7;
+  --color-surface-warm: #F9F6F0;
   --color-surface-muted: #F5F0EB;
   --color-surface-light-orange: #FFF3E8;
   --color-surface-footer: #2A2520;
@@ -76,11 +76,11 @@
   --radius: 0.5rem; /* 8px — Neobrutalism 標準圓角 */
 
   /* 背景 & 前景 */
-  --background: #FFFDF7; /* 暖白 — 頁面主背景 */
+  --background: #F9F6F0; /* 奶油白 — 頁面主背景 */
   --foreground: #1A1A1A; /* 黑 — 主要文字 */
-  --card: #FFFDF7;
+  --card: #F9F6F0;
   --card-foreground: #1A1A1A;
-  --popover: #FFFDF7;
+  --popover: #F9F6F0;
   --popover-foreground: #1A1A1A;
 
   /* 主色 — 招牌橘 */
