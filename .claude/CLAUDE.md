@@ -342,6 +342,7 @@ tests/
    → 使用 Learn+ 或 Review 模式
    → 參考 Pencil 設計稿
    → 一次一個 task
+   → 遇到技術坑、設計決策、好問題時，即時追加到 learnings.md
 
 6. 測試（關鍵邏輯）
    → 寫測試確保正確性
@@ -349,8 +350,8 @@ tests/
 7. 驗證與封存 (/opsx:verify + /opsx:archive)
    → 確認完成、封存 change（包含設計檔案）
 
-8. 學習記錄（5-10 分鐘）
-   → 寫 learnings.md
+8. 學習記錄整理（5-10 分鐘）
+   → 整理 learnings.md：把過程中的零散筆記串成有脈絡的文章
 ```
 
 **詳細說明**：參考 [DEV_GUIDE.md](../DEV_GUIDE.md)
