@@ -1,8 +1,8 @@
 ## 1. Prisma 基礎設施
 
-- [ ] 1.1 建立 Prisma Client 單例（`lib/db/prisma.ts`）
-- [ ] 1.2 在 `schema.prisma` 新增 User、Account、Session、VerificationToken model（含 Role enum、points 欄位）
-- [ ] 1.3 執行 `prisma migrate dev` 建立資料表
+- [x] 1.1 建立 Prisma Client 單例（`lib/db/prisma.ts`）
+- [x] 1.2 在 `schema.prisma` 新增 User、Account、Session、VerificationToken model（含 Role enum、points 欄位）
+- [x] 1.3 執行 `prisma migrate dev` 建立資料表
 
 ## 2. NextAuth 設定
 

@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client"
   output   = "../app/generated/prisma"
@@ -11,4 +5,85 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+}
+
+// ============================================================
+// 角色 enum
+// ============================================================
+
+enum Role {
+  MEMBER // 一般會員（預設）
+  ADMIN  // 組織者（手動在資料庫設定）
+}
+
+// ============================================================
+// User — 使用者（我們自己的 + NextAuth 需要的欄位）
+// ============================================================
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime? // 【NextAuth 需要】Email 驗證時間
+  image         String?   // 【NextAuth 需要】Google 頭像 URL
+  role          Role      @default(MEMBER) // 【自訂】使用者角色
+  points        Int       @default(0)      // 【自訂】累積積分
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // 關聯：一個 User 可以有多個 OAuth 帳號連結和多個 Session
+  accounts Account[]
+  sessions Session[]
+}
+
+// ============================================================
+// Account — OAuth 帳號連結（NextAuth 要求，格式固定）
+// ============================================================
+// 存放 Google OAuth 的 token 資訊
+// 一個 User 可以連結多個 provider（我們只用 Google）
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String  // "oauth" | "oidc" | "email" 等
+  provider          String  // "google"
+  providerAccountId String  // Google 那邊的使用者 ID
+  refresh_token     String? // 【注意】NextAuth 要求用 snake_case
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId]) // 同一個 provider 的帳號不能重複
+}
+
+// ============================================================
+// Session — 登入 session 記錄（NextAuth 要求，格式固定）
+// ============================================================
+// 每次登入建立一筆，過期後自動清除
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique // 存在 cookie 裡的 token
+  userId       String
+  expires      DateTime // session 過期時間
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ============================================================
+// VerificationToken — Email 驗證用（NextAuth 要求，格式固定）
+// ============================================================
+// 我們用 Google OAuth 不會用到，但 NextAuth Prisma Adapter 要求要有
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@unique([identifier, token])
 }
