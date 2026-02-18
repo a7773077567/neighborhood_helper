@@ -1,0 +1,510 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "VPcQb",
+      "x": 0,
+      "y": 0,
+      "name": "Login Page - Desktop",
+      "width": 1280,
+      "height": 800,
+      "fill": "$--surface-warm",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "tGFeB",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 64,
+          "fill": "$--surface-header",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 2
+            },
+            "fill": "$--ink-primary"
+          },
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "IyC3H",
+              "name": "Logo",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "mUlLa",
+                  "name": "dBird",
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../../../../public/images/logo-no-bg.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 999
+                },
+                {
+                  "type": "text",
+                  "id": "t1UqM",
+                  "name": "logoText",
+                  "fill": "$--ink-primary",
+                  "content": "雞婆鄰里互助會",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 18,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kbKUu",
+          "name": "Main Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            0,
+            24,
+            120,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "h93PL",
+              "name": "Title Group",
+              "layout": "vertical",
+              "gap": 10,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "tGv7h",
+                  "name": "title",
+                  "fill": "$--ink-primary",
+                  "content": "登入解鎖",
+                  "textAlign": "center",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 32,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "9XOPv",
+                  "name": "subtitle",
+                  "fill": "$--ink-body",
+                  "content": "報活動 · 集積分 · 認識厲害的人",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "42ds7",
+              "name": "Google Login Button",
+              "width": 320,
+              "height": 56,
+              "fill": "$--brand-orange",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "outside",
+                "thickness": 2,
+                "fill": "$--ink-primary"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A1A1A",
+                "offset": {
+                  "x": 5,
+                  "y": 5
+                }
+              },
+              "gap": 12,
+              "padding": [
+                14,
+                24
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "SKvCv",
+                  "name": "dGIcon",
+                  "width": 28,
+                  "height": 28,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 6,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "azwlP",
+                      "width": 18,
+                      "height": 18,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "../../../../public/images/google.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "sTmON",
+                  "name": "gText",
+                  "fill": "$--white",
+                  "content": "使用 Google 帳號登入",
+                  "fontFamily": "Inter",
+                  "fontSize": 17,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "BTt1B",
+              "name": "hint",
+              "fill": "$--ink-body",
+              "content": "對，就是你平常用的那個 Google 帳號",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "4rkDk",
+          "name": "Footer",
+          "width": "fill_container",
+          "height": 56,
+          "fill": "$--surface-muted",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "top": 2
+            },
+            "fill": "$--ink-primary"
+          },
+          "padding": [
+            0,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "prLxM",
+              "name": "footerText",
+              "fill": "$--ink-body",
+              "content": "© 2026 Neighborhood Helper · GDG Tainan",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "njmnT",
+      "x": 1400,
+      "y": 0,
+      "name": "Login Page - Mobile",
+      "width": 390,
+      "height": 844,
+      "fill": "$--surface-warm",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "4Kdd5",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 56,
+          "fill": "$--surface-header",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 2
+            },
+            "fill": "$--ink-primary"
+          },
+          "padding": [
+            0,
+            16
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "3BhO8",
+              "name": "Logo",
+              "gap": 6,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "2XWq3",
+                  "name": "mBird",
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "../../../../public/images/logo-no-bg.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 999
+                },
+                {
+                  "type": "text",
+                  "id": "LitRO",
+                  "name": "mLogoText",
+                  "fill": "$--ink-primary",
+                  "content": "雞婆鄰里互助會",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "kJFDV",
+          "name": "Main Content",
+          "width": "fill_container",
+          "height": "fill_container",
+          "layout": "vertical",
+          "gap": 28,
+          "padding": [
+            0,
+            24,
+            80,
+            24
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "EG5qo",
+              "name": "Title Group",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "nU52o",
+                  "name": "mTitle",
+                  "fill": "$--ink-primary",
+                  "content": "登入解鎖",
+                  "textAlign": "center",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 26,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "KlQfo",
+                  "name": "mSubtitle",
+                  "fill": "$--ink-body",
+                  "content": "報活動 · 集積分 · 認識厲害的人",
+                  "textAlign": "center",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "K53PN",
+              "name": "Google Login Button",
+              "width": "fill_container",
+              "height": 52,
+              "fill": "$--brand-orange",
+              "cornerRadius": 8,
+              "stroke": {
+                "align": "outside",
+                "thickness": 2,
+                "fill": "$--ink-primary"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A1A1A",
+                "offset": {
+                  "x": 5,
+                  "y": 5
+                }
+              },
+              "gap": 10,
+              "padding": [
+                12,
+                20
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Bk0vJ",
+                  "name": "mGIcon",
+                  "width": 26,
+                  "height": 26,
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 6,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "sYNI5",
+                      "width": 16,
+                      "height": 16,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "../../../../public/images/google.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "coM6k",
+                  "name": "mGText",
+                  "fill": "$--white",
+                  "content": "使用 Google 帳號登入",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "700"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "nGpYi",
+              "name": "mHint",
+              "fill": "$--ink-body",
+              "content": "對，就是你平常用的那個 Google 帳號",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RIWjt",
+          "name": "Footer",
+          "width": "fill_container",
+          "height": 48,
+          "fill": "$--surface-muted",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "top": 2
+            },
+            "fill": "$--ink-primary"
+          },
+          "padding": [
+            0,
+            16
+          ],
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "kjVOH",
+              "name": "mFooterText",
+              "fill": "$--ink-body",
+              "content": "© 2026 Neighborhood Helper",
+              "fontFamily": "Inter",
+              "fontSize": 12,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "--brand-deep-orange": {
+      "type": "color",
+      "value": "#D4764E"
+    },
+    "--brand-orange": {
+      "type": "color",
+      "value": "#FF7A3D"
+    },
+    "--brand-yellow": {
+      "type": "color",
+      "value": "#FFD23F"
+    },
+    "--ink-body": {
+      "type": "color",
+      "value": "#666666"
+    },
+    "--ink-primary": {
+      "type": "color",
+      "value": "#1A1A1A"
+    },
+    "--ink-secondary": {
+      "type": "color",
+      "value": "#555555"
+    },
+    "--surface-header": {
+      "type": "color",
+      "value": "#FFFDF7"
+    },
+    "--surface-muted": {
+      "type": "color",
+      "value": "#F5F0EB"
+    },
+    "--surface-warm": {
+      "type": "color",
+      "value": "#F9F6F0"
+    },
+    "--white": {
+      "type": "color",
+      "value": "#FFFFFF"
+    }
+  }
+}
