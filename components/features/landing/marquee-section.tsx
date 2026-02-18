@@ -138,10 +138,10 @@ export function MarqueeSection(): React.ReactElement {
       onMouseEnter={() => setPlay(false)}
       onMouseLeave={() => setPlay(true)}
     >
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-0">
         {/* Row 1 */}
         <Marquee speed={35} direction="left" play={play} autoFill>
-          <div className="flex items-center gap-10 px-5 py-2">
+          <div className="flex items-center gap-3 px-2 py-2">
             {ROW_1_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />
             ))}
@@ -150,7 +150,7 @@ export function MarqueeSection(): React.ReactElement {
 
         {/* Row 2 — translateX 錯開起始位置 */}
         <Marquee speed={35} direction="left" play={play} autoFill>
-          <div className="flex -translate-x-25 items-center gap-10 px-5 py-2">
+          <div className="flex -translate-x-20 items-center gap-3 px-2 py-2">
             {ROW_2_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />
             ))}
@@ -159,7 +159,7 @@ export function MarqueeSection(): React.ReactElement {
 
         {/* Row 3 — translateX 錯開起始位置 */}
         <Marquee speed={35} direction="left" play={play} autoFill>
-          <div className="flex -translate-x-50 items-center gap-10 px-5 py-2">
+          <div className="flex -translate-x-31 items-center gap-3 px-2 py-2">
             {ROW_3_ITEMS.map(item => (
               <MarqueeItem key={item.label} {...item} />
             ))}

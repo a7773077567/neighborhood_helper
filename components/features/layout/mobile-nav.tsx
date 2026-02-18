@@ -13,7 +13,6 @@
  */
 
 import {
-  Bird,
   Calendar,
   Menu,
   Settings,
@@ -21,6 +20,7 @@ import {
   Trophy,
   X,
 } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -174,7 +174,13 @@ export function MobileNav({ variant = 'public' }: MobileNavProps): React.ReactEl
              * 螢幕閱讀器會讀出這個標題，告訴使用者這是什麼面板。
              * 如果沒有 SheetTitle，Radix UI 會在 console 發出警告。
              */}
-            <Bird className="size-6 text-brand-orange" />
+            <Image
+              src="/images/logo-no-bg.png"
+              alt="雞婆鄰里互助會 Logo"
+              width={44}
+              height={44}
+              className="size-11"
+            />
             <span className="font-mono text-sm font-bold">
               雞婆鄰里互助會
             </span>

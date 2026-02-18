@@ -1,4 +1,4 @@
-import { Bird } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { MobileNav } from './mobile-nav'
@@ -67,7 +67,7 @@ export function Header({ variant = 'public' }: HeaderProps): React.ReactElement 
   const isLoggedIn = variant !== 'public'
 
   return (
-    <header className="flex h-14 items-center justify-between border-b-2 border-ink-primary bg-surface-warm px-4 md:h-16 md:px-6">
+    <header className="flex h-14 items-center justify-between border-b-2 border-ink-primary bg-surface-header px-4 md:h-16 md:px-6 sticky top-0 z-100">
       {/*
        * 響應式尺寸（對應 Pencil 設計）：
        *   h-14 → 手機版 56px    md:h-16 → 桌面版 64px
@@ -86,15 +86,16 @@ export function Header({ variant = 'public' }: HeaderProps): React.ReactElement 
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 md:gap-2">
-          <Bird className="size-6 text-brand-orange md:size-7" />
+          <Image
+            src="/images/logo-no-bg.png"
+            alt="雞婆鄰里互助會 Logo"
+            width={48}
+            height={48}
+            className="size-11 md:size-12"
+          />
           <span className="font-mono text-base font-bold text-ink-primary md:text-lg">
             雞婆鄰里互助會
           </span>
-          {/*
-           * 響應式尺寸：
-           *   size-6 → 手機 24px    md:size-7 → 桌面 28px
-           *   text-base → 手機 16px  md:text-lg → 桌面 18px
-           */}
         </Link>
 
         {/* 桌面版導覽列 — 手機版隱藏 */}
@@ -126,7 +127,7 @@ export function Header({ variant = 'public' }: HeaderProps): React.ReactElement 
             {/* 登入按鈕 — 平面預設，hover 浮起 */}
             <Button
               size="sm"
-              className="border-2 border-ink-primary font-mono text-xs font-semibold transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-sm md:hover:shadow-brutal"
+              className="cursor-pointer border-2 border-ink-primary font-mono text-xs font-semibold transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-sm md:hover:shadow-brutal"
             >
               登入
             </Button>

@@ -32,7 +32,8 @@
 
 ```
 奶油白:     #F9F6F0    — 頁面主背景（統一底色，柔和不刺眼）
-暖灰米:     #F5F0EB    — 保留供元件內部使用
+暖白:       #FFFDF7    — Header 專用背景（比頁面底色稍淺）
+暖灰米:     #F5F0EB    — Footer 背景、保留供元件內部使用
 淡橘:       #FFF3E8    — 保留供元件內部使用
 ```
 
@@ -40,11 +41,9 @@
 
 ```
 黑:         #1A1A1A    — 邊框、標題文字、實心陰影
-深暖褐:     #2A2520    — Footer 背景（比純黑更溫暖）
-深灰:       #555555    — 次要文字（導覽連結）
+深灰:       #555555    — 次要文字（導覽連結、Footer 文字）
 中灰:       #666666    — 內文、描述文字
-淺暖灰:     #D4C8BC    — Footer 文字（暗底上的柔和色）
-Footer灰:   #8A7E72    — Footer 版權文字
+Footer灰:   #8A7E72    — Footer 版權文字（比連結文字更柔和）
 白:         #FFFFFF    — 按鈕文字（在深色底上）
 ```
 
@@ -259,15 +258,19 @@ Icon 庫:     Lucide（專案已安裝）
 
 ## 區塊背景策略
 
-全頁統一底色，區塊靠內容和間距區分，不靠背景色：
+全頁統一暖色調，結構靠粗邊框分隔，不靠色差：
 
 ```
-全頁統一:    #F9F6F0（奶油白）
-Footer:      #2A2520（深暖褐，唯一深色區塊）
+Header:      #FFFDF7（暖白，最淺）  — sticky, 2px 底部邊框分隔
+頁面內容:    #F9F6F0（奶油白）      — 統一底色
+Footer:      #F5F0EB（暖灰米）      — sticky, 2px 頂部邊框分隔
+
+三層暖色從上到下漸深，粗邊框提供結構分隔。
 
 設計原則:
   ✅ 區塊間用大間距（120-160px padding）自然分隔
   ✅ 色彩留給元素本身（按鈕、icon、卡片邊框）
+  ✅ 結構靠 2px 粗邊框定義，不靠背景色差
   ✅ 參考 Gumroad：大部分區塊同底色，靠內容區分
   ❌ 不要給每個區塊不同背景色
 ```
@@ -276,31 +279,27 @@ Footer:      #2A2520（深暖褐，唯一深色區塊）
 
 ## Tailwind CSS 自訂色彩 Token
 
-實作時在 `tailwind.config.ts` 中設定：
+實作時在 `globals.css` 的 `@theme inline` 區塊中定義（Tailwind v4）：
 
-```typescript
-colors: {
-  brand: {
-    orange: '#FF7A3D',
-    yellow: '#FFD23F',
-    'deep-orange': '#D4764E',
-  },
-  surface: {
-    warm: '#F9F6F0',       // 頁面統一底色（原 #FFFDF7）
-    muted: '#F5F0EB',      // 保留供元件內部使用
-    'light-orange': '#FFF3E8', // 保留供元件內部使用
-    footer: '#2A2520',
-  },
-  ink: {
-    primary: '#1A1A1A',
-    secondary: '#555555',
-    body: '#666666',
-    'footer-light': '#D4C8BC',
-    'footer-muted': '#8A7E72',
-  },
-}
+```css
+/* globals.css @theme inline 區塊 */
+--color-brand-orange: #FF7A3D;
+--color-brand-yellow: #FFD23F;
+--color-brand-deep-orange: #D4764E;
+
+--color-surface-warm: #F9F6F0;       /* 頁面統一底色 */
+--color-surface-header: #FFFDF7;     /* Header 專用背景 */
+--color-surface-muted: #F5F0EB;      /* 元件內部使用 */
+--color-surface-light-orange: #FFF3E8;
+--color-surface-footer: #F5F0EB;     /* Footer 背景 */
+
+--color-ink-primary: #1A1A1A;
+--color-ink-secondary: #555555;
+--color-ink-body: #666666;
+--color-ink-footer-light: #555555;   /* Footer 文字（淺底上） */
+--color-ink-footer-muted: #8A7E72;   /* Footer 版權文字 */
 ```
 
 ---
 
-**最後更新**：2026-02-16
+**最後更新**：2026-02-18

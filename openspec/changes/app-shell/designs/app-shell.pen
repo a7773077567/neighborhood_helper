@@ -4,12 +4,12 @@
     {
       "type": "frame",
       "id": "CXzAX",
-      "x": -50,
-      "y": 2946,
+      "x": 0,
+      "y": 0,
       "name": "Header - Public (未登入)",
       "width": 1280,
       "height": 64,
-      "fill": "#F9F6F0",
+      "fill": "$--surface-header",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -39,14 +39,18 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
-                  "id": "7YHV6",
+                  "type": "frame",
+                  "id": "GQQPd",
                   "name": "h1Logo",
-                  "width": 28,
-                  "height": 28,
-                  "iconFontName": "bird",
-                  "iconFontFamily": "lucide",
-                  "fill": "$--brand-orange"
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1771391205490.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 999
                 },
                 {
                   "type": "text",
@@ -172,8 +176,8 @@
     {
       "type": "frame",
       "id": "gV2OW",
-      "x": 500,
-      "y": 6500,
+      "x": 0,
+      "y": 1450,
       "name": "User Menu (下拉選單)",
       "width": 224,
       "layout": "vertical",
@@ -389,12 +393,12 @@
     {
       "type": "frame",
       "id": "2bmzE",
-      "x": -50,
-      "y": 3060,
+      "x": 0,
+      "y": 114,
       "name": "Header - Dashboard (已登入)",
       "width": 1280,
       "height": 64,
-      "fill": "#F9F6F0",
+      "fill": "$--surface-header",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -424,14 +428,18 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
-                  "id": "ihmv7",
+                  "type": "frame",
+                  "id": "y0dwc",
                   "name": "h2Logo",
-                  "width": 28,
-                  "height": 28,
-                  "iconFontName": "bird",
-                  "iconFontFamily": "lucide",
-                  "fill": "$--brand-orange"
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1771391213000.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 999
                 },
                 {
                   "type": "text",
@@ -533,12 +541,12 @@
     {
       "type": "frame",
       "id": "C1EQy",
-      "x": -50,
-      "y": 3174,
+      "x": 0,
+      "y": 228,
       "name": "Header - Admin (組織者)",
       "width": 1280,
       "height": 64,
-      "fill": "#F9F6F0",
+      "fill": "$--surface-header",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -568,14 +576,18 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
-                  "id": "k9ccz",
+                  "type": "frame",
+                  "id": "4wCYV",
                   "name": "h3Logo",
-                  "width": 28,
-                  "height": 28,
-                  "iconFontName": "bird",
-                  "iconFontFamily": "lucide",
-                  "fill": "$--brand-orange"
+                  "width": 48,
+                  "height": 48,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1771391220070.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 999
                 },
                 {
                   "type": "text",
@@ -687,12 +699,12 @@
     {
       "type": "frame",
       "id": "YWZCN",
-      "x": -50,
-      "y": 3338,
+      "x": 0,
+      "y": 370,
       "name": "Header - Mobile",
       "width": 390,
       "height": 56,
-      "fill": "#F9F6F0",
+      "fill": "$--surface-header",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -732,14 +744,18 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
-                  "id": "6sAun",
+                  "type": "frame",
+                  "id": "MD2Cr",
                   "name": "mhLogo",
-                  "width": 24,
-                  "height": 24,
-                  "iconFontName": "bird",
-                  "iconFontFamily": "lucide",
-                  "fill": "$--brand-orange"
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1771391233277.png",
+                    "mode": "fill"
+                  },
+                  "cornerRadius": 999
                 },
                 {
                   "type": "text",
@@ -836,8 +852,8 @@
     {
       "type": "frame",
       "id": "TU2U5",
-      "x": 400,
-      "y": 3338,
+      "x": 490,
+      "y": 370,
       "name": "Mobile Nav - Sheet (展開)",
       "width": 390,
       "height": 600,
@@ -885,14 +901,18 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "icon_font",
-                      "id": "0ucJZ",
+                      "type": "frame",
+                      "id": "Cuc4Z",
                       "name": "shLogo",
-                      "width": 24,
-                      "height": 24,
-                      "iconFontName": "bird",
-                      "iconFontFamily": "lucide",
-                      "fill": "$--brand-orange"
+                      "width": 44,
+                      "height": 44,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./images/generated-1771391240535.png",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 999
                     },
                     {
                       "type": "text",
@@ -1104,11 +1124,11 @@
     {
       "type": "frame",
       "id": "0PRG0",
-      "x": -50,
-      "y": 4038,
+      "x": 0,
+      "y": 1070,
       "name": "Footer",
       "width": 1280,
-      "height": 80,
+      "height": 56,
       "fill": "$--surface-footer",
       "stroke": {
         "align": "inside",
@@ -1197,8 +1217,8 @@
     {
       "type": "frame",
       "id": "OQH93",
-      "x": -50,
-      "y": 4218,
+      "x": 0,
+      "y": 2800,
       "name": "Landing Page (首頁)",
       "clip": true,
       "width": 1280,
@@ -1211,7 +1231,7 @@
           "name": "Header",
           "width": "fill_container",
           "height": 64,
-          "fill": "#F9F6F0",
+          "fill": "$--surface-header",
           "stroke": {
             "align": "inside",
             "thickness": {
@@ -1241,14 +1261,18 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "icon_font",
-                      "id": "lW15s",
+                      "type": "frame",
+                      "id": "DSKTA",
                       "name": "lpLogo",
-                      "width": 28,
-                      "height": 28,
-                      "iconFontName": "bird",
-                      "iconFontFamily": "lucide",
-                      "fill": "$--brand-orange"
+                      "width": 48,
+                      "height": 48,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./images/generated-1771391148258.png",
+                        "mode": "fill"
+                      },
+                      "cornerRadius": 999
                     },
                     {
                       "type": "text",
@@ -1380,7 +1404,9 @@
           "layout": "vertical",
           "gap": 32,
           "padding": [
-            160,
+            80,
+            24,
+            128,
             24
           ],
           "justifyContent": "center",
@@ -1389,198 +1415,222 @@
             {
               "type": "frame",
               "id": "snZuD",
-              "name": "Hero Content",
-              "width": 640,
-              "layout": "vertical",
-              "gap": 40,
+              "name": "Hero Container",
+              "width": 1152,
               "alignItems": "center",
               "children": [
                 {
                   "type": "frame",
-                  "id": "DdO3g",
-                  "name": "textGroup",
-                  "width": 640,
+                  "id": "N1l3T",
+                  "name": "Hero Text",
+                  "width": 576,
                   "layout": "vertical",
-                  "gap": 16,
+                  "gap": 40,
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "frame",
-                      "id": "hzm8x",
-                      "name": "Icon Badge",
-                      "fill": "$--brand-orange",
-                      "cornerRadius": "$--radius-pill",
-                      "stroke": {
-                        "align": "outside",
-                        "thickness": 2,
-                        "fill": "$--ink-primary"
-                      },
-                      "gap": 8,
-                      "padding": [
-                        8,
-                        16
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon_font",
-                          "id": "6jVix",
-                          "name": "gdgLogo",
-                          "width": 20,
-                          "height": 20,
-                          "iconFontName": "hexagon",
-                          "iconFontFamily": "lucide",
-                          "fill": "#FFFFFF"
-                        },
-                        {
-                          "type": "text",
-                          "id": "YpQRU",
-                          "name": "heroIconText",
-                          "fill": "#FFFFFF",
-                          "content": "GDG Tainan 社群平台",
-                          "fontFamily": "Space Mono",
-                          "fontSize": 13,
-                          "fontWeight": "600"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "id": "ubLRO",
-                      "name": "heroTitle",
-                      "fill": "$--ink-primary",
-                      "textGrowth": "fixed-width",
-                      "width": 640,
-                      "content": "讓科技成為這片土地的養分",
-                      "textAlign": "center",
-                      "fontFamily": "Space Mono",
-                      "fontSize": 40,
-                      "fontWeight": "700"
-                    },
-                    {
-                      "type": "text",
-                      "id": "CdttF",
-                      "name": "heroSubtitle",
-                      "fill": "$--ink-body",
-                      "textGrowth": "fixed-width",
-                      "width": 520,
-                      "content": "挖掘在地講者、鼓勵社群參與、串連台南社群。\n一場小聚、一次分享。\n累積起來就是改變的開始。",
-                      "lineHeight": 1.6,
-                      "textAlign": "center",
-                      "fontFamily": "Inter",
-                      "fontSize": 16,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "ZLdWa",
-                  "name": "CTA Buttons",
-                  "gap": 12,
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "AQBEv",
-                      "name": "ctaBtn",
-                      "height": 48,
-                      "fill": "$--brand-orange",
-                      "cornerRadius": 8,
-                      "stroke": {
-                        "align": "outside",
-                        "thickness": 2,
-                        "fill": "$--ink-primary"
-                      },
-                      "gap": 6,
-                      "padding": [
-                        12,
-                        24
-                      ],
-                      "justifyContent": "center",
+                      "id": "DdO3g",
+                      "name": "textGroup",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 16,
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "frame",
-                          "id": "VDYTh",
-                          "name": "plus",
-                          "enabled": false,
-                          "width": 20,
-                          "height": 20,
+                          "id": "hzm8x",
+                          "name": "Icon Badge",
+                          "fill": "#F59E0B",
+                          "cornerRadius": "$--radius-pill",
                           "stroke": {
-                            "align": "inside",
-                            "thickness": 1
+                            "align": "outside",
+                            "thickness": 2,
+                            "fill": "$--ink-primary"
                           },
-                          "layout": "none",
+                          "gap": 8,
+                          "padding": [
+                            8,
+                            16
+                          ],
+                          "alignItems": "center",
                           "children": [
                             {
-                              "type": "path",
-                              "id": "JQJ0u",
-                              "x": 5,
-                              "y": 5,
-                              "name": "Vector",
-                              "geometry": "M7.07104 3.53555l-3.53552 0-3.53552 0m3.53552-3.53555l0 3.53555 0 3.53549",
-                              "width": 10,
-                              "height": 10,
-                              "stroke": {
-                                "align": "center",
-                                "thickness": 1.5,
-                                "join": "round",
-                                "cap": "round",
-                                "fill": "$--primary-foreground"
-                              }
+                              "type": "icon_font",
+                              "id": "6jVix",
+                              "name": "gdgLogo",
+                              "width": 20,
+                              "height": 20,
+                              "iconFontName": "hexagon",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            },
+                            {
+                              "type": "text",
+                              "id": "YpQRU",
+                              "name": "heroIconText",
+                              "fill": "#FFFFFF",
+                              "content": "GDG Tainan 社群平台",
+                              "fontFamily": "Space Mono",
+                              "fontSize": 13,
+                              "fontWeight": "600"
                             }
                           ]
                         },
                         {
                           "type": "text",
-                          "id": "B4iEf",
-                          "name": "Button",
-                          "fill": "#FFFFFF",
-                          "content": "瀏覽活動",
-                          "lineHeight": 1.4286,
+                          "id": "ubLRO",
+                          "name": "heroTitle",
+                          "fill": "$--ink-primary",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "讓資訊成為這片土地的養分",
                           "textAlign": "center",
-                          "textAlignVertical": "middle",
                           "fontFamily": "Space Mono",
+                          "fontSize": 40,
+                          "fontWeight": "700"
+                        },
+                        {
+                          "type": "text",
+                          "id": "CdttF",
+                          "name": "heroSubtitle",
+                          "fill": "$--ink-body",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "挖掘在地講者、鼓勵社群參與、串連台南社群。\n一場小聚、一次分享。\n累積起來就是改變的開始。",
+                          "lineHeight": 1.6,
+                          "textAlign": "center",
+                          "fontFamily": "Inter",
                           "fontSize": 16,
-                          "fontWeight": "600"
+                          "fontWeight": "normal"
                         }
                       ]
                     },
                     {
                       "type": "frame",
-                      "id": "jbHaz",
-                      "name": "Secondary Button",
-                      "height": 48,
-                      "fill": "$--surface-warm",
-                      "cornerRadius": 8,
-                      "stroke": {
-                        "align": "outside",
-                        "thickness": 2,
-                        "fill": "$--ink-primary"
-                      },
-                      "gap": 6,
-                      "padding": [
-                        12,
-                        24
-                      ],
-                      "justifyContent": "center",
+                      "id": "ZLdWa",
+                      "name": "CTA Buttons",
+                      "gap": 12,
                       "alignItems": "center",
                       "children": [
                         {
-                          "type": "text",
-                          "id": "eeaPA",
-                          "name": "secondBtnText",
-                          "fill": "$--ink-primary",
-                          "content": "了解更多",
-                          "textAlign": "center",
-                          "fontFamily": "Space Mono",
-                          "fontSize": 16,
-                          "fontWeight": "600"
+                          "type": "frame",
+                          "id": "AQBEv",
+                          "name": "ctaBtn",
+                          "height": 48,
+                          "fill": "$--brand-orange",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "outside",
+                            "thickness": 2,
+                            "fill": "$--ink-primary"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            12,
+                            24
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "VDYTh",
+                              "name": "plus",
+                              "enabled": false,
+                              "width": 20,
+                              "height": 20,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1
+                              },
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "JQJ0u",
+                                  "x": 5,
+                                  "y": 5,
+                                  "name": "Vector",
+                                  "geometry": "M7.07104 3.53555l-3.53552 0-3.53552 0m3.53552-3.53555l0 3.53555 0 3.53549",
+                                  "width": 10,
+                                  "height": 10,
+                                  "stroke": {
+                                    "align": "center",
+                                    "thickness": 1.5,
+                                    "join": "round",
+                                    "cap": "round",
+                                    "fill": "$--primary-foreground"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "B4iEf",
+                              "name": "Button",
+                              "fill": "#FFFFFF",
+                              "content": "瀏覽活動",
+                              "lineHeight": 1.4286,
+                              "textAlign": "center",
+                              "textAlignVertical": "middle",
+                              "fontFamily": "Space Mono",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "jbHaz",
+                          "name": "Secondary Button",
+                          "height": 48,
+                          "fill": "$--surface-warm",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "align": "outside",
+                            "thickness": 2,
+                            "fill": "$--ink-primary"
+                          },
+                          "gap": 6,
+                          "padding": [
+                            12,
+                            24
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "eeaPA",
+                              "name": "secondBtnText",
+                              "fill": "$--ink-primary",
+                              "content": "了解更多",
+                              "textAlign": "center",
+                              "fontFamily": "Space Mono",
+                              "fontSize": 16,
+                              "fontWeight": "600"
+                            }
+                          ]
                         }
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CnwqD",
+                  "name": "Hero Image",
+                  "width": 576,
+                  "height": 300,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./images/generated-1771391125390.png",
+                    "mode": "fill"
+                  },
+                  "justifyContent": "center",
+                  "alignItems": "center"
                 }
               ]
             }
@@ -2626,7 +2676,9 @@
           "layout": "vertical",
           "gap": 40,
           "padding": [
-            120,
+            100,
+            80,
+            64,
             80
           ],
           "alignItems": "center",
@@ -2900,6 +2952,8 @@
           "gap": 20,
           "padding": [
             120,
+            80,
+            160,
             80
           ],
           "alignItems": "center",
@@ -2964,7 +3018,7 @@
           "id": "S5djx",
           "name": "landingFooter",
           "width": "fill_container",
-          "height": 80,
+          "height": 56,
           "fill": "$--surface-footer",
           "stroke": {
             "align": "inside",
@@ -3055,8 +3109,8 @@
     {
       "type": "frame",
       "id": "qvgaW",
-      "x": -50,
-      "y": 6500,
+      "x": 374,
+      "y": 1450,
       "name": "Empty State 元件",
       "width": 400,
       "height": 264,
@@ -3208,8 +3262,8 @@
     {
       "type": "frame",
       "id": "jTw37",
-      "x": -1130,
-      "y": -395,
+      "x": 0,
+      "y": 5600,
       "name": "Color Test - Landing Page",
       "clip": true,
       "width": 1440,
@@ -3223,7 +3277,7 @@
           "name": "Header",
           "width": "fill_container",
           "height": 64,
-          "fill": "#FFFDF7",
+          "fill": "$--surface-header",
           "padding": [
             0,
             48
@@ -3898,8 +3952,8 @@
     {
       "type": "frame",
       "id": "Zteqh",
-      "x": 510,
-      "y": -395,
+      "x": 1590,
+      "y": 5600,
       "name": "Color Test 2 - Warm Orange",
       "clip": true,
       "width": 1440,
@@ -3913,7 +3967,7 @@
           "name": "Header",
           "width": "fill_container",
           "height": 64,
-          "fill": "#FFFDF7",
+          "fill": "$--surface-header",
           "padding": [
             0,
             48
@@ -4692,8 +4746,8 @@
     {
       "type": "frame",
       "id": "w05Oq",
-      "x": 2150,
-      "y": -395,
+      "x": 3230,
+      "y": 5600,
       "name": "Color Test 3 - Mixed",
       "clip": true,
       "width": 1440,
@@ -4707,7 +4761,7 @@
           "name": "Header",
           "width": "fill_container",
           "height": 64,
-          "fill": "#FFFDF7",
+          "fill": "$--surface-header",
           "padding": [
             0,
             48
@@ -5493,8 +5547,8 @@
     {
       "type": "frame",
       "id": "CKnvx",
-      "x": 1380,
-      "y": 4038,
+      "x": 1430,
+      "y": 1070,
       "name": "Mobile Footer",
       "width": 375,
       "fill": "$--surface-footer",
@@ -5583,12 +5637,12 @@
     {
       "type": "frame",
       "id": "d2EUx",
-      "x": -74,
-      "y": 6259,
+      "x": 0,
+      "y": 1280,
       "name": "Auth Header (Desktop)",
       "width": 1280,
       "height": 64,
-      "fill": "#F9F6F0",
+      "fill": "$--surface-header",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -5611,14 +5665,18 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "icon_font",
-              "id": "OErV7",
+              "type": "frame",
+              "id": "UDdJJ",
               "name": "authBird",
-              "width": 28,
-              "height": 28,
-              "iconFontName": "bird",
-              "iconFontFamily": "lucide",
-              "fill": "$--brand-orange"
+              "width": 48,
+              "height": 48,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1771391226634.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 999
             },
             {
               "type": "text",
@@ -5637,12 +5695,12 @@
     {
       "type": "frame",
       "id": "hJ6Gj",
-      "x": 1246,
-      "y": 6259,
+      "x": 1430,
+      "y": 1280,
       "name": "Auth Header (Mobile)",
       "width": 375,
       "height": 56,
-      "fill": "#F9F6F0",
+      "fill": "$--surface-header",
       "stroke": {
         "align": "inside",
         "thickness": {
@@ -5665,14 +5723,18 @@
           "alignItems": "center",
           "children": [
             {
-              "type": "icon_font",
-              "id": "kvVnE",
+              "type": "frame",
+              "id": "OO61L",
               "name": "authBird",
-              "width": 24,
-              "height": 24,
-              "iconFontName": "bird",
-              "iconFontFamily": "lucide",
-              "fill": "$--brand-orange"
+              "width": 44,
+              "height": 44,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1771391246814.png",
+                "mode": "fill"
+              },
+              "cornerRadius": 999
             },
             {
               "type": "text",
@@ -5691,8 +5753,8 @@
     {
       "type": "frame",
       "id": "MIbbS",
-      "x": 1380,
-      "y": 4218,
+      "x": 1430,
+      "y": 2800,
       "name": "Landing Page Mobile (首頁)",
       "clip": true,
       "width": 375,
@@ -5705,18 +5767,33 @@
           "name": "Hero Section",
           "width": "fill_container",
           "layout": "vertical",
-          "gap": 20,
+          "gap": 40,
           "padding": [
-            64,
-            20
+            48,
+            16
           ],
           "alignItems": "center",
           "children": [
             {
               "type": "frame",
+              "id": "xdhIp",
+              "name": "Banner Image",
+              "width": "fill_container",
+              "height": 180,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1771391324594.png",
+                "mode": "fill"
+              },
+              "justifyContent": "center",
+              "alignItems": "center"
+            },
+            {
+              "type": "frame",
               "id": "u73C6",
               "name": "Badge",
-              "fill": "$--brand-orange",
+              "fill": "#F59E0B",
               "cornerRadius": 999,
               "stroke": {
                 "thickness": 2,
@@ -5744,7 +5821,7 @@
               "id": "sdBt0",
               "name": "title",
               "fill": "$--ink-primary",
-              "content": "讓科技成為這片土地的養分",
+              "content": "讓資訊成為這片土地的養分",
               "textAlign": "center",
               "fontFamily": "Space Mono",
               "fontSize": 24,
@@ -6440,7 +6517,7 @@
           "gap": 28,
           "padding": [
             64,
-            20
+            16
           ],
           "alignItems": "center",
           "children": [
@@ -6701,7 +6778,7 @@
           "gap": 16,
           "padding": [
             64,
-            20
+            16
           ],
           "alignItems": "center",
           "children": [
@@ -6764,12 +6841,98 @@
     {
       "type": "note",
       "id": "vhr9a",
-      "x": -447,
-      "y": 4672,
+      "x": -350,
+      "y": 3352,
       "name": "note1",
       "width": 280,
       "height": 0,
-      "content": "⚡ 動態行為：跑馬燈（Marquee）\n\n使用 react-fast-marquee 套件\n\n• Row 1：向左滾動，speed=40\n• Row 2：向右滾動，speed=30\n• Row 3：向左滾動，speed=35\n• pauseOnHover: true\n• autoFill: true（自動填滿寬度）\n\n設計稿顯示的是靜態排列，\n實際會無限水平滾動。"
+      "content": "⚡ 動態行為：跑馬燈（Marquee）\n\n使用 react-fast-marquee 套件\n\n• 3 列統一：向左滾動，speed=35\n• Row 2：-translate-x-20（錯位效果）\n• Row 3：-translate-x-31（錯位效果）\n• hover 外層容器時 3 列全部暫停\n• autoFill: true（自動填滿寬度）\n\n設計稿顯示的是靜態排列，\n實際會無限水平滾動。"
+    },
+    {
+      "type": "note",
+      "id": "x7GkV",
+      "x": -350,
+      "y": 0,
+      "name": "headerNote",
+      "width": 280,
+      "height": 0,
+      "content": "📌 動態行為：Sticky Header\n\nHeader 使用 sticky 定位：\n• position: sticky, top: 0\n• background: surface-header (#FFFDF7)\n• z-index: 100\n• 頁面滾動時固定在頂部\n\n所有 Header 變體（Public / Dashboard /\nAdmin / Mobile）都使用相同的 sticky 行為。"
+    },
+    {
+      "type": "note",
+      "id": "e6BmF",
+      "x": -350,
+      "y": 1070,
+      "name": "footerNote",
+      "width": 280,
+      "height": 0,
+      "content": "📌 動態行為：Sticky Footer\n\nFooter 使用 sticky 定位：\n• position: sticky, bottom: 0\n• z-index: 100\n• 桌面版高度：56px (md:h-14)\n• 頁面滾動時固定在底部"
+    },
+    {
+      "type": "text",
+      "id": "Bd60b",
+      "x": 0,
+      "y": -80,
+      "name": "compLabel",
+      "fill": "#999999",
+      "content": "COMPONENTS",
+      "fontFamily": "Space Mono",
+      "fontSize": 20,
+      "fontWeight": "700"
+    },
+    {
+      "type": "rectangle",
+      "id": "gT2Eo",
+      "x": 0,
+      "y": -45,
+      "name": "compLine",
+      "fill": "#DDDDDD",
+      "width": 1900,
+      "height": 2
+    },
+    {
+      "type": "text",
+      "id": "OLr3q",
+      "x": 0,
+      "y": 2700,
+      "name": "pagesLabel",
+      "fill": "#999999",
+      "content": "PAGES",
+      "fontFamily": "Space Mono",
+      "fontSize": 20,
+      "fontWeight": "700"
+    },
+    {
+      "type": "rectangle",
+      "id": "XeOXb",
+      "x": 0,
+      "y": 2735,
+      "name": "pagesLine",
+      "fill": "#DDDDDD",
+      "width": 1900,
+      "height": 2
+    },
+    {
+      "type": "text",
+      "id": "2TWeF",
+      "x": 0,
+      "y": 5500,
+      "name": "refsLabel",
+      "fill": "#999999",
+      "content": "REFERENCES",
+      "fontFamily": "Space Mono",
+      "fontSize": 20,
+      "fontWeight": "700"
+    },
+    {
+      "type": "rectangle",
+      "id": "X4p1O",
+      "x": 0,
+      "y": 5535,
+      "name": "refsLine",
+      "fill": "#DDDDDD",
+      "width": 1900,
+      "height": 2
     }
   ],
   "themes": {
@@ -7361,7 +7524,17 @@
     },
     "--ink-footer-light": {
       "type": "color",
-      "value": "#D4C8BC"
+      "value": [
+        {
+          "value": "#D4C8BC"
+        },
+        {
+          "value": "#555555"
+        },
+        {
+          "value": "#555555"
+        }
+      ]
     },
     "--ink-footer-muted": {
       "type": "color",
@@ -7381,7 +7554,17 @@
     },
     "--surface-footer": {
       "type": "color",
-      "value": "#2A2520"
+      "value": [
+        {
+          "value": "#2A2520"
+        },
+        {
+          "value": "#F5F0EB"
+        },
+        {
+          "value": "#F5F0EB"
+        }
+      ]
     },
     "--surface-light-orange": {
       "type": "color",
@@ -7392,6 +7575,17 @@
       "value": "#F5F0EB"
     },
     "--surface-warm": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFDF7"
+        },
+        {
+          "value": "#F9F6F0"
+        }
+      ]
+    },
+    "--surface-header": {
       "type": "color",
       "value": "#FFFDF7"
     }

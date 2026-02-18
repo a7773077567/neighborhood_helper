@@ -17,15 +17,16 @@
 
   /* ===== 表面色（區塊背景） ===== */
   --color-surface-warm: #F9F6F0;
+  --color-surface-header: #FFFDF7;
   --color-surface-muted: #F5F0EB;
   --color-surface-light-orange: #FFF3E8;
-  --color-surface-footer: #2A2520;
+  --color-surface-footer: #F5F0EB;
 
   /* ===== 墨水色（文字） ===== */
   --color-ink-primary: #1A1A1A;
   --color-ink-secondary: #555555;
   --color-ink-body: #666666;
-  --color-ink-footer-light: #D4C8BC;
+  --color-ink-footer-light: #555555;
   --color-ink-footer-muted: #8A7E72;
 
   /* ===== Neobrutalism 陰影 ===== */

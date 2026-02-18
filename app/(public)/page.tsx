@@ -1,4 +1,5 @@
 import { Hexagon, Mic, Trophy, Users } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { MarqueeSection } from '@/components/features/landing/marquee-section'
 
@@ -9,7 +10,7 @@ import { MarqueeSection } from '@/components/features/landing/marquee-section'
  *
  * 結構（4 個區塊，由上到下）：
  *   ┌────────────────────────────────────┐
- *   │  Hero — 標語 + CTA 按鈕            │  bg: 統一底色
+ *   │  Hero — 左文右圖 + CTA 按鈕        │  bg: 統一底色
  *   ├────────────────────────────────────┤
  *   │  Marquee — 3 列跑馬燈              │  bg: 統一底色
  *   ├────────────────────────────────────┤
@@ -64,53 +65,70 @@ export default function Home(): React.ReactElement {
       {/* ══════════════════════════════════════
        * Hero Section
        *
-       * 對照 Pencil 節點 nSuDK：
-       *   padding: [160, 24] → py-16 md:py-40 px-4 md:px-6
-       *   內容寬度: 640px → max-w-[640px]
-       *   文字組 gap: 16px → gap-4
-       *   文字組與按鈕組 gap: 40px → gap-10
+       * 桌面版：左文右圖（flex-row）
+       * 手機版：圖上文下（flex-col，圖片 order-first）
        * ══════════════════════════════════════ */}
-      <section className="flex flex-col items-center px-4 py-16 md:px-6 md:py-40">
-        <div className="flex max-w-[640px] flex-col items-center gap-10">
-          {/* 文字組：badge + 標題 + 副標題 */}
-          <div className="flex flex-col items-center gap-4">
-            {/* 品牌 Badge — 平面預設，hover 浮起 */}
-            <div className="flex items-center gap-2 rounded-full border-2 border-ink-primary bg-brand-orange px-4 py-2 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm">
-              <Hexagon className="size-5 text-white" />
-              <span className="font-mono text-[13px] font-semibold text-white">
-                GDG Tainan 社群平台
-              </span>
-            </div>
-
-            {/* 主標題 */}
-            <h1 className="text-center font-mono text-3xl font-bold text-ink-primary md:text-[40px] md:leading-tight">
-              讓科技成為這片土地的養分
-            </h1>
-
-            {/* 副標題 */}
-            <p className="max-w-[520px] text-center text-sm leading-relaxed text-ink-body md:text-base md:leading-[1.6]">
-              挖掘在地講者、鼓勵社群參與、串連台南社群。
-              <br />
-              一場小聚、一次分享。
-              <br />
-              累積起來就是改變的開始。
-            </p>
+      <section className="px-4 py-12 md:px-6 md:py-20 md:pb-32">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 lg:flex-row lg:gap-0">
+          {/* 插畫：手機/平板在上方，桌面在右側 */}
+          <div className="w-full lg:order-last lg:w-1/2">
+            <Image
+              src="/images/banner-no-background.png"
+              alt="兩隻雞在桌前分享知識與熱情"
+              width={542}
+              height={281}
+              priority
+              className="mx-auto w-full max-w-lg lg:max-w-none lg:translate-y-15"
+            />
           </div>
 
-          {/* CTA 按鈕組 — 平面預設，hover 浮起 */}
-          <div className="flex items-center gap-3">
-            <Link
-              href="/events"
-              className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-brand-orange px-6 font-mono text-sm font-semibold text-white transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
-            >
-              瀏覽活動
-            </Link>
-            <Link
-              href="/about"
-              className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-surface-warm px-6 font-mono text-sm font-semibold text-ink-primary transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
-            >
-              了解更多
-            </Link>
+          {/* 文字內容：置中對齊 */}
+          <div className="flex flex-col items-center gap-10 lg:w-1/2">
+            {/* 文字組：badge + 標題 + 副標題 */}
+            <div className="flex flex-col items-center gap-4">
+              {/* 品牌 Badge — 平面預設，hover 浮起，連結到 GDG Tainan */}
+              <a
+                href="https://gdg.community.dev/gdg-tainan/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 mb-2 rounded-full border-2 border-ink-primary bg-amber-500 px-4 py-2 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm"
+              >
+                <Hexagon className="size-5 text-white" />
+                <span className="font-mono text-[13px] font-semibold text-white">
+                  GDG Tainan 社群平台
+                </span>
+              </a>
+
+              {/* 主標題 */}
+              <h1 className="text-center font-mono text-3xl font-bold text-ink-primary md:text-[40px] md:leading-tight">
+                讓資訊成為這片土地的養分
+              </h1>
+
+              {/* 副標題 */}
+              <p className="max-w-[520px] text-center text-sm leading-relaxed text-ink-body md:text-base md:leading-[1.6]">
+                挖掘在地講者、鼓勵社群參與、串連台南社群。
+                <br />
+                一場小聚、一次分享。
+                <br />
+                累積起來就是改變的開始。
+              </p>
+            </div>
+
+            {/* CTA 按鈕組 — 平面預設，hover 浮起 */}
+            <div className="flex items-center gap-3">
+              <Link
+                href="/events"
+                className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-brand-orange px-6 font-mono text-sm font-semibold text-white transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
+              >
+                瀏覽活動
+              </Link>
+              <Link
+                href="/about"
+                className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-surface-warm px-6 font-mono text-sm font-semibold text-ink-primary transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
+              >
+                了解更多
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -131,7 +149,7 @@ export default function Home(): React.ReactElement {
        *   padding: [120, 80] → py-16 md:py-[120px] px-4 md:px-20
        *   gap: 40 → gap-10
        * ══════════════════════════════════════ */}
-      <section className="px-4 py-16 md:px-20 md:py-[120px]">
+      <section className="px-4 py-16 md:px-20 md:pt-[100px]">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-10">
           {/* 區塊標題 */}
           <h2 className="text-center font-mono text-2xl font-bold text-ink-primary md:text-[28px]">
@@ -173,7 +191,7 @@ export default function Home(): React.ReactElement {
        *   padding: [120, 80] → py-16 md:py-[120px] px-4 md:px-20
        *   gap: 20 → gap-5
        * ══════════════════════════════════════ */}
-      <section className="flex flex-col items-center gap-5 px-4 py-16 md:px-20 md:py-[120px]">
+      <section className="flex flex-col items-center gap-5 px-4 py-16 md:px-20 md:pt-[120px] md:pb-[160px]">
         <h2 className="text-center font-mono text-2xl font-bold text-ink-primary md:text-[28px]">
           準備好加入了嗎？
         </h2>

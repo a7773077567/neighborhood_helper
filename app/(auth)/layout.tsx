@@ -1,4 +1,4 @@
-import { Bird } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 /* ─────────────────────────────────────────────
@@ -39,13 +39,19 @@ export default function AuthLayout({
   return (
     <div className="min-h-screen">
       {/* ── Auth Header：置中 Logo ── */}
-      <header className="flex h-14 items-center justify-center border-b-2 border-ink-primary bg-surface-warm px-4 md:h-16 md:px-6">
+      <header className="flex h-14 items-center justify-center border-b-2 border-ink-primary bg-surface-header px-4 md:h-16 md:px-6">
         {/*
          * justify-center → Logo 水平置中（不同於 Header 的 justify-between）
          * 響應式尺寸跟 Header 一致：h-14(56px) / md:h-16(64px)
          */}
         <Link href="/" className="flex items-center gap-1.5 md:gap-2">
-          <Bird className="size-6 text-brand-orange md:size-7" />
+          <Image
+            src="/images/logo-no-bg.png"
+            alt="雞婆鄰里互助會 Logo"
+            width={48}
+            height={48}
+            className="size-11 md:size-12"
+          />
           <span className="font-mono text-base font-bold text-ink-primary md:text-lg">
             雞婆鄰里互助會
           </span>

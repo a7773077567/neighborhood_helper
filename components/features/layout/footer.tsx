@@ -37,7 +37,7 @@ const FOOTER_LINKS = [
  * ───────────────────────────────────────────── */
 export function Footer(): React.ReactElement {
   return (
-    <footer className="flex flex-col items-center gap-3 border-t-2 border-ink-primary bg-surface-footer px-4 py-4 md:h-20 md:flex-row md:justify-between md:gap-0 md:px-6 md:py-0">
+    <footer className="flex flex-col items-center gap-3 border-t-2 border-ink-primary bg-surface-footer px-4 py-4 md:h-14 md:flex-row md:justify-between md:gap-0 md:px-6 md:py-0 sticky bottom-0 z-100">
       {/*
        * 響應式策略（mobile-first）：
        *
@@ -63,7 +63,7 @@ export function Footer(): React.ReactElement {
         <MapPin className="size-4 text-ink-footer-light" />
         {/*
          * size-4 = 16px，對齊 Pencil 的 width/height: 16
-         * text-ink-footer-light → currentColor 變成 #D4C8BC
+         * text-ink-footer-light → currentColor 變成 #555555
          */}
         <span className="font-mono text-[13px] text-ink-footer-light">
           GDG Tainan — 雞婆鄰里互助會
@@ -72,7 +72,7 @@ export function Footer(): React.ReactElement {
          * font-mono → Space Mono（layout.tsx 已設定 --font-mono）
          * text-[13px] → Pencil 設計的 fontSize: 13
          *   13px 不在 Tailwind 預設字級裡，所以用 arbitrary value
-         * text-ink-footer-light → #D4C8BC
+         * text-ink-footer-light → #555555
          */}
       </div>
 
@@ -101,10 +101,10 @@ export function Footer(): React.ReactElement {
             <Link
               key={link.href}
               href={link.href}
-              className="text-[13px] text-ink-footer-light hover:text-white"
+              className="text-[13px] text-ink-footer-light hover:text-ink-primary"
             >
               {/*
-               * hover:text-white → 深色背景上，hover 時變白提高對比
+               * hover:text-ink-primary → 淺色背景上，hover 時加深提高對比
                * Pencil 沒定義 hover 狀態，這是合理的互動補充
                */}
               {link.label}
@@ -118,8 +118,8 @@ export function Footer(): React.ReactElement {
         </span>
         {/*
          * text-ink-footer-muted → #8A7E72
-         * 比連結文字更暗，製造視覺層次：
-         *   連結 #D4C8BC（要看到、要點）
+         * 比連結文字更淡，製造視覺層次：
+         *   連結 #555555（要看到、要點）
          *   版權 #8A7E72（資訊性、不重要）
          *
          * 手機版：版權獨立一行（因為外層是 flex-col）
