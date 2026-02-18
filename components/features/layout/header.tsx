@@ -67,7 +67,7 @@ export function Header({ variant = 'public' }: HeaderProps): React.ReactElement 
   const isLoggedIn = variant !== 'public'
 
   return (
-    <header className="flex h-14 items-center justify-between border-b-2 border-ink-primary bg-surface-header px-4 md:h-16 md:px-6 sticky top-0 z-100">
+    <header className="flex h-14 items-center justify-between border-b-2 border-ink-primary bg-surface-header px-4 md:h-16 md:px-6 sticky top-0 z-40">
       {/*
        * 響應式尺寸（對應 Pencil 設計）：
        *   h-14 → 手機版 56px    md:h-16 → 桌面版 64px

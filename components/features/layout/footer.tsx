@@ -37,7 +37,7 @@ const FOOTER_LINKS = [
  * ───────────────────────────────────────────── */
 export function Footer(): React.ReactElement {
   return (
-    <footer className="flex flex-col items-center gap-3 border-t-2 border-ink-primary bg-surface-footer px-4 py-4 md:h-14 md:flex-row md:justify-between md:gap-0 md:px-6 md:py-0 sticky bottom-0 z-100">
+    <footer className="flex flex-col items-center gap-3 border-t-2 border-ink-primary bg-surface-footer px-4 py-4 md:h-14 md:flex-row md:justify-between md:gap-0 md:px-6 md:py-0 sticky bottom-0 z-40">
       {/*
        * 響應式策略（mobile-first）：
        *
