@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { Footer } from '@/components/features/layout/footer'
 
 /* ─────────────────────────────────────────────
  * (auth) Route Group Layout
@@ -15,21 +16,22 @@ import Link from 'next/link'
  *   │  [🐦 品牌名]  置中   │  ← 簡潔 Header：只有 Logo，沒有導覽
  *   ├─────────────────────┤
  *   │                     │
- *   │      children       │  ← 登入/註冊表單
+ *   │      children       │  ← 登入/註冊表單（flex-1 撐滿中間）
  *   │                     │
+ *   ├─────────────────────┤
+ *   │  Footer（完整版）    │  ← 共用 Footer 元件
  *   └─────────────────────┘
- *   （沒有 Footer）
  *
  * 為什麼 (auth) 不用 Header 元件？
- *   Auth 頁面需要極簡體驗：
+ *   Auth 頁面的 Header 需要極簡體驗：
  *   - 沒有導覽 → 不讓使用者分心
- *   - 沒有 Footer → 減少干擾
  *   - Logo 置中 → 引導視覺焦點到表單
- *   結構跟 Header 差太多，沒必要共用同一個元件。
+ *   結構跟 Header 差太多，沒必要共用元件。
+ *   但 Footer 共用完整版，保持全站一致。
  *
- * 為什麼 min-h-screen 但不需要 flex-1？
- *   沒有 Footer 要推到底部，min-h-screen 只是確保
- *   頁面至少有一個螢幕高度，讓表單垂直置中時有足夠空間。
+ * 為什麼用 flex + min-h-screen？
+ *   Header 和 Footer 各佔固定高度，中間 main(flex-1)
+ *   自動填滿剩餘空間，讓表單能垂直置中。
  * ───────────────────────────────────────────── */
 export default function AuthLayout({
   children,
@@ -37,7 +39,7 @@ export default function AuthLayout({
   children: React.ReactNode
 }>): React.ReactElement {
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-screen flex-col bg-surface-warm">
       {/* ── Auth Header：置中 Logo ── */}
       <header className="flex h-14 items-center justify-center border-b-2 border-ink-primary bg-surface-header px-4 md:h-16 md:px-6">
         {/*
@@ -58,8 +60,11 @@ export default function AuthLayout({
         </Link>
       </header>
 
-      {/* 頁面內容（登入/註冊表單） */}
-      <main>{children}</main>
+      {/* 頁面內容（登入/註冊表單） — flex-1 填滿中間空間 */}
+      <main className="flex flex-1">{children}</main>
+
+      {/* ── Footer（共用完整版） ── */}
+      <Footer />
     </div>
   )
 }
