@@ -6,19 +6,19 @@
 
 ## 2. NextAuth 設定
 
-- [ ] 2.1 安裝 `next-auth@5` 和 `@auth/prisma-adapter`
-- [ ] 2.2 建立 NextAuth 設定檔（`lib/auth/index.ts`）：Google provider、Prisma adapter、session callback（把 role 加進 session）
-- [ ] 2.3 建立 API route handler（`app/api/auth/[...nextauth]/route.ts`）
-- [ ] 2.4 設定環境變數（`GOOGLE_CLIENT_ID`、`GOOGLE_CLIENT_SECRET`、`AUTH_SECRET`）
+- [x] 2.1 安裝 `next-auth@5` 和 `@auth/prisma-adapter`
+- [x] 2.2 建立 NextAuth 設定檔（`lib/auth/index.ts`）：Google provider、Prisma adapter、session callback（把 role 加進 session）
+- [x] 2.3 建立 API route handler（`app/api/auth/[...nextauth]/route.ts`）
+- [x] 2.4 設定環境變數（`AUTH_GOOGLE_ID`、`AUTH_GOOGLE_SECRET`、`AUTH_SECRET`）
 
 ## 3. 路由保護
 
-- [ ] 3.1 建立 `middleware.ts`：dashboard 路由需登入、admin 路由需 ADMIN 角色、已登入訪問 /login 導向首頁
+- [x] 3.1 建立 `middleware.ts`：用 cookie 檢查取代 auth() import（避免 Edge Runtime 問題），dashboard 路由需登入、已登入訪問 /login 導向首頁
 
 ## 4. 登入頁面
 
-- [ ] 4.1 設計登入頁面 Pencil 設計稿（`designs/login.pen`）
-- [ ] 4.2 實作登入頁面（`app/(auth)/login/page.tsx`）：Google 登入按鈕，符合 Neobrutalism 風格
+- [x] 4.1 設計登入頁面 Pencil 設計稿（`designs/login-page.pen`）
+- [x] 4.2 實作登入頁面（`app/(auth)/login/page.tsx`）：Server Action + Google OAuth，符合 Neobrutalism 風格
 
 ## 5. Header / UserMenu 改造
 
