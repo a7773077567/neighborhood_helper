@@ -1,7 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { LogOut, Settings, User } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { signOutAction } from '@/lib/auth/actions'
 
 /* ─────────────────────────────────────────────
  * 型別定義
@@ -17,10 +19,15 @@ import {
 
 interface UserMenuProps {
   /** 使用者姓名，用來產生 initials */
-  name?: string
+  name: string
   /** 使用者 email，顯示在選單頂部 */
-  email?: string
+  email: string
+  /** 使用者大頭照 URL（Google OAuth 提供），沒有時顯示 initials */
+  image?: string | null
 }
+
+// 【改造】name、email 改為 required（Header 傳入真實資料，不再需要預設值）
+// 【改造】新增 image prop，有照片時顯示圓形大頭照
 
 /* ─────────────────────────────────────────────
  * 工具函式：從姓名產生 initials
@@ -31,7 +38,7 @@ interface UserMenuProps {
 function getInitials(name: string): string {
   return name
     .split(' ')
-    .map((word) => word[0])
+    .map(word => word[0])
     .join('')
     .toUpperCase()
     .slice(0, 2)
@@ -40,12 +47,17 @@ function getInitials(name: string): string {
 /* ─────────────────────────────────────────────
  * UserMenu 元件
  *
- * 使用 shadcn/ui 的 DropdownMenu，觸發器是橘色頭像圓圈。
- * 目前使用 placeholder 資料，未來接上 Auth 後傳入真實使用者資料。
+ * 使用 shadcn/ui 的 DropdownMenu，觸發器是頭像圓圈。
+ *
+ * 【改造重點】
+ * - name/email：由 Header 傳入真實 session 資料（不再有預設值）
+ * - image：有 Google 大頭照時顯示照片，沒有時顯示 initials
+ * - 登出：用 <form action={signOutAction}> 觸發 Server Action
  * ───────────────────────────────────────────── */
 export function UserMenu({
-  name = 'PJ',
-  email = 'pj@example.com',
+  name,
+  email,
+  image,
 }: UserMenuProps): React.ReactElement {
   return (
     <DropdownMenu>
@@ -59,26 +71,31 @@ export function UserMenu({
 
       <DropdownMenuTrigger asChild>
         {/*
-         * 用 <button> 當觸發器，而不是 shadcn 的 Avatar 元件。
-         * 原因：我們需要 Neobrutalism 的 2px 邊框樣式，
-         * 直接用 button + 自訂 className 比覆寫 Avatar 的樣式更簡潔。
+         * 【改造】頭像觸發器現在支援兩種模式：
+         * 1. 有 image → 圓形大頭照（Next.js Image 元件）
+         * 2. 沒有 image → 橘色圓圈 + initials 文字（原有樣式）
          */}
         <button
-          className="flex size-8 items-center justify-center rounded-full border-2 border-ink-primary bg-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 md:size-9"
+          className="flex size-8 items-center justify-center overflow-hidden rounded-full border-2 border-ink-primary bg-brand-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 md:size-9 cursor-pointer"
           aria-label="使用者選單"
         >
-          {/*
-           * focus:outline-none → 移除瀏覽器預設的 outline
-           * focus-visible:ring-2 → 用鍵盤 Tab 聚焦時顯示橘色外圈
-           *
-           * focus vs focus-visible 的差異：
-           *   focus         → 任何方式聚焦都觸發（滑鼠點擊也會）
-           *   focus-visible → 只有鍵盤操作聚焦才觸發
-           * 所以用 focus-visible 讓滑鼠點擊不會出現醜醜的 ring。
-           */}
-          <span className="font-mono text-xs font-semibold text-white md:text-sm">
-            {getInitials(name)}
-          </span>
+          {image ? (
+            // 【改造】有大頭照時，用 Next.js Image 顯示
+            // fill + object-cover 確保圖片填滿圓形區域不變形
+            // rounded-full 由外層 button 的 overflow-hidden 裁切
+            <Image
+              src={image}
+              alt={name}
+              width={36}
+              height={36}
+              className="size-full object-cover"
+            />
+          ) : (
+            // 沒有大頭照時，顯示 initials（維持原有樣式）
+            <span className="font-mono text-xs font-semibold text-white md:text-sm">
+              {getInitials(name)}
+            </span>
+          )}
         </button>
       </DropdownMenuTrigger>
 
@@ -86,9 +103,6 @@ export function UserMenu({
         {/*
          * align="end"：選單靠右對齊（因為觸發器在 Header 最右邊）
          * w-56 → width: 224px
-         *
-         * 如果不設 align="end"，選單會靠左對齊，
-         * 可能會超出螢幕右邊界。
          */}
 
         {/* 使用者資訊區（不可點擊） */}
@@ -102,20 +116,14 @@ export function UserMenu({
         <DropdownMenuSeparator />
 
         {/* 導覽選項 */}
-        <DropdownMenuItem asChild>
-          {/*
-           * asChild 的用法跟 SheetTrigger 一樣。
-           * DropdownMenuItem 預設渲染 <div>，
-           * 加上 asChild 後把行為委派給裡面的 <Link>，
-           * 這樣點擊就能正確導覽（而不是只關閉選單）。
-           */}
+        <DropdownMenuItem asChild className="cursor-pointer">
           <Link href="/profile">
             <User className="mr-2 size-4" />
             個人資料
           </Link>
         </DropdownMenuItem>
 
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild className="cursor-pointer">
           <Link href="/settings">
             <Settings className="mr-2 size-4" />
             設定
@@ -124,15 +132,27 @@ export function UserMenu({
 
         <DropdownMenuSeparator />
 
-        {/* 登出（未來接上 Auth 的 signOut 函式） */}
-        <DropdownMenuItem className="text-destructive focus:text-destructive">
-          {/*
-           * text-destructive → 紅色文字，暗示這是「危險」操作
-           * focus:text-destructive → hover/focus 時也保持紅色
-           *   （不加的話 focus 時會被 DropdownMenuItem 的預設樣式覆蓋成黑色）
-           */}
-          <LogOut className="mr-2 size-4" />
-          登出
+        {/* 【改造】登出 — 用 form + Server Action 取代 placeholder
+         *
+         * 為什麼用 <form> 而不是 onClick？
+         * - signOut() 必須在 server 端執行（存取 cookie、清除 session）
+         * - Client Component 不能直接呼叫 server-only 函式
+         * - <form action={serverAction}> 是 Next.js 官方推薦的做法
+         *   它會自動發 POST request 給 server，觸發 Server Action
+         *
+         * 額外好處：即使 JavaScript 還沒載入（SSR hydration 前），
+         * 表單提交仍然能運作（Progressive Enhancement）。
+         */}
+        <DropdownMenuItem asChild className="cursor-pointer">
+          <form action={signOutAction} className="w-full">
+            <button
+              type="submit"
+              className="flex w-full items-center text-destructive"
+            >
+              <LogOut className="mr-2 size-4" />
+              登出
+            </button>
+          </form>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

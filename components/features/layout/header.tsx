@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { auth } from '@/lib/auth' // 【改造】新增：讀取 session
 import { MobileNav } from './mobile-nav'
 import { UserMenu } from './user-menu'
 
@@ -8,81 +9,58 @@ import { UserMenu } from './user-menu'
  * 型別定義
  * ───────────────────────────────────────────── */
 
-/** Header 的三種變體，對應不同的 Route Group */
-type HeaderVariant = 'public' | 'dashboard' | 'admin'
-
 /** 單一導覽項目的資料結構 */
 interface NavItem {
-  label: string // 顯示文字（如「活動」）
-  href: string // 連結目標（如「/events」）
-  highlight?: boolean // 是否用橘色強調（如「管理後台」）
+  label: string
+  href: string
+  highlight?: boolean
 }
 
-/** Header 元件接受的 props */
-interface HeaderProps {
-  variant?: HeaderVariant // 預設為 'public'
-}
+// 【改造】移除了 HeaderVariant、HeaderProps
+// Header 不再接收 variant prop，改用 session 自動判斷
 
 /* ─────────────────────────────────────────────
- * 導覽項目設定（桌面版）
+ * Header 元件（Async Server Component）
  *
- * Record<K, V> 是 TypeScript 內建的泛型：
- *   Key = HeaderVariant（'public' | 'dashboard' | 'admin'）
- *   Value = NavItem[]（導覽項目陣列）
+ * 【改造重點】
+ * 原本：Layout 傳 variant="public" | "dashboard" | "admin"
+ * 現在：Header 內部用 await auth() 讀取 session 自動判斷
+ *
+ * session === null           → 未登入（顯示登入按鈕）
+ * session.user.role === MEMBER → 已登入（顯示 UserMenu）
+ * session.user.role === ADMIN  → 管理員（多顯示管理後台）
+ *
+ * MobileNav 仍是 Client Component，無法直接用 auth()，
+ * 所以 Header 計算出 variant 再傳給它。
  * ───────────────────────────────────────────── */
-const NAV_ITEMS: Record<HeaderVariant, NavItem[]> = {
-  public: [
-    { label: '活動', href: '/events' },
-    { label: '排行榜', href: '/leaderboard' },
-  ],
-  dashboard: [
-    { label: '活動', href: '/events' },
-    { label: '排行榜', href: '/leaderboard' },
-    { label: '我的活動', href: '/my-events' },
-  ],
-  admin: [
-    { label: '活動', href: '/events' },
-    { label: '排行榜', href: '/leaderboard' },
-    { label: '我的活動', href: '/my-events' },
-    { label: '管理後台', href: '/admin', highlight: true },
-  ],
-}
+export async function Header(): Promise<React.ReactElement> {
+  // 【改造】在 Server Component 直接查 DB 讀取 session
+  // 不需要 API call、不需要 useEffect、不需要 loading state
+  const session = await auth()
 
-/* ─────────────────────────────────────────────
- * Header 元件（Server Component）
- *
- * 結構對照 Pencil 設計：
- *
- * 手機版（< 768px）：
- *   [漢堡] [Logo]  ................  [登入/頭像]
- *
- * 桌面版（≥ 768px）：
- *   [Logo]  [活動] [排行榜] ...  ....  [登入/頭像]
- *
- * MobileNav（Client Component）嵌在 Header（Server Component）裡，
- * 只有 MobileNav 的 JS 會被送到瀏覽器。
- * ───────────────────────────────────────────── */
-export function Header({ variant = 'public' }: HeaderProps): React.ReactElement {
-  const navItems = NAV_ITEMS[variant]
-  const isLoggedIn = variant !== 'public'
+  const isAdmin = session?.user?.role === 'ADMIN'
+
+  // 【改造】根據 session 動態建立導覽項目（取代原本的 Record lookup）
+  const navItems: NavItem[] = [
+    { label: '活動', href: '/events' },
+    { label: '排行榜', href: '/leaderboard' },
+    ...(session ? [{ label: '我的活動', href: '/my-events' }] : []),
+    ...(isAdmin ? [{ label: '管理後台', href: '/admin', highlight: true }] : []),
+  ]
+
+  // 【改造】計算 MobileNav 的 variant（MobileNav 是 Client Component，不能直接用 auth()）
+  const mobileVariant = !session
+    ? 'public'
+    : isAdmin
+      ? 'admin'
+      : 'dashboard'
 
   return (
-    <header className="flex h-14 items-center justify-between border-b-2 border-ink-primary bg-surface-header px-4 md:h-16 md:px-6 sticky top-0 z-40">
-      {/*
-       * 響應式尺寸（對應 Pencil 設計）：
-       *   h-14 → 手機版 56px    md:h-16 → 桌面版 64px
-       *   px-4 → 手機版 16px    md:px-6 → 桌面版 24px
-       */}
-
+    <header className="sticky top-0 z-40 flex h-14 items-center justify-between border-b-2 border-ink-primary bg-surface-header px-4 md:h-16 md:px-6">
       {/* ── 左側群組：漢堡 + Logo + 導覽 ── */}
       <div className="flex items-center gap-2 md:gap-8">
-        {/*
-         * gap-2 → 手機版：漢堡和 Logo 間距 8px
-         * md:gap-8 → 桌面版：Logo 和導覽間距 32px
-         */}
-
-        {/* 手機版漢堡選單（含 Sheet 側邊面板） — 桌面版自動隱藏 */}
-        <MobileNav variant={variant} />
+        {/* 手機版漢堡選單 — 桌面版自動隱藏 */}
+        <MobileNav variant={mobileVariant} />
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 md:gap-2">
@@ -118,21 +96,25 @@ export function Header({ variant = 'public' }: HeaderProps): React.ReactElement 
 
       {/* ── 右側群組：登入 / 頭像 ── */}
       <div className="flex items-center">
-        {isLoggedIn ? (
-          /* 已登入 → 使用者選單（頭像 + 下拉） */
-          <UserMenu />
-        ) : (
-          /* 未登入 → 登入按鈕 */
-          <Link href="/login">
-            {/* 登入按鈕 — 預設陰影，hover 浮起加大 */}
-            <Button
-              size="sm"
-              className="cursor-pointer border-2 border-ink-primary font-mono text-xs font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-sm md:shadow-brutal md:hover:shadow-brutal-hover"
-            >
-              登入
-            </Button>
-          </Link>
-        )}
+        {/* 【改造】用 session 判斷，並傳入真實使用者資料（含大頭照） */}
+        {session
+          ? (
+              <UserMenu
+                name={session.user.name ?? '使用者'}
+                email={session.user.email ?? ''}
+                image={session.user.image}
+              />
+            )
+          : (
+              <Link href="/login">
+                <Button
+                  size="sm"
+                  className="cursor-pointer border-2 border-ink-primary font-mono text-xs font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-sm md:shadow-brutal md:hover:shadow-brutal-hover"
+                >
+                  登入
+                </Button>
+              </Link>
+            )}
       </div>
     </header>
   )

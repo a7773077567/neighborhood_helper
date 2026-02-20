@@ -1,5 +1,5 @@
-import { Header } from '@/components/features/layout/header'
 import { Footer } from '@/components/features/layout/footer'
+import { Header } from '@/components/features/layout/header'
 
 /* ─────────────────────────────────────────────
  * (public) Route Group Layout
@@ -11,7 +11,7 @@ import { Footer } from '@/components/features/layout/footer'
  *
  * 結構：
  *   ┌─────────────────────┐
- *   │  Header (public)    │  ← 有導覽，有「登入」按鈕
+ *   │      Header         │  ← 自動偵測登入狀態（via auth()）
  *   ├─────────────────────┤
  *   │                     │
  *   │      children       │  ← 頁面內容
@@ -39,7 +39,7 @@ export default function PublicLayout({
 }>): React.ReactElement {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header variant="public" />
+      <Header />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>

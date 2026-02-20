@@ -9,14 +9,9 @@ import { Footer } from '@/components/features/layout/footer'
  *   - /admin/events（活動管理）
  *   - /admin/users（使用者管理）
  *
- * 跟 (dashboard) layout 的差異：
- *   - Header variant="admin"
- *     → 多了「管理後台」導覽項目（橘色 highlight）
- *
- * 未來考量：
- *   這個 layout 需要更嚴格的權限保護。
- *   除了要登入，還要檢查 role === 'ADMIN'。
- *   未授權的使用者應該看到 403 或 redirect。
+ * Header 不再需要 variant prop，會自動用 auth() 判斷登入狀態和角色。
+ * 路由保護由 middleware.ts 負責（cookie-based 檢查）。
+ * 未來可加上 role 檢查：未授權使用者 redirect 或顯示 403。
  * ───────────────────────────────────────────── */
 export default function AdminLayout({
   children,
@@ -25,7 +20,7 @@ export default function AdminLayout({
 }>): React.ReactElement {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header variant="admin" />
+      <Header />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>

@@ -9,15 +9,8 @@ import { Footer } from '@/components/features/layout/footer'
  *   - /profile（個人資料）
  *   - /settings（設定）
  *
- * 跟 (public) layout 的差異：
- *   - Header variant="dashboard"
- *     → 多了「我的活動」導覽項目
- *     → 右側顯示使用者頭像（不是「登入」按鈕）
- *
- * 未來考量：
- *   實際上線時，這個 layout 需要加上認證保護。
- *   如果使用者未登入，應該 redirect 到 /login。
- *   目前先不做（Auth 還沒接），之後在 NextAuth middleware 處理。
+ * Header 不再需要 variant prop，會自動用 auth() 判斷登入狀態。
+ * 路由保護由 middleware.ts 負責（cookie-based 檢查）。
  * ───────────────────────────────────────────── */
 export default function DashboardLayout({
   children,
@@ -26,7 +19,7 @@ export default function DashboardLayout({
 }>): React.ReactElement {
   return (
     <div className="flex min-h-screen flex-col">
-      <Header variant="dashboard" />
+      <Header />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>
