@@ -22,13 +22,13 @@
 
 ## 5. Header / UserMenu 改造
 
-- [ ] 5.1 更新 Header 設計稿（反映移除 variant、改用 session 偵測的變化）
-- [ ] 5.2 改造 Header：移除 variant prop，改用 `async` + `auth()` 讀取 session 判斷狀態
-- [ ] 5.3 改造 UserMenu：接收 user prop 顯示真實資料，登出按鈕接入 `signOut()`
-- [ ] 5.4 更新各 Layout（public、dashboard、admin）：移除 Header 的 variant prop
+- [x] 5.1 更新 Header 設計稿（反映移除 variant、改用 session 偵測的變化）
+- [x] 5.2 改造 Header：移除 variant prop，改用 `async` + `auth()` 讀取 session 判斷狀態
+- [x] 5.3 改造 UserMenu：接收 user prop 顯示真實資料（含大頭照），登出按鈕接入 `signOut()`
+- [x] 5.4 更新各 Layout（public、dashboard、admin）：移除 Header 的 variant prop
 
 ## 6. 驗證
 
-- [ ] 6.1 本機測試完整登入/登出流程
-- [ ] 6.2 測試路由保護：未登入存取 dashboard、MEMBER 存取 admin、已登入存取 /login
-- [ ] 6.3 確認 Header 在不同登入狀態下正確顯示
+- [x] 6.1 本機測試完整登入/登出流程
+- [x] 6.2 測試路由保護：未登入存取 dashboard、MEMBER 存取 admin、已登入存取 /login
+- [x] 6.3 確認 Header 在不同登入狀態下正確顯示

@@ -154,7 +154,105 @@ Session Pooler vs Transaction Pooler 的差別在「連線歸還時機」：
 
 ---
 
+## 11. Async Server Component 讀取 Session
+
+Header 改造的核心 pattern：把元件改為 `async`，直接 `await auth()` 讀取 session：
+
+```tsx
+// Server Component — 可以直接 await
+export async function Header(): Promise<React.ReactElement> {
+  const session = await auth()  // 直接查 DB，零 API call
+  // session === null → 未登入
+  // session.user.role === 'ADMIN' → 管理員
+}
+```
+
+**為什麼比 variant prop 好？**
+- 不需要在每個 Layout 手動指定 `variant`（容易忘記或搞錯）
+- 真實的登入狀態由 DB 決定，不是由程式碼路徑假設
+- Header 成為自包含的元件，不依賴外部告訴它「你應該長什麼樣」
+
+**Server/Client 邊界處理**：
+- MobileNav 是 Client Component，不能呼叫 `auth()`
+- 解法：Header（Server）計算好 `mobileVariant` 字串，傳給 MobileNav
+- 只傳「純資料」跨越 Server/Client 邊界，不傳函式
+
+---
+
+## 12. Server Action 兩種呼叫方式
+
+```tsx
+// 方式一：<form action>（推薦用於 mutation）
+// 優點：Progressive Enhancement — JS 壞了也能運作
+<form action={signOutAction}>
+  <button type="submit">登出</button>
+</form>
+
+// 方式二：直接在 event handler 呼叫
+<button onClick={async () => await signOutAction()}>登出</button>
+```
+
+Server Action 不是只能用 `<form>`，但對登入/登出這類操作，`<form>` 是更好的選擇。
+
+**Server Action 放置位置的 scope 原則**：
+- 只有一個頁面用 → colocate（跟頁面放一起），如 `app/(auth)/login/actions.ts`
+- 多個頁面共用 → 放 `lib/`，如 `lib/auth/actions.ts`
+
+---
+
+## 13. Next.js Image 外部圖片設定
+
+Google OAuth 的大頭照 URL 來自 `lh3.googleusercontent.com`，Next.js `Image` 預設不允許外部網域：
+
+```typescript
+// next.config.ts
+images: {
+  remotePatterns: [
+    { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+  ],
+},
+```
+
+不加這個設定，`<Image src="https://lh3.googleusercontent.com/..." />` 會直接報錯。
+
+---
+
+## 14. 條件式陣列展開（Spread + Conditional）
+
+動態建立導覽項目的 pattern，避免 Record lookup 的重複：
+
+```typescript
+const navItems = [
+  { label: '活動', href: '/events' },           // 所有人
+  ...(session ? [{ label: '我的活動' }] : []),   // 登入才有
+  ...(isAdmin ? [{ label: '管理後台' }] : []),   // admin 才有
+]
+```
+
+`...(條件 ? [項目] : [])` — 條件成立就展開一個元素，否則展開空陣列（等於不加）。比用 `Record<variant, NavItem[]>` 更簡潔，新增共用項目只要改一處。
+
+---
+
+## 15. Radix UI 的 asChild 和 Controlled vs Uncontrolled
+
+**asChild**：讓 Radix 元件不渲染自己的 DOM wrapper，把 props 委派給唯一的子元素。
+```tsx
+// 沒 asChild：<div role="menuitem"><a>...</a></div>（點 div 不會導覽）
+// 有 asChild：<a role="menuitem">...</a>（Link 同時有選單行為 + 導覽功能）
+<DropdownMenuItem asChild>
+  <Link href="/profile">個人資料</Link>
+</DropdownMenuItem>
+```
+
+**Controlled vs Uncontrolled**：
+- Uncontrolled（DropdownMenu）：不需要 `useState`，Radix 自己管理開關
+- Controlled（Sheet/MobileNav）：需要手動關閉（如點連結後 `setOpen(false)`）
+
+---
+
 ## 流程改善筆記
 
 - tasks.md 要及時更新，不要等到最後才同步（這次 2.1~4.1 都做完了但 tasks.md 沒更新）
 - 遇到「奇怪的錯誤」時，先 `npx prisma db execute` 測 DB 連線，可以快速排除基礎設施問題
+- **設計稿整合為單一檔案**：從「每個 change 各自一份 .pen」改為「全部放在 `designs/app-shell.pen`」。單一設計稿避免重複讀取、減少同步問題，用 git 追蹤變更歷史
+- **Pencil MCP 綁定 VSCode 視窗**：開多個 VSCode 時，Pencil MCP 可能在錯誤的視窗開檔案。確保只在目標專案的 VSCode 視窗操作
