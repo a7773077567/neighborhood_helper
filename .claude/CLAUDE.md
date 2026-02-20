@@ -143,10 +143,12 @@ lib/
   ├── validations/         # Zod schemas
   └── utils/               # 通用工具
 
+designs/                   # Pencil 設計檔案（活的主設計稿）
+  └── app-shell.pen        # 所有元件、頁面、探索性設計
+
 openspec/
   ├── changes/             # 開發中的 changes
   │   └── <change-name>/
-  │       ├── designs/     # Pencil 設計檔案（*.pen）
   │       ├── proposal.md
   │       ├── design.md
   │       ├── spec.md
@@ -335,8 +337,8 @@ tests/
 
 4. UI/UX 設計 (Pencil)
    → 使用 Pencil + shadcn/ui 設計系統
-   → 設計所有頁面和元件
-   → 設計檔案放在 openspec/changes/<name>/designs/
+   → 直接在 designs/app-shell.pen 上設計或更新
+   → 新元件、新頁面、改造既有元件都在同一份主設計稿
 
 5. 學習式實作 (/opsx:apply)
    → 使用 Learn+ 或 Review 模式
@@ -394,36 +396,27 @@ tests/
 
 ### 設計檔案結構
 
-**檔案位置**：
+**單一主設計稿**：所有設計集中在 `designs/app-shell.pen`，不分散到各 change 資料夾。
+
 ```
-openspec/changes/<change-name>/designs/
+designs/
+  └── app-shell.pen       ← 唯一的活設計稿（元件 + 頁面 + 探索）
 ```
 
-**命名規範**：
+**三區架構**（在 app-shell.pen 內部）：
 ```
-kebab-case.pen
-
-範例：
-- event-list.pen        (活動列表頁)
-- event-detail.pen      (活動詳情頁)
-- register-button.pen   (報名按鈕元件)
-- qr-display.pen        (QR Code 顯示)
+COMPONENTS（y:0 起）    ← Header、Footer、獨立元件
+PAGES（y:2800 起）      ← Landing Page、Login Page 等完整頁面
+REFERENCES（y:5800 起） ← Color Test 等參考用 frame
 ```
 
-**檔案組織**：
-```
-openspec/changes/registration-system/
-├── proposal.md
-├── design.md
-├── spec.md
-├── tasks.md
-├── designs/              ← 設計檔案資料夾
-│   ├── event-list.pen
-│   ├── event-detail.pen
-│   ├── register-button.pen
-│   └── qr-display.pen
-└── learnings.md
-```
+**為什麼不分散？**
+- 設計新元件時一定要參考現有元件的樣式，放同一份檔案最方便
+- 避免每次 change 都重建相似的設計（冗餘工作）
+- 開發者只看一個地方就能了解最新設計
+- git 歷史已足夠追蹤每次變更
+
+**檔案太大時**：按功能領域拆分（如 `events.pen`、`admin.pen`），不按 change 拆分
 
 ### 設計標準
 
@@ -443,11 +436,11 @@ openspec/changes/registration-system/
 
 ### 設計與實作的整合
 
-**在 tasks.md 中引用設計檔案**：
+**在 tasks.md 中引用設計**：
 ```markdown
 ## Task 1: 實作活動列表頁
 
-**設計稿**：designs/event-list.pen
+**設計稿**：designs/app-shell.pen → "Event List" frame
 
 **使用的 shadcn/ui 元件**：
 - Card
@@ -479,16 +472,15 @@ AI 解釋此 task 會用到的技術概念（2-3 分鐘）
 ### 設計檔案的生命週期
 
 ```
-1. 開發中
-   openspec/changes/<name>/designs/*.pen
+1. 設計 / 更新
+   直接在 designs/app-shell.pen 上操作
 
-2. Archive 後
-   整個 change 資料夾封存
-   設計檔案一起保存
+2. 探索性設計（A/B 方案）
+   在 app-shell.pen 內暫存，決定後刪除被拒絕的方案
 
-3. 可重用的設計 pattern
-   → 提取到 MEMORY.md 作為文字描述
-   → 或建立共用元件庫（未來考慮）
+3. Archive 後
+   change 資料夾只封存文字規格（不含 .pen）
+   設計變更由 git 歷史追蹤
 ```
 
 ### 禁止事項
@@ -498,7 +490,7 @@ AI 解釋此 task 會用到的技術概念（2-3 分鐘）
 ❌ 設計與實作不一致
 ❌ 使用 shadcn/ui 以外的設計系統
 ❌ 忽略響應式設計
-❌ 設計檔案放在錯誤的位置
+❌ 設計檔案放在 change 資料夾（應統一在 designs/）
 ```
 
 ---
