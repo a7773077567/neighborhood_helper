@@ -114,15 +114,20 @@ Badge/標籤:    12px      Space Mono, 600
             shadow-[3px_3px_0px_#FF7A3D]     — 特殊強調（如登入按鈕）
 ```
 
-### 互動狀態（Gumroad 風格：平面預設，hover 浮起）
+### 互動狀態（預設帶陰影，hover 浮起加大）
 
 ```
-預設:        無陰影（平面）
-hover:       shadow-[4px_4px_0px_#1A1A1A] + translate(-2px, -2px)  — 「浮起來」
+預設:        shadow-brutal（按鈕、卡片、Badge 都帶預設陰影）
+hover:       shadow-brutal-hover (6px 6px 3px) + translate(-2px, -2px)  — 「浮起來」+ 陰影擴散
 active:      shadow-none + translate(2px, 2px)  — 「按下去」的觸感
 
-注意：按鈕和 Badge 預設不帶陰影，只有 hover 時才出現。
-      卡片（Card）例外，卡片預設保留陰影。
+小型元件（badge、小按鈕）：
+  預設: shadow-brutal-sm (3px 3px 0px)
+  hover: shadow-brutal (4px 4px 0px) + translate(-2px, -2px)
+
+大型元件（CTA 按鈕）：
+  預設: shadow-brutal (4px 4px 0px)
+  hover: shadow-brutal-hover (6px 6px 3px) + translate(-2px, -2px)
 ```
 
 ---
@@ -146,21 +151,21 @@ Badge/Tag:   rounded-full         — 藥丸形
   背景: #FF7A3D
   文字: #FFFFFF (Space Mono, 600)
   邊框: 2px solid #1A1A1A
-  陰影: 無（hover 時 4px 4px 0 #1A1A1A）
+  陰影: 4px 4px 0 #1A1A1A（hover 時 6px 6px 3px #1A1A1A）
   圓角: 8px
 
 次要按鈕:
   背景: #F9F6F0
   文字: #1A1A1A (Space Mono, 600)
   邊框: 2px solid #1A1A1A
-  陰影: 無（hover 時 4px 4px 0 #1A1A1A）
+  陰影: 4px 4px 0 #1A1A1A（hover 時 6px 6px 3px #1A1A1A）
   圓角: 8px
 
 深色按鈕:
   背景: #1A1A1A
   文字: #FFFFFF (Space Mono, 600)
   邊框: 2px solid #1A1A1A
-  陰影: 無（hover 時 3px 3px 0 #FF7A3D）
+  陰影: 3px 3px 0 #FF7A3D（hover 時 4px 4px 0 #FF7A3D）
   圓角: 8px
 ```
 

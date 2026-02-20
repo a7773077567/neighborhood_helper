@@ -124,10 +124,10 @@ export function Header({ variant = 'public' }: HeaderProps): React.ReactElement 
         ) : (
           /* 未登入 → 登入按鈕 */
           <Link href="/login">
-            {/* 登入按鈕 — 平面預設，hover 浮起 */}
+            {/* 登入按鈕 — 預設陰影，hover 浮起加大 */}
             <Button
               size="sm"
-              className="cursor-pointer border-2 border-ink-primary font-mono text-xs font-semibold transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-sm md:hover:shadow-brutal"
+              className="cursor-pointer border-2 border-ink-primary font-mono text-xs font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-sm md:shadow-brutal md:hover:shadow-brutal-hover"
             >
               登入
             </Button>

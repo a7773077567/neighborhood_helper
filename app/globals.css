@@ -32,7 +32,7 @@
   /* ===== Neobrutalism 陰影 ===== */
   --shadow-brutal: 4px 4px 0px #1A1A1A;
   --shadow-brutal-sm: 3px 3px 0px #1A1A1A;
-  --shadow-brutal-hover: 6px 6px 0px #1A1A1A;
+  --shadow-brutal-hover: 6px 6px 3px #1A1A1A;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);

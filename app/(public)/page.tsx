@@ -86,12 +86,12 @@ export default function Home(): React.ReactElement {
           <div className="flex flex-col items-center gap-10 lg:w-1/2">
             {/* 文字組：badge + 標題 + 副標題 */}
             <div className="flex flex-col items-center gap-4">
-              {/* 品牌 Badge — 平面預設，hover 浮起，連結到 GDG Tainan */}
+              {/* 品牌 Badge — 預設陰影，hover 浮起加大，連結到 GDG Tainan */}
               <a
                 href="https://gdg.community.dev/gdg-tainan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 mb-2 rounded-full border-2 border-ink-primary bg-amber-500 px-4 py-2 transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-sm"
+                className="flex items-center gap-2 mb-2 rounded-full border-2 border-ink-primary bg-amber-500 px-4 py-2 shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal"
               >
                 <Hexagon className="size-5 text-white" />
                 <span className="font-mono text-[13px] font-semibold text-white">
@@ -114,17 +114,17 @@ export default function Home(): React.ReactElement {
               </p>
             </div>
 
-            {/* CTA 按鈕組 — 平面預設，hover 浮起 */}
+            {/* CTA 按鈕組 — 預設陰影，hover 浮起加大 */}
             <div className="flex items-center gap-3">
               <Link
                 href="/events"
-                className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-brand-orange px-6 font-mono text-sm font-semibold text-white transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
+                className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-brand-orange px-6 font-mono text-sm font-semibold text-white shadow-brutal transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
               >
                 瀏覽活動
               </Link>
               <Link
                 href="/about"
-                className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-surface-warm px-6 font-mono text-sm font-semibold text-ink-primary transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
+                className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-surface-warm px-6 font-mono text-sm font-semibold text-ink-primary shadow-brutal transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
               >
                 了解更多
               </Link>
@@ -200,7 +200,7 @@ export default function Home(): React.ReactElement {
         </p>
         <Link
           href="/events"
-          className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-brand-orange px-8 font-mono text-sm font-semibold text-white transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
+          className="flex h-12 items-center justify-center rounded-lg border-2 border-ink-primary bg-brand-orange px-8 font-mono text-sm font-semibold text-white shadow-brutal transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:text-base"
         >
           立即瀏覽活動
         </Link>
