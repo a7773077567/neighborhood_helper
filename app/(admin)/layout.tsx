@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation'
+import { auth } from '@/lib/auth'
 import { Header } from '@/components/features/layout/header'
 import { Footer } from '@/components/features/layout/footer'
 
@@ -9,15 +11,22 @@ import { Footer } from '@/components/features/layout/footer'
  *   - /admin/events（活動管理）
  *   - /admin/users（使用者管理）
  *
- * Header 不再需要 variant prop，會自動用 auth() 判斷登入狀態和角色。
- * 路由保護由 middleware.ts 負責（cookie-based 檢查）。
- * 未來可加上 role 檢查：未授權使用者 redirect 或顯示 403。
+ * 權限保護兩層：
+ *   1. middleware.ts — cookie 檢查（沒登入 → /login）
+ *   2. 這個 layout — role 檢查（非 ADMIN → /）
  * ───────────────────────────────────────────── */
-export default function AdminLayout({
+export default async function AdminLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
-}>): React.ReactElement {
+}>): Promise<React.ReactElement> {
+  const session = await auth()
+
+  // middleware 已確保有登入，但防禦性檢查：沒 session 或非 ADMIN 就導回首頁
+  if (!session || session.user.role !== 'ADMIN') {
+    redirect('/')
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />

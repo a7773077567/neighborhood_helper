@@ -34,6 +34,48 @@ model User {
   // 關聯：一個 User 可以有多個 OAuth 帳號連結和多個 Session
   accounts Account[]
   sessions Session[]
+
+  // 【event-crud】一個組織者可以建立多個活動
+  events Event[]
+}
+
+// ============================================================
+// 活動狀態 enum
+// ============================================================
+
+enum EventStatus {
+  DRAFT      // 草稿（組織者建立後的初始狀態，公開頁面看不到）
+  PUBLISHED  // 已發布（出現在公開活動列表）
+  ENDED      // 已結束（組織者手動標記，觸發積分發放）
+  CANCELLED  // 已取消（從公開列表隱藏，取代硬刪除）
+}
+
+// ============================================================
+// Event — 活動（我們的核心業務 model）
+// ============================================================
+// 由組織者（ADMIN）建立，參加者在公開列表瀏覽
+// 生命週期：DRAFT → PUBLISHED → ENDED（或 CANCELLED）
+
+model Event {
+  id             String      @id @default(cuid())
+  title          String                              // 活動標題
+  description    String                              // 活動描述
+  startTime      DateTime                            // 開始時間
+  endTime        DateTime                            // 結束時間
+  location       String                              // 地點
+  capacity       Int                                 // 容量上限
+  status         EventStatus @default(DRAFT)         // 活動狀態
+  seekingSpeaker Boolean     @default(false)         // 是否徵求講者（為講者系統預留）
+  organizerId    String                              // 建立者（→ User）
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  // 關聯：活動由一位組織者建立
+  organizer User @relation(fields: [organizerId], references: [id])
+
+  // 索引：公開列表頁會頻繁用 status 篩選 + startTime 排序
+  @@index([status])
+  @@index([startTime])
 }
 
 // ============================================================
