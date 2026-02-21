@@ -43,11 +43,19 @@ import { createEventSchema, updateEventSchema } from '@/lib/validations/event'
 
 // ── 型別定義 ─────────────────────────────────────────
 
-/** Server Action 的回傳格式（Task 3.3 實作） */
-interface ActionResult {
-  success?: boolean
-  error?: string
-}
+/**
+ * Server Action 的回傳格式（Discriminated Union）
+ *
+ * 用 success 欄位區分成功/失敗兩種情況：
+ * - { success: true }          → 成功，不會有 error
+ * - { success: false, error }  → 失敗，一定有 error 訊息
+ *
+ * TypeScript 會根據 success 的值自動收窄型別（narrowing），
+ * 在 if (result.success) 的分支裡，存取 result.error 會報錯
+ */
+export type ActionResult =
+  | { success: true }
+  | { success: false; error: string }
 
 /**
  * 表單欄位值 — 對應 HTML input 的原始型別
@@ -122,8 +130,8 @@ export function EventForm({
   function handleFormSubmit(data: EventFormValues): void {
     startTransition(async () => {
       const result = await onSubmit(data)
-      if (result?.error) {
-        // 把 Server Action 回傳的錯誤設到表單的 root 層級
+      // discriminated union：先用 success 收窄，才能安全存取 error
+      if (!result.success) {
         setError('root', { message: result.error })
       }
     })
@@ -135,7 +143,7 @@ export function EventForm({
       return
     startTransition(async () => {
       const result = await onSaveDraft(data)
-      if (result?.error) {
+      if (!result.success) {
         setError('root', { message: result.error })
       }
     })
