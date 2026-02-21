@@ -53,9 +53,9 @@ import { createEventSchema, updateEventSchema } from '@/lib/validations/event'
  * TypeScript 會根據 success 的值自動收窄型別（narrowing），
  * 在 if (result.success) 的分支裡，存取 result.error 會報錯
  */
-export type ActionResult =
-  | { success: true }
-  | { success: false; error: string }
+export type ActionResult
+  = | { success: true }
+    | { success: false, error: string }
 
 /**
  * 表單欄位值 — 對應 HTML input 的原始型別
@@ -63,7 +63,7 @@ export type ActionResult =
  * 注意 startTime / endTime 是 string（datetime-local 的值）
  * 提交時 Zod 的 z.coerce.date() 會把它們轉成 Date
  */
-interface EventFormValues {
+export type EventFormValues = {
   title: string
   description: string
   startTime: string

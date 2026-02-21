@@ -11,4 +11,7 @@ export default antfu({
     '**/*.md',
     'openspec/**',
   ],
+  rules: {
+    'ts/consistent-type-definitions': ['off'],
+  },
 })
