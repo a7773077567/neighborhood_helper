@@ -27,10 +27,11 @@
 // 所以必須放在 try-catch 之外，否則會被 catch 攔截
 // ============================================================
 
+import type { EventStatus } from '@/app/generated/prisma/enums'
 import type { ActionResult } from '@/components/features/events/event-form'
 import { revalidatePath } from 'next/cache'
-
 import { redirect } from 'next/navigation'
+
 import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/db/prisma'
 import { createEventSchema, updateEventSchema } from '@/lib/validations/event'
@@ -154,4 +155,54 @@ export async function updateEvent(
   revalidatePath('/events')
   revalidatePath(`/events/${eventId}`)
   redirect('/admin/events')
+}
+
+// ── 變更活動狀態 ───────────────────────────────────────
+
+/**
+ * 變更活動狀態（發布 / 結束 / 取消）
+ *
+ * 與 createEvent / updateEvent 不同：
+ * - 不需要 Zod 驗證（沒有表單資料，只有一個狀態值）
+ * - 但需要檢查狀態轉換是否合法（例如已結束的不能再發布）
+ *
+ * 合法的狀態轉換：
+ *   DRAFT     → PUBLISHED | CANCELLED
+ *   PUBLISHED → ENDED | CANCELLED
+ *   ENDED     → （不可變更）
+ *   CANCELLED → （不可變更）
+ */
+
+const VALID_TRANSITIONS: Record<string, EventStatus[]> = {
+  DRAFT: ['PUBLISHED', 'CANCELLED'],
+  PUBLISHED: ['ENDED', 'CANCELLED'],
+  ENDED: [],
+  CANCELLED: [],
+}
+
+export async function updateEventStatus(
+  eventId: string,
+  newStatus: EventStatus,
+): Promise<void> {
+  const admin = await requireAdmin()
+  if (!admin) return
+
+  const event = await prisma.event.findUnique({
+    where: { id: eventId },
+    select: { status: true },
+  })
+  if (!event) return
+
+  // 檢查狀態轉換是否合法
+  const allowed = VALID_TRANSITIONS[event.status] ?? []
+  if (!allowed.includes(newStatus)) return
+
+  await prisma.event.update({
+    where: { id: eventId },
+    data: { status: newStatus },
+  })
+
+  revalidatePath('/admin/events')
+  revalidatePath('/events')
+  revalidatePath(`/events/${eventId}`)
 }
