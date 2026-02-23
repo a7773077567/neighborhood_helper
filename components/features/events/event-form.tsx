@@ -367,7 +367,7 @@ export function EventForm({
               variant="outline"
               onClick={() => router.back()}
               disabled={isPending}
-              className="h-11 cursor-pointer border-2 border-ink-primary font-mono font-semibold transition-all hover:bg-surface-muted"
+              className="h-11 cursor-pointer border-2 border-ink-primary bg-surface-warm font-mono font-semibold text-ink-secondary shadow-brutal transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-surface-muted hover:shadow-brutal-hover active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
               取消
             </Button>

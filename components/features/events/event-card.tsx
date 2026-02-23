@@ -21,7 +21,7 @@
 
 import type { Event } from '@/app/generated/prisma/client'
 import dayjs from 'dayjs'
-import { ArrowRight, Calendar, MapPin, MicVocal, Users } from 'lucide-react'
+import { ArrowRight, Calendar, MapPin, Megaphone, Users } from 'lucide-react'
 import Link from 'next/link'
 
 // ── 中文星期對照表 ─────────────────────────────────────
@@ -60,7 +60,7 @@ export function EventCard({ event, registrationCount = 0 }: EventCardProps): Rea
         {event.seekingSpeaker && (
           <div className="px-2.5 pt-2 md:px-3 md:pt-2.5">
             <span className="inline-flex items-center gap-1 rounded border-2 border-ink-primary bg-brand-yellow px-3 py-1 shadow-[2px_2px_0px_#1A1A1A] md:gap-1.5 md:px-3.5 md:py-1.5">
-              <MicVocal className="size-3 text-ink-primary md:size-3.5" />
+              <Megaphone className="size-3 text-ink-primary md:size-3.5" />
               <span className="font-mono text-[11px] font-bold text-ink-primary md:text-xs">
                 徵求講者！
               </span>

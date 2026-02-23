@@ -199,7 +199,7 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
                           <Button
                             type="submit"
                             size="sm"
-                            className="cursor-pointer border-2 border-[#E65100] bg-[#FFF3E0] font-mono text-[13px] font-semibold text-[#E65100] shadow-[3px_3px_0px_#E65100] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#E65100] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                            className="cursor-pointer border-2 border-[#E65100] bg-[#FFF3E0] font-mono text-[13px] font-semibold text-[#E65100] shadow-[3px_3px_0px_#E65100] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-[#FFE0B2] hover:shadow-[4px_4px_0px_#E65100] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                           >
                             結束
                           </Button>
