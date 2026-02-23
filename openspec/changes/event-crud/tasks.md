@@ -11,19 +11,19 @@
 
 ## 3. 組織者後台 — 活動管理
 
-- [ ] 3.1 設計活動管理相關頁面的 Pencil 設計稿（Admin 列表、建立/編輯表單）
-- [ ] 3.2 建立活動表單元件 `components/features/events/event-form.tsx`（react-hook-form + Zod，建立/編輯共用）
-- [ ] 3.3 建立 Server Actions `app/(admin)/admin/events/actions.ts`（createEvent、updateEvent、updateEventStatus）
-- [ ] 3.4 實作 `/admin/events` 活動管理列表頁（顯示所有狀態，含狀態操作按鈕）
-- [ ] 3.5 實作 `/admin/events/new` 建立活動頁
-- [ ] 3.6 實作 `/admin/events/[id]/edit` 編輯活動頁
+- [x] 3.1 設計活動管理相關頁面的 Pencil 設計稿（Admin 列表、建立/編輯表單）
+- [x] 3.2 建立活動表單元件 `components/features/events/event-form.tsx`（react-hook-form + Zod，建立/編輯共用）
+- [x] 3.3 建立 Server Actions `app/(admin)/admin/events/actions.ts`（createEvent、updateEvent、updateEventStatus）
+- [x] 3.4 實作 `/admin/events` 活動管理列表頁（顯示所有狀態，含狀態操作按鈕）
+- [x] 3.5 實作 `/admin/events/new` 建立活動頁
+- [x] 3.6 實作 `/admin/events/[id]/edit` 編輯活動頁
 
 ## 4. 公開頁面 — 活動列表與詳情
 
-- [ ] 4.1 設計活動列表和詳情頁的 Pencil 設計稿（EventCard、列表、詳情頁，含響應式）
-- [ ] 4.2 建立 `components/features/events/event-card.tsx` 活動卡片元件
-- [ ] 4.3 實作 `/events` 活動列表頁（Tab 篩選：即將舉辦 / 已結束，含空狀態）
-- [ ] 4.4 實作 `/events/[id]` 活動詳情頁（含預留報名按鈕 disabled）
+- [x] 4.1 設計活動列表和詳情頁的 Pencil 設計稿（EventCard、列表、詳情頁，含響應式）
+- [x] 4.2 建立 `components/features/events/event-card.tsx` 活動卡片元件
+- [x] 4.3 實作 `/events` 活動列表頁（Tab 篩選：即將舉辦 / 已結束，含空狀態）
+- [x] 4.4 實作 `/events/[id]` 活動詳情頁（含預留報名按鈕 disabled）
 
 ## 5. Seed Data 與驗證
 
