@@ -37,6 +37,9 @@ model User {
 
   // 【event-crud】一個組織者可以建立多個活動
   events Event[]
+
+  // 【event-registration】一個使用者可以報名多個活動
+  registrations Registration[]
 }
 
 // ============================================================
@@ -73,9 +76,47 @@ model Event {
   // 關聯：活動由一位組織者建立
   organizer User @relation(fields: [organizerId], references: [id])
 
+  // 【event-registration】一個活動可以被多人報名
+  registrations Registration[]
+
   // 索引：公開列表頁會頻繁用 status 篩選 + startTime 排序
   @@index([status])
   @@index([startTime])
+}
+
+// ============================================================
+// 報名狀態 enum
+// ============================================================
+
+enum RegistrationStatus {
+  CONFIRMED // 已報名（報名成功的狀態）
+  CANCELLED // 已取消（soft delete，保留記錄供分析）
+}
+
+// ============================================================
+// Registration — 活動報名（User ↔ Event 的 explicit 多對多）
+// ============================================================
+// 同一組 userId + eventId 只會有一筆記錄。
+// 取消報名 = 更新 status 為 CANCELLED（不是新增一筆）
+// 重新報名 = 更新 status 回 CONFIRMED（不是再新增一筆）
+
+model Registration {
+  id        String             @id @default(cuid())
+  userId    String                                      // 報名者（→ User）
+  eventId   String                                      // 報名的活動（→ Event）
+  status    RegistrationStatus @default(CONFIRMED)      // 報名狀態
+  createdAt DateTime           @default(now())           // 首次報名時間
+  updatedAt DateTime           @updatedAt                // 最後更新時間（取消/重新報名）
+
+  // 關聯
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  // 同一人對同一活動只能有一筆報名記錄
+  @@unique([userId, eventId])
+
+  // 查詢優化：常需要查「某活動的所有 CONFIRMED 報名」
+  @@index([eventId, status])
 }
 
 // ============================================================
