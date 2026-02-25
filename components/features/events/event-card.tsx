@@ -23,6 +23,7 @@ import type { Event } from '@/app/generated/prisma/client'
 import dayjs from 'dayjs'
 import { ArrowRight, Calendar, MapPin, Megaphone, Users } from 'lucide-react'
 import Link from 'next/link'
+import { ProgressBar } from '@/components/ui/progress-bar'
 
 // ── 中文星期對照表 ─────────────────────────────────────
 // 比載入 dayjs locale 套件輕量得多
@@ -118,13 +119,7 @@ export function EventCard({ event, registrationCount = 0 }: EventCardProps): Rea
             <div className="flex items-center gap-2">
               <Users className="size-3.5 shrink-0 text-ink-secondary" />
 
-              {/* Neobrutalism Progress Bar */}
-              <div className="h-2.5 min-w-0 flex-1 rounded-sm border-2 border-ink-primary bg-[#E8E3DD] p-0.5 shadow-[2px_2px_0px_#1A1A1A] md:h-3">
-                <div
-                  className="h-full rounded-[1px] bg-brand-orange transition-all"
-                  style={{ width: `${percentage}%` }}
-                />
-              </div>
+              <ProgressBar percentage={percentage} className="min-w-0 flex-1" />
 
               <span className="shrink-0 font-mono text-[11px] font-bold text-ink-secondary md:text-xs">
                 {registrationCount}

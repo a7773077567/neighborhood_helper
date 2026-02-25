@@ -15515,7 +15515,6 @@
                       "y": 2
                     }
                   },
-                  "padding": 2,
                   "children": [
                     {
                       "type": "frame",
@@ -18082,7 +18081,6 @@
                       "y": 2
                     }
                   },
-                  "padding": 2,
                   "children": [
                     {
                       "type": "frame",
@@ -18968,22 +18966,37 @@
                 },
                 {
                   "type": "frame",
-                  "id": "PiupP",
-                  "name": "Cancel Row",
+                  "id": "Vpndr",
+                  "name": "Cancel Button",
                   "width": "fill_container",
-                  "height": 28,
+                  "height": 40,
+                  "fill": "#FFFDF7",
+                  "cornerRadius": 8,
+                  "stroke": {
+                    "thickness": 2,
+                    "fill": "#1A1A1A"
+                  },
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "color": "#1A1A1A",
+                    "offset": {
+                      "x": 2,
+                      "y": 2
+                    }
+                  },
                   "justifyContent": "center",
                   "alignItems": "center",
                   "children": [
                     {
                       "type": "text",
-                      "id": "PzoSk",
-                      "name": "s3ct",
+                      "id": "YzWj9",
+                      "name": "cancelText",
                       "fill": "#D4764E",
                       "content": "取消報名",
-                      "fontFamily": "Inter",
-                      "fontSize": 13,
-                      "fontWeight": "600"
+                      "fontFamily": "Space Mono",
+                      "fontSize": 14,
+                      "fontWeight": "700"
                     }
                   ]
                 }

@@ -16,13 +16,17 @@
 //    手機：單欄堆疊，報名卡片在說明下方
 //    用 lg: breakpoint (1024px) 切換，避免平板壓縮
 //
-// 4. 預留 UI 區塊（先做 UI，之後接資料）
-//    - 報名按鈕：disabled，顯示「即將開放報名」（Change 2）
+// 4. RegisterButton 狀態判斷
+//    在 Server Component 裡判斷按鈕狀態，傳入 Client Component
+//    判斷優先級：已結束 > 已額滿 > 未登入 > 已報名 > 可報名
+//
+// 5. 預留 UI 區塊（先做 UI，之後接資料）
 //    - 講者卡片：目前用 placeholder（Speaker model 未建立）
 //    - Tags：目前硬編碼（Event model 未來加 tags 欄位）
-//    - Attendees Row：頭像堆疊 placeholder（Registration 未建立）
 //    - 分享按鈕：UI 先放，功能未接
 // ============================================================
+
+import type { ButtonState } from '@/components/features/events/register-button'
 
 import dayjs from 'dayjs'
 import { ArrowLeft, Calendar, MapPin, Megaphone, Share2, Users } from 'lucide-react'
@@ -30,7 +34,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+import { RegisterButton } from '@/components/features/events/register-button'
 import { Button } from '@/components/ui/button'
+import { ProgressBar } from '@/components/ui/progress-bar'
+import { auth } from '@/lib/auth'
 import { prisma } from '@/lib/db/prisma'
 
 // ── 中文星期對照表 ─────────────────────────────────────
@@ -56,8 +63,16 @@ export default async function EventDetailPage({
 }): Promise<React.ReactElement> {
   const { id } = await params
 
+  // 同時查詢活動資料 + 報名人數（一次 DB 查詢，用 include _count）
   const event = await prisma.event.findUnique({
     where: { id },
+    include: {
+      _count: {
+        select: {
+          registrations: { where: { status: 'CONFIRMED' } },
+        },
+      },
+    },
   })
 
   // 不存在、DRAFT、CANCELLED → 404
@@ -65,11 +80,33 @@ export default async function EventDetailPage({
     notFound()
   }
 
-  // 報名人數（目前固定 0，Change 2 實作後改為真實資料）
-  const registrationCount = 0
+  // 真實報名人數
+  const registrationCount = event._count.registrations
   const percentage = event.capacity > 0
     ? Math.min((registrationCount / event.capacity) * 100, 100)
     : 0
+
+  // ── 判斷 RegisterButton 狀態 ─────────────────────────
+  // 優先級：已結束 > 已額滿 > 未登入 > 已報名 > 可報名
+  const session = await auth()
+
+  let buttonState: ButtonState
+  if (event.status === 'ENDED' || event.startTime <= new Date()) {
+    buttonState = 'ended'
+  } else if (registrationCount >= event.capacity) {
+    buttonState = 'full'
+  } else if (!session) {
+    buttonState = 'not-logged-in'
+  } else {
+    // 已登入 → 查詢使用者的報名狀態
+    const registration = await prisma.registration.findUnique({
+      where: {
+        userId_eventId: { userId: session.user.id, eventId: id },
+      },
+      select: { status: true },
+    })
+    buttonState = registration?.status === 'CONFIRMED' ? 'registered' : 'can-register'
+  }
 
   // 日期格式化
   const d = dayjs(event.startTime)
@@ -275,24 +312,13 @@ export default async function EventDetailPage({
                   人
                 </span>
               </div>
-              {/* Neobrutalism Progress Bar */}
-              <div className="h-2.5 rounded-sm border-2 border-ink-primary bg-[#E8E3DD] p-0.5 shadow-[2px_2px_0px_#1A1A1A]">
-                <div
-                  className="h-full rounded-[1px] bg-brand-orange transition-all"
-                  style={{ width: `${percentage}%` }}
-                />
-              </div>
+              <ProgressBar percentage={percentage} />
             </div>
 
             <hr className="my-4 border-[#E0DBD4]" />
 
-            {/* CTA 按鈕（預留，disabled） */}
-            <Button
-              disabled
-              className="h-12 w-full cursor-not-allowed border-2 border-ink-primary font-mono text-base font-bold opacity-60 shadow-brutal"
-            >
-              即將開放報名
-            </Button>
+            {/* CTA 按鈕 — 根據登入 / 報名 / 容量狀態顯示不同 UI */}
+            <RegisterButton eventId={id} state={buttonState} />
 
             {/* 分享按鈕 */}
             <button

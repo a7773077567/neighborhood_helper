@@ -21,9 +21,9 @@ import { prisma } from '@/lib/db/prisma'
 
 // ── 回傳型別 ────────────────────────────────────────────
 
-type RegistrationResult =
-  | { success: true }
-  | { success: false; error: string; code?: string }
+type RegistrationResult
+  = | { success: true }
+    | { success: false, error: string, code?: string }
 
 // ── 報名活動 ────────────────────────────────────────────
 
@@ -87,14 +87,16 @@ export async function registerEvent(
           where: { id: existingRegistration.id },
           data: { status: 'CONFIRMED' },
         })
-      } else {
+      }
+      else {
         // 首次報名 → 建立新記錄
         await tx.registration.create({
           data: { userId, eventId },
         })
       }
     })
-  } catch (error) {
+  }
+  catch (error) {
     if (error instanceof Error && error.message === 'EVENT_FULL') {
       return { success: false, error: '活動已額滿', code: 'EVENT_FULL' }
     }
