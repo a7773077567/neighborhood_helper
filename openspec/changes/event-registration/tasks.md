@@ -17,14 +17,14 @@
 
 ## 4. 活動詳情頁更新
 
-- [ ] 4.1 實作 RegisterButton client component（呼叫 Server Action + loading 狀態）
-- [ ] 4.2 更新活動詳情頁 Server Component（查詢報名狀態，傳入 RegisterButton）
-- [ ] 4.3 更新報名人數顯示為真實數據（進度條 + 數字）
+- [x] 4.1 實作 RegisterButton client component（呼叫 Server Action + loading 狀態）
+- [x] 4.2 更新活動詳情頁 Server Component（查詢報名狀態，傳入 RegisterButton）
+- [x] 4.3 更新報名人數顯示為真實數據（進度條 + 數字）
 
 ## 5. 「我的活動」頁面
 
-- [ ] 5.1 實作 `/my-events` 頁面（即將參加 / 過去參加 tab）
-- [ ] 5.2 實作未登入使用者導向登入頁面
+- [x] 5.1 實作 `/my-events` 頁面（即將參加 / 過去參加 tab）
+- [x] 5.2 實作未登入使用者導向登入頁面（middleware 已處理 + auth() defense in depth）
 
 ## 6. 活動列表與 Admin 頁面更新
 
