@@ -68,6 +68,13 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
   // Server Component 直接查 DB — 最新建立的排最前面
   const events = await prisma.event.findMany({
     orderBy: { createdAt: 'desc' },
+    include: {
+      _count: {
+        select: {
+          registrations: { where: { status: 'CONFIRMED' } },
+        },
+      },
+    },
   })
 
   return (
@@ -164,7 +171,8 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
                         <span
                           className={`text-sm ${isInactive ? 'text-[#999999]' : 'text-ink-body'}`}
                         >
-                          0/
+                          {event._count.registrations}
+                          /
                           {event.capacity}
                           {' '}
                           人
@@ -174,57 +182,70 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
                   </div>
 
                   {/* ── 操作按鈕 ── */}
-                  {!isInactive && (
-                    <div className="flex items-center gap-2.5">
-                      {/* 編輯按鈕 — 所有活動狀態都可以 */}
-                      <Link href={`/admin/events/${event.id}/edit`}>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          className="cursor-pointer border-2 border-ink-primary bg-surface-warm font-mono text-[13px] font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
-                        >
-                          編輯
-                        </Button>
-                      </Link>
+                  <div className="flex items-center gap-2.5">
+                    {/* 名單按鈕 — 所有活動都可以查看報名名單 */}
+                    <Link href={`/admin/events/${event.id}/registrations`}>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="cursor-pointer border-2 border-ink-primary bg-surface-warm font-mono text-[13px] font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                      >
+                        <Users className="size-3.5" />
+                        名單
+                      </Button>
+                    </Link>
 
-                      {/* 狀態操作按鈕 — 根據狀態顯示不同按鈕 */}
-                      {event.status === 'PUBLISHED' && (
-                        <form
-                          action={updateEventStatus.bind(
-                            null,
-                            event.id,
-                            'ENDED',
-                          )}
-                        >
+                    {/* 編輯 + 狀態按鈕 — 只有活躍活動顯示 */}
+                    {!isInactive && (
+                      <>
+                        <Link href={`/admin/events/${event.id}/edit`}>
                           <Button
-                            type="submit"
+                            variant="outline"
                             size="sm"
-                            className="cursor-pointer border-2 border-[#E65100] bg-[#FFF3E0] font-mono text-[13px] font-semibold text-[#E65100] shadow-[3px_3px_0px_#E65100] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-[#FFE0B2] hover:shadow-[4px_4px_0px_#E65100] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                            className="cursor-pointer border-2 border-ink-primary bg-surface-warm font-mono text-[13px] font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                           >
-                            結束
+                            編輯
                           </Button>
-                        </form>
-                      )}
+                        </Link>
 
-                      {event.status === 'DRAFT' && (
-                        <form
-                          action={updateEventStatus.bind(
-                            null,
-                            event.id,
-                            'PUBLISHED',
-                          )}
-                        >
-                          <Button
-                            type="submit"
-                            size="sm"
-                            className="cursor-pointer border-2 border-ink-primary bg-brand-orange font-mono text-[13px] font-semibold text-white shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                        {event.status === 'PUBLISHED' && (
+                          <form
+                            action={updateEventStatus.bind(
+                              null,
+                              event.id,
+                              'ENDED',
+                            )}
                           >
-                            發布
-                          </Button>
-                        </form>
-                      )}
-                    </div>
-                  )}
+                            <Button
+                              type="submit"
+                              size="sm"
+                              className="cursor-pointer border-2 border-[#E65100] bg-[#FFF3E0] font-mono text-[13px] font-semibold text-[#E65100] shadow-[3px_3px_0px_#E65100] transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-[#FFE0B2] hover:shadow-[4px_4px_0px_#E65100] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                            >
+                              結束
+                            </Button>
+                          </form>
+                        )}
+
+                        {event.status === 'DRAFT' && (
+                          <form
+                            action={updateEventStatus.bind(
+                              null,
+                              event.id,
+                              'PUBLISHED',
+                            )}
+                          >
+                            <Button
+                              type="submit"
+                              size="sm"
+                              className="cursor-pointer border-2 border-ink-primary bg-brand-orange font-mono text-[13px] font-semibold text-white shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                            >
+                              發布
+                            </Button>
+                          </form>
+                        )}
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
             )

@@ -28,10 +28,10 @@
 
 ## 6. 活動列表與 Admin 頁面更新
 
-- [ ] 6.1 更新 EventCard 顯示真實報名人數
-- [ ] 6.2 更新公開活動列表頁查詢（include registrations count）
-- [ ] 6.3 更新 Admin 活動管理頁顯示真實報名人數
-- [ ] 6.4 實作 Admin 報名名單頁面（`/admin/events/[id]/registrations`）
+- [x] 6.1 更新 EventCard 顯示真實報名人數
+- [x] 6.2 更新公開活動列表頁查詢（include registrations count）
+- [x] 6.3 更新 Admin 活動管理頁顯示真實報名人數
+- [x] 6.4 實作 Admin 報名名單頁面（`/admin/events/[id]/registrations`）
 
 ## 7. 測試
 

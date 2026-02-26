@@ -48,6 +48,7 @@ export default async function EventsPage({
   const now = new Date()
 
   // ── 根據 Tab 查詢不同資料 ──
+  // 👈 加上 include _count 查 CONFIRMED 報名人數，與活動詳情頁同 pattern
   const events = activeTab === 'upcoming'
     ? await prisma.event.findMany({
         where: {
@@ -55,6 +56,13 @@ export default async function EventsPage({
           endTime: { gt: now },
         },
         orderBy: { startTime: 'asc' },
+        include: {
+          _count: {
+            select: {
+              registrations: { where: { status: 'CONFIRMED' } },
+            },
+          },
+        },
       })
     : await prisma.event.findMany({
         where: {
@@ -64,6 +72,13 @@ export default async function EventsPage({
           ],
         },
         orderBy: { startTime: 'desc' },
+        include: {
+          _count: {
+            select: {
+              registrations: { where: { status: 'CONFIRMED' } },
+            },
+          },
+        },
       })
 
   return (
@@ -115,7 +130,11 @@ export default async function EventsPage({
         : (
             <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
               {events.map(event => (
-                <EventCard key={event.id} event={event} />
+                <EventCard
+                  key={event.id}
+                  event={event}
+                  registrationCount={event._count.registrations}  // 👈 傳入真實報名人數
+                />
               ))}
             </div>
           )}
