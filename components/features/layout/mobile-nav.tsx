@@ -72,7 +72,7 @@ const MOBILE_NAV_ITEMS: Record<HeaderVariant, MobileNavItem[]> = {
     { label: '活動', href: '/events', icon: Calendar },
     { label: '排行榜', href: '/leaderboard', icon: Trophy },
     { label: '我的活動', href: '/my-events', icon: Ticket },
-    { label: '管理後台', href: '/admin', icon: Settings, highlight: true },
+    { label: '管理後台', href: '/admin/events', icon: Settings, highlight: true },
   ],
 }
 

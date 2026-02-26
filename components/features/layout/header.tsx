@@ -45,7 +45,7 @@ export async function Header(): Promise<React.ReactElement> {
     { label: '活動', href: '/events' },
     { label: '排行榜', href: '/leaderboard' },
     ...(session ? [{ label: '我的活動', href: '/my-events' }] : []),
-    ...(isAdmin ? [{ label: '管理後台', href: '/admin', highlight: true }] : []),
+    ...(isAdmin ? [{ label: '管理後台', href: '/admin/events', highlight: true }] : []),
   ]
 
   // 【改造】計算 MobileNav 的 variant（MobileNav 是 Client Component，不能直接用 auth()）

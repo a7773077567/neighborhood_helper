@@ -62,12 +62,23 @@ const STATUS_CONFIG: Record<
   },
 }
 
+// ── 排序：按狀態分群 + 時間排序 ────────────────────────────
+//
+// 管理員最需要看到「待處理」的活動，所以：
+//   DRAFT → PUBLISHED → ENDED → CANCELLED
+// 同狀態內按 startTime 排序（活躍的看最近的，歷史的看最新結束的）
+
+const STATUS_PRIORITY: Record<EventStatus, number> = {
+  DRAFT: 0,
+  PUBLISHED: 1,
+  ENDED: 2,
+  CANCELLED: 3,
+}
+
 // ── 頁面元件 ─────────────────────────────────────────────
 
 export default async function AdminEventsPage(): Promise<React.ReactElement> {
-  // Server Component 直接查 DB — 最新建立的排最前面
   const events = await prisma.event.findMany({
-    orderBy: { createdAt: 'desc' },
     include: {
       _count: {
         select: {
@@ -75,6 +86,15 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
         },
       },
     },
+  })
+
+  // Prisma 不支援自訂 enum 排序，所以在 JS 端排
+  const sortedEvents = [...events].sort((a, b) => {
+    const priorityDiff = STATUS_PRIORITY[a.status] - STATUS_PRIORITY[b.status]
+    if (priorityDiff !== 0)
+      return priorityDiff
+    // 同狀態：按開始時間排（近的在前）
+    return new Date(a.startTime).getTime() - new Date(b.startTime).getTime()
   })
 
   return (
@@ -104,7 +124,7 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
             </p>
           </div>
         ) : (
-          events.map((event) => {
+          sortedEvents.map((event) => {
             const config = STATUS_CONFIG[event.status]
             const isInactive
               = event.status === 'ENDED' || event.status === 'CANCELLED'
@@ -121,7 +141,7 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
                     : 'border-ink-primary shadow-brutal'
                 }`}
               >
-                <div className="flex flex-col gap-4 p-4 md:flex-row md:items-center md:gap-6 md:p-5 md:px-6">
+                <div className="flex flex-col gap-4 p-4 lg:flex-row lg:items-center lg:gap-6 lg:p-5 lg:px-6">
                   {/* ── 活動資訊 ── */}
                   <div className="min-w-0 flex-1 space-y-2">
                     {/* 標題 + Badge */}
@@ -143,28 +163,28 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
                     </div>
 
                     {/* Meta 資訊 — 桌面水平排列，手機垂直堆疊 */}
-                    <div className="flex flex-col gap-1.5 md:flex-row md:items-center md:gap-6">
-                      <div className="flex items-center gap-1.5">
+                    <div className="flex flex-col gap-1.5 lg:flex-row lg:items-center lg:gap-6">
+                      <div className="flex items-center gap-1.5 lg:w-40">
                         <Calendar
                           className={`size-4 ${isInactive ? 'text-[#999999]' : 'text-ink-secondary'}`}
                         />
                         <span
-                          className={`text-sm ${isInactive ? 'text-[#999999]' : 'text-ink-body'}`}
+                          className={`whitespace-nowrap text-sm ${isInactive ? 'text-[#999999]' : 'text-ink-body'}`}
                         >
                           {dateStr}
                         </span>
                       </div>
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex items-center gap-1.5 lg:w-64">
                         <MapPin
-                          className={`size-4 ${isInactive ? 'text-[#999999]' : 'text-ink-secondary'}`}
+                          className={`size-4 shrink-0 ${isInactive ? 'text-[#999999]' : 'text-ink-secondary'}`}
                         />
                         <span
-                          className={`text-sm ${isInactive ? 'text-[#999999]' : 'text-ink-body'}`}
+                          className={`truncate text-sm ${isInactive ? 'text-[#999999]' : 'text-ink-body'}`}
                         >
                           {event.location}
                         </span>
                       </div>
-                      <div className="flex items-center gap-1.5">
+                      <div className="flex shrink-0 items-center gap-1.5 lg:w-18">
                         <Users
                           className={`size-4 ${isInactive ? 'text-[#999999]' : 'text-ink-secondary'}`}
                         />
