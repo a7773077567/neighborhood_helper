@@ -77,7 +77,8 @@ export default async function AdminRegistrationsPage({
     },
   })
 
-  if (!event) notFound()
+  if (!event)
+    notFound()
 
   // 👈 Stats 計算只算 CONFIRMED
   const confirmedCount = event.registrations.filter(r => r.status === 'CONFIRMED').length
@@ -141,7 +142,8 @@ export default async function AdminRegistrationsPage({
         <div className="rounded-lg border-2 border-ink-primary bg-surface-header p-3 shadow-[2px_2px_0px_#1A1A1A] md:w-[200px] md:px-5 md:py-4 md:shadow-[3px_3px_0px_#1A1A1A]">
           <p className="text-[11px] text-ink-secondary md:text-[13px]">報名率</p>
           <p className="font-mono text-[22px] font-bold text-brand-orange md:text-[28px]">
-            {percentage}%
+            {percentage}
+            %
           </p>
         </div>
       </div>
@@ -172,7 +174,7 @@ export default async function AdminRegistrationsPage({
                     key={reg.id}
                     className={`rounded-lg border-2 bg-surface-header ${
                       isCancelled
-                        ? 'border-[#CCCCCC]'  // 👈 取消的報名淡化邊框
+                        ? 'border-[#CCCCCC]' // 👈 取消的報名淡化邊框
                         : 'border-ink-primary shadow-[3px_3px_0px_#1A1A1A]'
                     }`}
                   >
@@ -201,7 +203,8 @@ export default async function AdminRegistrationsPage({
                         </p>
                         {/* 報名時間 — 手機版顯示在 Info 下方 */}
                         <p className={`mt-1 text-xs md:hidden ${isCancelled ? 'text-[#CCCCCC]' : 'text-ink-secondary'}`}>
-                          報名時間：{dayjs(reg.createdAt).format('M/D HH:mm')}
+                          報名時間：
+                          {dayjs(reg.createdAt).format('M/D HH:mm')}
                         </p>
                       </div>
 
