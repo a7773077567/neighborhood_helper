@@ -86,3 +86,59 @@ export async function checkinByQrToken(
     },
   }
 }
+
+// ── 取消簽到 ──────────────────────────────────────────
+
+export async function uncheckIn(
+  registrationId: string,
+  eventId: string,
+): Promise<CheckinResult> {
+  // 1. 身份 + 權限檢查
+  const session = await auth()
+  if (!session) {
+    return { success: false, error: '請先登入', code: 'UNAUTHORIZED' }
+  }
+
+  if (session.user.role !== 'ADMIN') {
+    return { success: false, error: '無權限執行此操作', code: 'FORBIDDEN' }
+  }
+
+  // 2. 用 registrationId 查詢
+  //    跟 checkinByQrToken 不同：取消簽到是從名單按鈕觸發，前端已有 id
+  const registration = await prisma.registration.findUnique({
+    where: { id: registrationId },
+    include: { user: { select: { name: true, image: true } } },
+  })
+
+  if (!registration) {
+    return { success: false, error: '找不到此報名記錄', code: 'NOT_FOUND' }
+  }
+
+  // 3. 確認是本場活動
+  if (registration.eventId !== eventId) {
+    return { success: false, error: '此報名不屬於本場活動', code: 'WRONG_EVENT' }
+  }
+
+  // 4. 只有已簽到的才能取消
+  if (!registration.attended) {
+    return { success: false, error: '此參加者尚未簽到', code: 'NOT_CHECKED_IN' }
+  }
+
+  // 5. 歸零簽到狀態
+  await prisma.registration.update({
+    where: { id: registration.id },
+    data: { attended: false, attendedAt: null },
+  })
+
+  // 6. 更新快取
+  revalidatePath(`/admin/events/${eventId}/checkin`)
+  revalidatePath(`/admin/events/${eventId}/registrations`)
+
+  return {
+    success: true,
+    attendee: {
+      name: registration.user.name ?? '未知使用者',
+      image: registration.user.image,
+    },
+  }
+}
