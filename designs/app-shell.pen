@@ -698,206 +698,6 @@
     },
     {
       "type": "frame",
-      "id": "btiKB",
-      "x": 2380,
-      "y": 15200,
-      "name": "QR Code Display - Registered State",
-      "width": 340,
-      "fill": "$--surface-header",
-      "cornerRadius": 8,
-      "stroke": {
-        "thickness": 2,
-        "fill": "#1A1A1A"
-      },
-      "effect": {
-        "type": "shadow",
-        "shadowType": "outer",
-        "color": "#1A1A1A",
-        "offset": {
-          "x": 4,
-          "y": 4
-        }
-      },
-      "layout": "vertical",
-      "gap": 20,
-      "padding": 24,
-      "children": [
-        {
-          "type": "text",
-          "id": "r9B8T",
-          "name": "qlabel",
-          "fill": "#999999",
-          "content": "QR CODE DISPLAY",
-          "fontFamily": "Space Mono",
-          "fontSize": 11,
-          "fontWeight": "700"
-        },
-        {
-          "type": "frame",
-          "id": "4KaFm",
-          "name": "QR Section",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 16,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "frame",
-              "id": "OpDXM",
-              "name": "QR Code Box",
-              "width": 180,
-              "height": 180,
-              "fill": "#FFFFFF",
-              "cornerRadius": 8,
-              "stroke": {
-                "thickness": 2,
-                "fill": "#1A1A1A"
-              },
-              "layout": "vertical",
-              "gap": 8,
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon_font",
-                  "id": "AQ3KM",
-                  "name": "qricon",
-                  "width": 100,
-                  "height": 100,
-                  "iconFontName": "qr-code",
-                  "iconFontFamily": "lucide",
-                  "fill": "#1A1A1A"
-                },
-                {
-                  "type": "text",
-                  "id": "h3SwN",
-                  "name": "qrtxt",
-                  "fill": "#999999",
-                  "content": "QR Code",
-                  "fontFamily": "Space Mono",
-                  "fontSize": 10,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "id": "mVdL2",
-              "name": "qhint",
-              "fill": "$--ink-secondary",
-              "content": "請在活動現場出示此 QR Code",
-              "textAlign": "center",
-              "fontFamily": "Inter",
-              "fontSize": 13,
-              "fontWeight": "normal"
-            }
-          ]
-        },
-        {
-          "type": "rectangle",
-          "id": "FpJlH",
-          "name": "Divider",
-          "fill": "#E8E3DD",
-          "width": "fill_container",
-          "height": 1
-        },
-        {
-          "type": "frame",
-          "id": "73sI3",
-          "name": "Actions",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 10,
-          "children": [
-            {
-              "type": "frame",
-              "id": "yq9sv",
-              "name": "Cancel Button",
-              "width": "fill_container",
-              "height": 44,
-              "fill": "$--surface-warm",
-              "cornerRadius": 8,
-              "stroke": {
-                "thickness": 2,
-                "fill": "#1A1A1A"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "#1A1A1A",
-                "offset": {
-                  "x": 3,
-                  "y": 3
-                }
-              },
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "PkoOI",
-                  "name": "qcanceltxt",
-                  "fill": "$--ink-primary",
-                  "content": "取消報名",
-                  "fontFamily": "Space Mono",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "ULftu",
-              "name": "Share Button",
-              "width": "fill_container",
-              "height": 44,
-              "fill": "$--surface-warm",
-              "cornerRadius": 8,
-              "stroke": {
-                "thickness": 2,
-                "fill": "#1A1A1A"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "#1A1A1A",
-                "offset": {
-                  "x": 3,
-                  "y": 3
-                }
-              },
-              "gap": 8,
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon_font",
-                  "id": "rgr91",
-                  "name": "qshareicon",
-                  "width": 16,
-                  "height": 16,
-                  "iconFontName": "share-2",
-                  "iconFontFamily": "lucide",
-                  "fill": "$--ink-primary"
-                },
-                {
-                  "type": "text",
-                  "id": "ukXNx",
-                  "name": "qsharetxt",
-                  "fill": "$--ink-primary",
-                  "content": "分享活動",
-                  "fontFamily": "Space Mono",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "frame",
       "id": "YWZCN",
       "x": 0,
       "y": 370,
@@ -27136,6 +26936,147 @@
               "fontWeight": "normal"
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "WbI7M",
+      "x": 2380,
+      "y": 15200,
+      "name": "QR Code Dialog",
+      "width": 360,
+      "fill": "$--surface-header",
+      "cornerRadius": 12,
+      "stroke": {
+        "thickness": 2,
+        "fill": "#1A1A1A"
+      },
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#1A1A1A",
+        "offset": {
+          "x": 4,
+          "y": 4
+        }
+      },
+      "layout": "vertical",
+      "gap": 20,
+      "padding": 28,
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "frame",
+          "id": "HSwps",
+          "name": "Header",
+          "width": "fill_container",
+          "height": 32,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "hKWZg",
+              "name": "Title",
+              "fill": "$--ink-primary",
+              "content": "簽到 QR Code",
+              "fontFamily": "Space Mono",
+              "fontSize": 18,
+              "fontWeight": "700"
+            },
+            {
+              "type": "frame",
+              "id": "uAHjU",
+              "name": "Spacer",
+              "width": "fill_container",
+              "height": 1
+            },
+            {
+              "type": "frame",
+              "id": "mbrR1",
+              "name": "Close Button",
+              "width": 32,
+              "height": 32,
+              "fill": "$--surface-muted",
+              "cornerRadius": 6,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "OUjrH",
+                  "name": "closeIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--ink-secondary"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "4re1M",
+          "name": "QR Code Box",
+          "width": 200,
+          "height": 200,
+          "fill": "#FFFFFF",
+          "cornerRadius": 8,
+          "stroke": {
+            "thickness": 2,
+            "fill": "#1A1A1A"
+          },
+          "layout": "vertical",
+          "gap": 8,
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "OHIwq",
+              "name": "qrIcon",
+              "width": 120,
+              "height": 120,
+              "iconFontName": "qr-code",
+              "iconFontFamily": "lucide",
+              "fill": "#1A1A1A"
+            },
+            {
+              "type": "text",
+              "id": "ff8wT",
+              "name": "QR Placeholder",
+              "fill": "#999999",
+              "content": "QR Code",
+              "fontFamily": "Space Mono",
+              "fontSize": 10,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "MGgJ4",
+          "name": "Scan Hint",
+          "fill": "$--ink-secondary",
+          "content": "請在活動現場出示此 QR Code",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "Gq7vk",
+          "name": "Brightness Hint",
+          "fill": "#BBBBBB",
+          "content": "建議調高螢幕亮度以利掃描",
+          "textAlign": "center",
+          "fontFamily": "Inter",
+          "fontSize": 12,
+          "fontWeight": "normal"
         }
       ]
     }

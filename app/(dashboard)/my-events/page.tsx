@@ -161,11 +161,12 @@ export default async function MyEventsPage({
           )
         : (
             <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-              {registrations.map(({ event }) => (
+              {registrations.map(({ event, qrToken }) => (
                 <EventCard
                   key={event.id}
                   event={event}
                   registrationCount={event._count.registrations}
+                  qrToken={activeTab === 'upcoming' ? qrToken : undefined}
                 />
               ))}
             </div>
