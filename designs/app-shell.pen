@@ -698,6 +698,206 @@
     },
     {
       "type": "frame",
+      "id": "btiKB",
+      "x": 2380,
+      "y": 15200,
+      "name": "QR Code Display - Registered State",
+      "width": 340,
+      "fill": "$--surface-header",
+      "cornerRadius": 8,
+      "stroke": {
+        "thickness": 2,
+        "fill": "#1A1A1A"
+      },
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#1A1A1A",
+        "offset": {
+          "x": 4,
+          "y": 4
+        }
+      },
+      "layout": "vertical",
+      "gap": 20,
+      "padding": 24,
+      "children": [
+        {
+          "type": "text",
+          "id": "r9B8T",
+          "name": "qlabel",
+          "fill": "#999999",
+          "content": "QR CODE DISPLAY",
+          "fontFamily": "Space Mono",
+          "fontSize": 11,
+          "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "4KaFm",
+          "name": "QR Section",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 16,
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "OpDXM",
+              "name": "QR Code Box",
+              "width": 180,
+              "height": 180,
+              "fill": "#FFFFFF",
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "layout": "vertical",
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "AQ3KM",
+                  "name": "qricon",
+                  "width": 100,
+                  "height": 100,
+                  "iconFontName": "qr-code",
+                  "iconFontFamily": "lucide",
+                  "fill": "#1A1A1A"
+                },
+                {
+                  "type": "text",
+                  "id": "h3SwN",
+                  "name": "qrtxt",
+                  "fill": "#999999",
+                  "content": "QR Code",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 10,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "mVdL2",
+              "name": "qhint",
+              "fill": "$--ink-secondary",
+              "content": "請在活動現場出示此 QR Code",
+              "textAlign": "center",
+              "fontFamily": "Inter",
+              "fontSize": 13,
+              "fontWeight": "normal"
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "id": "FpJlH",
+          "name": "Divider",
+          "fill": "#E8E3DD",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "73sI3",
+          "name": "Actions",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 10,
+          "children": [
+            {
+              "type": "frame",
+              "id": "yq9sv",
+              "name": "Cancel Button",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "$--surface-warm",
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A1A1A",
+                "offset": {
+                  "x": 3,
+                  "y": 3
+                }
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "PkoOI",
+                  "name": "qcanceltxt",
+                  "fill": "$--ink-primary",
+                  "content": "取消報名",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ULftu",
+              "name": "Share Button",
+              "width": "fill_container",
+              "height": 44,
+              "fill": "$--surface-warm",
+              "cornerRadius": 8,
+              "stroke": {
+                "thickness": 2,
+                "fill": "#1A1A1A"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#1A1A1A",
+                "offset": {
+                  "x": 3,
+                  "y": 3
+                }
+              },
+              "gap": 8,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "rgr91",
+                  "name": "qshareicon",
+                  "width": 16,
+                  "height": 16,
+                  "iconFontName": "share-2",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--ink-primary"
+                },
+                {
+                  "type": "text",
+                  "id": "ukXNx",
+                  "name": "qsharetxt",
+                  "fill": "$--ink-primary",
+                  "content": "分享活動",
+                  "fontFamily": "Space Mono",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
       "id": "YWZCN",
       "x": 0,
       "y": 370,
@@ -19573,7 +19773,7 @@
                               "id": "r6eFl",
                               "name": "Bottom Row",
                               "width": "fill_container",
-                              "gap": 40,
+                              "gap": 8,
                               "alignItems": "end",
                               "children": [
                                 {
@@ -19707,6 +19907,42 @@
                                           "fontWeight": "700"
                                         }
                                       ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "e10rj",
+                                  "name": "QR Button",
+                                  "width": 40,
+                                  "height": 40,
+                                  "fill": "$--surface-header",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#1A1A1A"
+                                  },
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#1A1A1A",
+                                    "offset": {
+                                      "x": 3,
+                                      "y": 3
+                                    }
+                                  },
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon_font",
+                                      "id": "GfqRv",
+                                      "name": "qrIcon",
+                                      "width": 20,
+                                      "height": 20,
+                                      "iconFontName": "qr-code",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "$--ink-primary"
                                     }
                                   ]
                                 },
@@ -19922,7 +20158,7 @@
                               "id": "o3q7K",
                               "name": "Bottom Row",
                               "width": "fill_container",
-                              "gap": 40,
+                              "gap": 8,
                               "alignItems": "end",
                               "children": [
                                 {
@@ -20056,6 +20292,42 @@
                                           "fontWeight": "700"
                                         }
                                       ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "ER0AW",
+                                  "name": "QR Button",
+                                  "width": 40,
+                                  "height": 40,
+                                  "fill": "$--surface-header",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#1A1A1A"
+                                  },
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#1A1A1A",
+                                    "offset": {
+                                      "x": 3,
+                                      "y": 3
+                                    }
+                                  },
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon_font",
+                                      "id": "h0AHK",
+                                      "name": "d2icon",
+                                      "width": 20,
+                                      "height": 20,
+                                      "iconFontName": "qr-code",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "$--ink-primary"
                                     }
                                   ]
                                 },
@@ -20271,7 +20543,7 @@
                               "id": "ZC9AV",
                               "name": "Bottom Row",
                               "width": "fill_container",
-                              "gap": 40,
+                              "gap": 8,
                               "alignItems": "end",
                               "children": [
                                 {
@@ -20405,6 +20677,42 @@
                                           "fontWeight": "700"
                                         }
                                       ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "JVLSB",
+                                  "name": "QR Button",
+                                  "width": 40,
+                                  "height": 40,
+                                  "fill": "$--surface-header",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#1A1A1A"
+                                  },
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#1A1A1A",
+                                    "offset": {
+                                      "x": 3,
+                                      "y": 3
+                                    }
+                                  },
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon_font",
+                                      "id": "QQUpO",
+                                      "name": "d3icon",
+                                      "width": 20,
+                                      "height": 20,
+                                      "iconFontName": "qr-code",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "$--ink-primary"
                                     }
                                   ]
                                 },
@@ -20849,7 +21157,7 @@
                           "id": "Dvz2g",
                           "name": "Bottom Row",
                           "width": "fill_container",
-                          "gap": 20,
+                          "gap": 8,
                           "alignItems": "end",
                           "children": [
                             {
@@ -20983,6 +21291,42 @@
                                       "fontWeight": "700"
                                     }
                                   ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "wPs2g",
+                              "name": "QR Button",
+                              "width": 36,
+                              "height": 36,
+                              "fill": "$--surface-header",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "#1A1A1A"
+                              },
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#1A1A1A",
+                                "offset": {
+                                  "x": 3,
+                                  "y": 3
+                                }
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "LYPWo",
+                                  "name": "mqrIcon",
+                                  "width": 18,
+                                  "height": 18,
+                                  "iconFontName": "qr-code",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$--ink-primary"
                                 }
                               ]
                             },
@@ -21198,7 +21542,7 @@
                           "id": "rODkd",
                           "name": "Bottom Row",
                           "width": "fill_container",
-                          "gap": 20,
+                          "gap": 8,
                           "alignItems": "end",
                           "children": [
                             {
@@ -21332,6 +21676,42 @@
                                       "fontWeight": "700"
                                     }
                                   ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "pGIv1",
+                              "name": "QR Button",
+                              "width": 36,
+                              "height": 36,
+                              "fill": "$--surface-header",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "#1A1A1A"
+                              },
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#1A1A1A",
+                                "offset": {
+                                  "x": 3,
+                                  "y": 3
+                                }
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "E3nRs",
+                                  "name": "m2icon",
+                                  "width": 18,
+                                  "height": 18,
+                                  "iconFontName": "qr-code",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$--ink-primary"
                                 }
                               ]
                             },
@@ -21547,7 +21927,7 @@
                           "id": "2KXgG",
                           "name": "Bottom Row",
                           "width": "fill_container",
-                          "gap": 20,
+                          "gap": 8,
                           "alignItems": "end",
                           "children": [
                             {
@@ -21681,6 +22061,42 @@
                                       "fontWeight": "700"
                                     }
                                   ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "9ekgz",
+                              "name": "QR Button",
+                              "width": 36,
+                              "height": 36,
+                              "fill": "$--surface-header",
+                              "cornerRadius": 8,
+                              "stroke": {
+                                "thickness": 2,
+                                "fill": "#1A1A1A"
+                              },
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#1A1A1A",
+                                "offset": {
+                                  "x": 3,
+                                  "y": 3
+                                }
+                              },
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon_font",
+                                  "id": "4qcTR",
+                                  "name": "m3icon",
+                                  "width": 18,
+                                  "height": 18,
+                                  "iconFontName": "qr-code",
+                                  "iconFontFamily": "lucide",
+                                  "fill": "$--ink-primary"
                                 }
                               ]
                             },
@@ -22105,7 +22521,7 @@
                               "id": "yE5WS",
                               "name": "Bottom Row",
                               "width": "fill_container",
-                              "gap": 20,
+                              "gap": 8,
                               "alignItems": "end",
                               "children": [
                                 {
@@ -22239,6 +22655,42 @@
                                           "fontWeight": "700"
                                         }
                                       ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "wZK4P",
+                                  "name": "QR Button",
+                                  "width": 36,
+                                  "height": 36,
+                                  "fill": "$--surface-header",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#1A1A1A"
+                                  },
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#1A1A1A",
+                                    "offset": {
+                                      "x": 3,
+                                      "y": 3
+                                    }
+                                  },
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon_font",
+                                      "id": "nZLsz",
+                                      "name": "tqrIcon",
+                                      "width": 18,
+                                      "height": 18,
+                                      "iconFontName": "qr-code",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "$--ink-primary"
                                     }
                                   ]
                                 },
@@ -22454,7 +22906,7 @@
                               "id": "JNQoq",
                               "name": "Bottom Row",
                               "width": "fill_container",
-                              "gap": 20,
+                              "gap": 8,
                               "alignItems": "end",
                               "children": [
                                 {
@@ -22588,6 +23040,42 @@
                                           "fontWeight": "700"
                                         }
                                       ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "F7rst",
+                                  "name": "QR Button",
+                                  "width": 36,
+                                  "height": 36,
+                                  "fill": "$--surface-header",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#1A1A1A"
+                                  },
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#1A1A1A",
+                                    "offset": {
+                                      "x": 3,
+                                      "y": 3
+                                    }
+                                  },
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon_font",
+                                      "id": "h7mKh",
+                                      "name": "t2icon",
+                                      "width": 18,
+                                      "height": 18,
+                                      "iconFontName": "qr-code",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "$--ink-primary"
                                     }
                                   ]
                                 },
@@ -22811,7 +23299,7 @@
                               "id": "BtQtr",
                               "name": "Bottom Row",
                               "width": "fill_container",
-                              "gap": 20,
+                              "gap": 8,
                               "alignItems": "end",
                               "children": [
                                 {
@@ -22945,6 +23433,42 @@
                                           "fontWeight": "700"
                                         }
                                       ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "MA2qz",
+                                  "name": "QR Button",
+                                  "width": 36,
+                                  "height": 36,
+                                  "fill": "$--surface-header",
+                                  "cornerRadius": 8,
+                                  "stroke": {
+                                    "thickness": 2,
+                                    "fill": "#1A1A1A"
+                                  },
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#1A1A1A",
+                                    "offset": {
+                                      "x": 3,
+                                      "y": 3
+                                    }
+                                  },
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon_font",
+                                      "id": "lL4BD",
+                                      "name": "t3icon",
+                                      "width": 18,
+                                      "height": 18,
+                                      "iconFontName": "qr-code",
+                                      "iconFontFamily": "lucide",
+                                      "fill": "$--ink-primary"
                                     }
                                   ]
                                 },
@@ -24392,206 +24916,6 @@
               "fontFamily": "Inter",
               "fontSize": 12,
               "fontWeight": "normal"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "frame",
-      "id": "btiKB",
-      "x": 1920,
-      "y": 15800,
-      "name": "QR Code Display - Registered State",
-      "width": 340,
-      "fill": "$--surface-header",
-      "cornerRadius": 8,
-      "stroke": {
-        "thickness": 2,
-        "fill": "#1A1A1A"
-      },
-      "effect": {
-        "type": "shadow",
-        "shadowType": "outer",
-        "color": "#1A1A1A",
-        "offset": {
-          "x": 4,
-          "y": 4
-        }
-      },
-      "layout": "vertical",
-      "gap": 20,
-      "padding": 24,
-      "children": [
-        {
-          "type": "text",
-          "id": "r9B8T",
-          "name": "qlabel",
-          "fill": "#999999",
-          "content": "QR CODE DISPLAY",
-          "fontFamily": "Space Mono",
-          "fontSize": 11,
-          "fontWeight": "700"
-        },
-        {
-          "type": "frame",
-          "id": "4KaFm",
-          "name": "QR Section",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 16,
-          "alignItems": "center",
-          "children": [
-            {
-              "type": "frame",
-              "id": "OpDXM",
-              "name": "QR Code Box",
-              "width": 180,
-              "height": 180,
-              "fill": "#FFFFFF",
-              "cornerRadius": 8,
-              "stroke": {
-                "thickness": 2,
-                "fill": "#1A1A1A"
-              },
-              "layout": "vertical",
-              "gap": 8,
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon_font",
-                  "id": "AQ3KM",
-                  "name": "qricon",
-                  "width": 100,
-                  "height": 100,
-                  "iconFontName": "qr-code",
-                  "iconFontFamily": "lucide",
-                  "fill": "#1A1A1A"
-                },
-                {
-                  "type": "text",
-                  "id": "h3SwN",
-                  "name": "qrtxt",
-                  "fill": "#999999",
-                  "content": "QR Code",
-                  "fontFamily": "Space Mono",
-                  "fontSize": 10,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "id": "mVdL2",
-              "name": "qhint",
-              "fill": "$--ink-secondary",
-              "content": "請在活動現場出示此 QR Code",
-              "textAlign": "center",
-              "fontFamily": "Inter",
-              "fontSize": 13,
-              "fontWeight": "normal"
-            }
-          ]
-        },
-        {
-          "type": "rectangle",
-          "id": "FpJlH",
-          "name": "Divider",
-          "fill": "#E8E3DD",
-          "width": "fill_container",
-          "height": 1
-        },
-        {
-          "type": "frame",
-          "id": "73sI3",
-          "name": "Actions",
-          "width": "fill_container",
-          "layout": "vertical",
-          "gap": 10,
-          "children": [
-            {
-              "type": "frame",
-              "id": "yq9sv",
-              "name": "Cancel Button",
-              "width": "fill_container",
-              "height": 44,
-              "fill": "$--surface-warm",
-              "cornerRadius": 8,
-              "stroke": {
-                "thickness": 2,
-                "fill": "#1A1A1A"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "#1A1A1A",
-                "offset": {
-                  "x": 3,
-                  "y": 3
-                }
-              },
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "PkoOI",
-                  "name": "qcanceltxt",
-                  "fill": "$--ink-primary",
-                  "content": "取消報名",
-                  "fontFamily": "Space Mono",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                }
-              ]
-            },
-            {
-              "type": "frame",
-              "id": "ULftu",
-              "name": "Share Button",
-              "width": "fill_container",
-              "height": 44,
-              "fill": "$--surface-warm",
-              "cornerRadius": 8,
-              "stroke": {
-                "thickness": 2,
-                "fill": "#1A1A1A"
-              },
-              "effect": {
-                "type": "shadow",
-                "shadowType": "outer",
-                "color": "#1A1A1A",
-                "offset": {
-                  "x": 3,
-                  "y": 3
-                }
-              },
-              "gap": 8,
-              "justifyContent": "center",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "icon_font",
-                  "id": "rgr91",
-                  "name": "qshareicon",
-                  "width": 16,
-                  "height": 16,
-                  "iconFontName": "share-2",
-                  "iconFontFamily": "lucide",
-                  "fill": "$--ink-primary"
-                },
-                {
-                  "type": "text",
-                  "id": "ukXNx",
-                  "name": "qsharetxt",
-                  "fill": "$--ink-primary",
-                  "content": "分享活動",
-                  "fontFamily": "Space Mono",
-                  "fontSize": 14,
-                  "fontWeight": "600"
-                }
-              ]
             }
           ]
         }
