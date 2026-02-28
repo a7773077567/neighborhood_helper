@@ -10,8 +10,8 @@
 
 ## 3. 簽到 Server Action
 
-- [ ] 3.1 建立簽到 Server Action（`lib/actions/checkin.ts`）：接收 qrToken + eventId，驗證 token、檢查活動歸屬、檢查重複簽到，標記出席
-- [ ] 3.2 處理所有異常情況：無效 token、非本場活動、已取消報名、已簽到
+- [x] 3.1 建立簽到 Server Action（`lib/actions/checkin.ts`）：接收 qrToken + eventId，驗證 token、檢查活動歸屬、檢查重複簽到，標記出席
+- [x] 3.2 處理所有異常情況：無效 token、非本場活動、已取消報名、已簽到
 
 ## 4. Pencil 設計
 
