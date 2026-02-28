@@ -1,12 +1,12 @@
 ## 1. 資料庫變更
 
-- [ ] 1.1 Registration model 新增 qrToken（String, @unique, @default(uuid())）、attended（Boolean, @default(false)）、attendedAt（DateTime?）欄位，執行 Prisma migration
-- [ ] 1.2 驗證現有 Registration 記錄在 migration 後自動補上 qrToken
+- [x] 1.1 Registration model 新增 qrToken（String, @unique, @default(uuid())）、attended（Boolean, @default(false)）、attendedAt（DateTime?）欄位，執行 Prisma migration
+- [x] 1.2 驗證現有 Registration 記錄在 migration 後自動補上 qrToken
 
 ## 2. 套件安裝
 
-- [ ] 2.1 安裝 `qrcode.react` 套件
-- [ ] 2.2 安裝 `html5-qrcode` 套件
+- [x] 2.1 安裝 `qrcode.react` 套件
+- [x] 2.2 安裝 `html5-qrcode` 套件
 
 ## 3. 簽到 Server Action
 

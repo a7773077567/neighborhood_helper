@@ -108,6 +108,11 @@ model Registration {
   createdAt DateTime           @default(now())           // 首次報名時間
   updatedAt DateTime           @updatedAt                // 最後更新時間（取消/重新報名）
 
+  // 【qr-checkin】簽到相關欄位
+  qrToken    String    @unique @default(uuid())          // QR Code 用的唯一 token
+  attended   Boolean   @default(false)                   // 是否已簽到
+  attendedAt DateTime?                                   // 簽到時間
+
   // 關聯
   user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
   event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
