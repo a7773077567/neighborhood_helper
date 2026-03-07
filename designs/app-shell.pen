@@ -25853,63 +25853,6 @@
             },
             {
               "type": "frame",
-              "id": "ayCEm",
-              "name": "Scanner Section",
-              "width": "fill_container",
-              "layout": "vertical",
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "frame",
-                  "id": "HKCI8",
-                  "name": "Toggle Scanner Button",
-                  "width": "fill_container",
-                  "height": 48,
-                  "fill": "$--surface-header",
-                  "cornerRadius": 8,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "#1A1A1A"
-                  },
-                  "effect": {
-                    "type": "shadow",
-                    "shadowType": "outer",
-                    "color": "#1A1A1A",
-                    "offset": {
-                      "x": 3,
-                      "y": 3
-                    }
-                  },
-                  "gap": 10,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "OZqSV",
-                      "name": "mScanBtnIcon",
-                      "width": 20,
-                      "height": 20,
-                      "iconFontName": "scan-line",
-                      "iconFontFamily": "lucide",
-                      "fill": "#1A1A1A"
-                    },
-                    {
-                      "type": "text",
-                      "id": "vHa0P",
-                      "name": "mScanBtnTxt",
-                      "fill": "#1A1A1A",
-                      "content": "開啟掃描器",
-                      "fontFamily": "Space Mono",
-                      "fontSize": 14,
-                      "fontWeight": "600"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "frame",
               "id": "Z68pk",
               "name": "Progress Section",
               "width": "fill_container",
@@ -26619,53 +26562,6 @@
                       "fontFamily": "Inter",
                       "fontSize": 14,
                       "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "TWgtr",
-                  "name": "Close Scanner Button",
-                  "width": "fill_container",
-                  "height": 40,
-                  "fill": "$--surface-header",
-                  "cornerRadius": 8,
-                  "stroke": {
-                    "thickness": 2,
-                    "fill": "#1A1A1A"
-                  },
-                  "effect": {
-                    "type": "shadow",
-                    "shadowType": "outer",
-                    "color": "#1A1A1A",
-                    "offset": {
-                      "x": 2,
-                      "y": 2
-                    }
-                  },
-                  "gap": 8,
-                  "justifyContent": "center",
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "lwYif",
-                      "name": "closeIcon",
-                      "width": 16,
-                      "height": 16,
-                      "iconFontName": "x",
-                      "iconFontFamily": "lucide",
-                      "fill": "$--ink-primary"
-                    },
-                    {
-                      "type": "text",
-                      "id": "qbCeV",
-                      "name": "closeTxt",
-                      "fill": "$--ink-primary",
-                      "content": "關閉掃描器",
-                      "fontFamily": "Inter",
-                      "fontSize": 13,
-                      "fontWeight": "500"
                     }
                   ]
                 }
@@ -27526,6 +27422,102 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "rlsE1",
+      "x": 1748,
+      "y": 15680,
+      "name": "FAB - Open Scanner",
+      "width": 56,
+      "height": 56,
+      "fill": "#FFFFFF",
+      "cornerRadius": 28,
+      "stroke": {
+        "thickness": 2,
+        "fill": "#1A1A1A"
+      },
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#1A1A1A",
+        "offset": {
+          "x": 3,
+          "y": 3
+        }
+      },
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon_font",
+          "id": "muKWp",
+          "name": "fabOffIcon",
+          "width": 24,
+          "height": 24,
+          "iconFontName": "scan-line",
+          "iconFontFamily": "lucide",
+          "fill": "#FF7A3D"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "EjW1h",
+      "x": 2238,
+      "y": 15680,
+      "name": "FAB - Close Scanner",
+      "width": 56,
+      "height": 56,
+      "fill": "#FFFFFF",
+      "cornerRadius": 28,
+      "stroke": {
+        "thickness": 2,
+        "fill": "#1A1A1A"
+      },
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#1A1A1A",
+        "offset": {
+          "x": 3,
+          "y": 3
+        }
+      },
+      "justifyContent": "center",
+      "alignItems": "center",
+      "children": [
+        {
+          "type": "icon_font",
+          "id": "MATnP",
+          "name": "fabOnIcon",
+          "width": 24,
+          "height": 24,
+          "iconFontName": "camera-off",
+          "iconFontFamily": "lucide",
+          "fill": "#FF7A3D"
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "id": "kt3ig",
+      "x": 1080,
+      "y": 15660,
+      "name": "noteOff",
+      "width": 300,
+      "height": 0,
+      "content": "FAB 浮動按鈕 (fixed bottom-16 right-4)\n掃描器關閉時：ScanLine icon\n點擊開啟掃描器\n白底 + 橘色 icon + 黑邊框 + 實心陰影"
+    },
+    {
+      "type": "note",
+      "id": "quwiA",
+      "x": 2330,
+      "y": 15660,
+      "name": "noteOn",
+      "width": 300,
+      "height": 0,
+      "content": "FAB 浮動按鈕 (fixed bottom-16 right-4)\n掃描器開啟時：CameraOff icon\n點擊關閉掃描器\n白底 + 橘色 icon + 黑邊框 + 實心陰影"
     }
   ],
   "themes": {
