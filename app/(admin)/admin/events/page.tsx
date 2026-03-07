@@ -203,21 +203,34 @@ export default async function AdminEventsPage(): Promise<React.ReactElement> {
 
                   {/* ── 操作按鈕 ── */}
                   <div className="flex items-center gap-2.5">
-                    {/* 名單按鈕 — 所有活動都可以查看報名名單 */}
-                    <Link href={`/admin/events/${event.id}/registrations`}>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="cursor-pointer border-2 border-ink-primary bg-surface-warm font-mono text-[13px] font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
-                      >
-                        <Users className="size-3.5" />
-                        名單
-                      </Button>
-                    </Link>
+                    {/* 名單按鈕 — PUBLISHED 以外的活動顯示（PUBLISHED 的名單已整合在簽到頁） */}
+                    {event.status !== 'PUBLISHED' && (
+                      <Link href={`/admin/events/${event.id}/registrations`}>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="cursor-pointer border-2 border-ink-primary bg-surface-warm font-mono text-[13px] font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                        >
+                          名單
+                        </Button>
+                      </Link>
+                    )}
 
                     {/* 編輯 + 狀態按鈕 — 只有活躍活動顯示 */}
                     {!isInactive && (
                       <>
+                        {event.status === 'PUBLISHED' && (
+                          <Link href={`/admin/events/${event.id}/checkin`}>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              className="cursor-pointer border-2 border-ink-primary bg-surface-warm font-mono text-[13px] font-semibold shadow-brutal-sm transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                            >
+                              簽到
+                            </Button>
+                          </Link>
+                        )}
+
                         <Link href={`/admin/events/${event.id}/edit`}>
                           <Button
                             variant="outline"

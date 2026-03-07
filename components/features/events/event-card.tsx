@@ -105,7 +105,7 @@ export function EventCard({ event, registrationCount = 0, qrToken }: EventCardPr
         </h3>
 
         {/* Bottom Row：Meta + Buttons */}
-        <div className="flex items-end gap-5 md:gap-10">
+        <div className="flex items-end gap-5">
           {/* Meta 資訊 */}
           <div className="flex min-w-0 flex-1 flex-col gap-1.5">
             {/* 日期 */}

@@ -7743,6 +7743,45 @@
                       "children": [
                         {
                           "type": "frame",
+                          "id": "YK98O",
+                          "name": "Checkin Btn",
+                          "fill": "$--surface-warm",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "$--ink-primary"
+                          },
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#1A1A1A",
+                            "offset": {
+                              "x": 3,
+                              "y": 3
+                            }
+                          },
+                          "gap": 8,
+                          "padding": [
+                            10,
+                            20
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "YnG6i",
+                              "name": "checkinTxt",
+                              "fill": "$--ink-primary",
+                              "content": "簽到",
+                              "fontFamily": "Space Mono",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
                           "id": "Cp5qF",
                           "name": "Edit Btn",
                           "fill": "$--surface-warm",
@@ -8008,6 +8047,44 @@
                       "children": [
                         {
                           "type": "frame",
+                          "id": "qX4Pg",
+                          "name": "List Btn",
+                          "fill": "$--surface-warm",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "$--ink-primary"
+                          },
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#1A1A1A",
+                            "offset": {
+                              "x": 3,
+                              "y": 3
+                            }
+                          },
+                          "padding": [
+                            10,
+                            20
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "F3AiO",
+                              "name": "draftDesktopListTxt",
+                              "fill": "$--ink-primary",
+                              "content": "名單",
+                              "fontFamily": "Space Mono",
+                              "fontSize": 13,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
                           "id": "A89qj",
                           "name": "Edit Btn",
                           "fill": "$--surface-warm",
@@ -8251,6 +8328,53 @@
                                   "fontWeight": "normal"
                                 }
                               ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "z0tMk",
+                      "name": "Actions",
+                      "gap": 10,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "WbpVq",
+                          "name": "List Btn",
+                          "fill": "$--surface-warm",
+                          "cornerRadius": 8,
+                          "stroke": {
+                            "thickness": 2,
+                            "fill": "$--ink-primary"
+                          },
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#1A1A1A",
+                            "offset": {
+                              "x": 3,
+                              "y": 3
+                            }
+                          },
+                          "padding": [
+                            10,
+                            20
+                          ],
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Th96O",
+                              "name": "endedDesktopListTxt",
+                              "fill": "$--ink-primary",
+                              "content": "名單",
+                              "fontFamily": "Space Mono",
+                              "fontSize": 13,
+                              "fontWeight": "600"
                             }
                           ]
                         }
@@ -8609,6 +8733,45 @@
                   "children": [
                     {
                       "type": "frame",
+                      "id": "D3Qzd",
+                      "name": "Checkin Btn",
+                      "fill": "$--surface-warm",
+                      "cornerRadius": 6,
+                      "stroke": {
+                        "thickness": 1.5,
+                        "fill": "$--ink-primary"
+                      },
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#1A1A1A",
+                        "offset": {
+                          "x": 2,
+                          "y": 2
+                        }
+                      },
+                      "gap": 6,
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "j9g2X",
+                          "name": "checkinTxt",
+                          "fill": "$--ink-primary",
+                          "content": "簽到",
+                          "fontFamily": "Space Mono",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
                       "id": "7NF7y",
                       "name": "Edit Btn",
                       "fill": "$--surface-warm",
@@ -8869,6 +9032,44 @@
                   "children": [
                     {
                       "type": "frame",
+                      "id": "6br88",
+                      "name": "List Btn",
+                      "fill": "$--surface-warm",
+                      "cornerRadius": 6,
+                      "stroke": {
+                        "thickness": 1.5,
+                        "fill": "$--ink-primary"
+                      },
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#1A1A1A",
+                        "offset": {
+                          "x": 2,
+                          "y": 2
+                        }
+                      },
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "AEy93",
+                          "name": "draftMobileListTxt",
+                          "fill": "$--ink-primary",
+                          "content": "名單",
+                          "fontFamily": "Space Mono",
+                          "fontSize": 12,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
                       "id": "Yq9Jw",
                       "name": "Edit Btn",
                       "fill": "$--surface-warm",
@@ -9107,6 +9308,53 @@
                           "fontFamily": "Inter",
                           "fontSize": 13,
                           "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "d4i8J",
+                  "name": "Actions",
+                  "width": "fill_container",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "c27QH",
+                      "name": "List Btn",
+                      "fill": "$--surface-warm",
+                      "cornerRadius": 6,
+                      "stroke": {
+                        "thickness": 1.5,
+                        "fill": "$--ink-primary"
+                      },
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#1A1A1A",
+                        "offset": {
+                          "x": 2,
+                          "y": 2
+                        }
+                      },
+                      "padding": [
+                        8,
+                        16
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "EI2cm",
+                          "name": "endedMobileListTxt",
+                          "fill": "$--ink-primary",
+                          "content": "名單",
+                          "fontFamily": "Space Mono",
+                          "fontSize": 12,
+                          "fontWeight": "600"
                         }
                       ]
                     }
@@ -24922,7 +25170,7 @@
                       "id": "fFADW",
                       "name": "plcount",
                       "fill": "$--brand-orange",
-                      "content": "12 / 45 人",
+                      "content": "12 / 45 人 (27%)",
                       "fontFamily": "Space Mono",
                       "fontSize": 14,
                       "fontWeight": "700"
@@ -24962,16 +25210,6 @@
                       "cornerRadius": 2
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "72zfE",
-                  "name": "ppct",
-                  "fill": "$--ink-secondary",
-                  "content": "27% 出席",
-                  "fontFamily": "Inter",
-                  "fontSize": 12,
-                  "fontWeight": "normal"
                 }
               ]
             },
@@ -25707,7 +25945,7 @@
                       "id": "CMTaW",
                       "name": "mProgCount",
                       "fill": "$--brand-orange",
-                      "content": "10 / 37 人",
+                      "content": "10 / 37 人 (27%)",
                       "fontFamily": "Space Mono",
                       "fontSize": 13,
                       "fontWeight": "600"
@@ -25747,16 +25985,6 @@
                       "height": "fill_container"
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "xPdsI",
-                  "name": "mProgPct",
-                  "fill": "$--ink-secondary",
-                  "content": "27% 出席",
-                  "fontFamily": "Inter",
-                  "fontSize": 11,
-                  "fontWeight": "normal"
                 }
               ]
             },
@@ -25776,7 +26004,7 @@
               "name": "Registration List",
               "width": "fill_container",
               "layout": "vertical",
-              "gap": 10,
+              "gap": 8,
               "children": [
                 {
                   "type": "frame",
@@ -25799,10 +26027,7 @@
                     }
                   },
                   "gap": 10,
-                  "padding": [
-                    12,
-                    14
-                  ],
+                  "padding": 8,
                   "alignItems": "center",
                   "children": [
                     {
@@ -25820,8 +26045,8 @@
                       "id": "ZgQF4",
                       "name": "Avatar",
                       "fill": "#FFD23F",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "stroke": {
                         "thickness": 2,
                         "fill": "#1A1A1A"
@@ -25916,10 +26141,7 @@
                     }
                   },
                   "gap": 10,
-                  "padding": [
-                    12,
-                    14
-                  ],
+                  "padding": 8,
                   "alignItems": "center",
                   "children": [
                     {
@@ -25937,8 +26159,8 @@
                       "id": "51JEn",
                       "name": "Avatar",
                       "fill": "#FFD23F",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "stroke": {
                         "thickness": 2,
                         "fill": "#1A1A1A"
@@ -26033,10 +26255,7 @@
                     }
                   },
                   "gap": 10,
-                  "padding": [
-                    12,
-                    14
-                  ],
+                  "padding": 8,
                   "alignItems": "center",
                   "children": [
                     {
@@ -26054,8 +26273,8 @@
                       "id": "gfbO4",
                       "name": "Avatar",
                       "fill": "#E8E3DD",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "stroke": {
                         "thickness": 2,
                         "fill": "#1A1A1A"
@@ -26138,7 +26357,7 @@
           "id": "jsEmw",
           "name": "Footer",
           "width": "fill_container",
-          "height": 48,
+          "height": 40,
           "fill": "$--surface-muted",
           "stroke": {
             "align": "inside",
@@ -26147,6 +26366,7 @@
             },
             "fill": "$--ink-primary"
           },
+          "gap": 6,
           "padding": [
             0,
             16
@@ -26155,13 +26375,23 @@
           "alignItems": "center",
           "children": [
             {
+              "type": "icon_font",
+              "id": "2o7e8",
+              "name": "CopyrightIcon",
+              "width": 14,
+              "height": 14,
+              "iconFontName": "copyright",
+              "iconFontFamily": "lucide",
+              "fill": "$--ink-footer-muted"
+            },
+            {
               "type": "text",
-              "id": "FMBv7",
+              "id": "hvx8E",
               "name": "mFooterTxt",
               "fill": "$--ink-footer-muted",
-              "content": "© 2026 Neighborhood Helper · GDG Tainan",
+              "content": "2026 GDG Tainan",
               "fontFamily": "Space Mono",
-              "fontSize": 10,
+              "fontSize": 12,
               "fontWeight": "normal"
             }
           ]
@@ -26478,7 +26708,7 @@
                       "id": "NRFJt",
                       "name": "mProgCount",
                       "fill": "$--brand-orange",
-                      "content": "10 / 37 人",
+                      "content": "10 / 37 人 (27%)",
                       "fontFamily": "Space Mono",
                       "fontSize": 13,
                       "fontWeight": "600"
@@ -26518,16 +26748,6 @@
                       "height": "fill_container"
                     }
                   ]
-                },
-                {
-                  "type": "text",
-                  "id": "KRo8j",
-                  "name": "mProgPct",
-                  "fill": "$--ink-secondary",
-                  "content": "27% 出席",
-                  "fontFamily": "Inter",
-                  "fontSize": 11,
-                  "fontWeight": "normal"
                 }
               ]
             },
@@ -26547,7 +26767,7 @@
               "name": "Registration List",
               "width": "fill_container",
               "layout": "vertical",
-              "gap": 10,
+              "gap": 8,
               "children": [
                 {
                   "type": "frame",
@@ -26570,10 +26790,7 @@
                     }
                   },
                   "gap": 10,
-                  "padding": [
-                    12,
-                    14
-                  ],
+                  "padding": 8,
                   "alignItems": "center",
                   "children": [
                     {
@@ -26591,8 +26808,8 @@
                       "id": "iRac5",
                       "name": "Avatar",
                       "fill": "#FFD23F",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "stroke": {
                         "thickness": 2,
                         "fill": "#1A1A1A"
@@ -26687,10 +26904,7 @@
                     }
                   },
                   "gap": 10,
-                  "padding": [
-                    12,
-                    14
-                  ],
+                  "padding": 8,
                   "alignItems": "center",
                   "children": [
                     {
@@ -26708,8 +26922,8 @@
                       "id": "l9BHO",
                       "name": "Avatar",
                       "fill": "#FFD23F",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "stroke": {
                         "thickness": 2,
                         "fill": "#1A1A1A"
@@ -26804,10 +27018,7 @@
                     }
                   },
                   "gap": 10,
-                  "padding": [
-                    12,
-                    14
-                  ],
+                  "padding": 8,
                   "alignItems": "center",
                   "children": [
                     {
@@ -26825,8 +27036,8 @@
                       "id": "kGBxP",
                       "name": "Avatar",
                       "fill": "#E8E3DD",
-                      "width": 36,
-                      "height": 36,
+                      "width": 32,
+                      "height": 32,
                       "stroke": {
                         "thickness": 2,
                         "fill": "#1A1A1A"
@@ -26909,7 +27120,7 @@
           "id": "fsgKB",
           "name": "Footer",
           "width": "fill_container",
-          "height": 48,
+          "height": 40,
           "fill": "$--surface-muted",
           "stroke": {
             "align": "inside",
@@ -26918,6 +27129,7 @@
             },
             "fill": "$--ink-primary"
           },
+          "gap": 6,
           "padding": [
             0,
             16
@@ -26926,13 +27138,23 @@
           "alignItems": "center",
           "children": [
             {
+              "type": "icon_font",
+              "id": "xbZnZ",
+              "name": "CopyrightIcon",
+              "width": 14,
+              "height": 14,
+              "iconFontName": "copyright",
+              "iconFontFamily": "lucide",
+              "fill": "$--ink-footer-muted"
+            },
+            {
               "type": "text",
-              "id": "CGFe8",
+              "id": "IbRFr",
               "name": "mFooterTxt",
               "fill": "$--ink-footer-muted",
-              "content": "© 2026 Neighborhood Helper · GDG Tainan",
+              "content": "2026 GDG Tainan",
               "fontFamily": "Space Mono",
-              "fontSize": 10,
+              "fontSize": 12,
               "fontWeight": "normal"
             }
           ]
@@ -27077,6 +27299,231 @@
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": "normal"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "nbyt7",
+      "x": 2820,
+      "y": 15200,
+      "name": "Toast — Scan States",
+      "width": 400,
+      "fill": "#F9F6F0",
+      "cornerRadius": 12,
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 24,
+      "children": [
+        {
+          "type": "text",
+          "id": "2EhiN",
+          "name": "Title",
+          "fill": "#999999",
+          "content": "Toast — Scan States",
+          "fontFamily": "Space Mono",
+          "fontSize": 16,
+          "fontWeight": "700"
+        },
+        {
+          "type": "rectangle",
+          "id": "yV54I",
+          "name": "Separator",
+          "fill": "#DDDDDD",
+          "width": "fill_container",
+          "height": 1
+        },
+        {
+          "type": "frame",
+          "id": "TLQHS",
+          "name": "Toast - Success",
+          "width": "fill_container",
+          "fill": "#E8F5E9",
+          "cornerRadius": 8,
+          "stroke": {
+            "thickness": 2,
+            "fill": "#2E7D32"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#1A1A1A",
+            "offset": {
+              "x": 3,
+              "y": 3
+            }
+          },
+          "gap": 10,
+          "padding": [
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "dwC2W",
+              "name": "SuccessIcon",
+              "width": 18,
+              "height": 18,
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#2E7D32"
+            },
+            {
+              "type": "text",
+              "id": "TZVrK",
+              "name": "SuccessText",
+              "fill": "#2E7D32",
+              "content": "王小明 簽到成功",
+              "fontFamily": "Space Mono",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ylZlg",
+          "name": "Toast - Warning",
+          "width": "fill_container",
+          "fill": "#FFF3E0",
+          "cornerRadius": 8,
+          "stroke": {
+            "thickness": 2,
+            "fill": "#E65100"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#1A1A1A",
+            "offset": {
+              "x": 3,
+              "y": 3
+            }
+          },
+          "gap": 10,
+          "padding": [
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "wn5Bc",
+              "name": "WarningIcon",
+              "width": 18,
+              "height": 18,
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#E65100"
+            },
+            {
+              "type": "text",
+              "id": "reAVy",
+              "name": "WarningText",
+              "fill": "#E65100",
+              "content": "此參加者已簽到",
+              "fontFamily": "Space Mono",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "2wdVY",
+          "name": "Toast - Error",
+          "width": "fill_container",
+          "fill": "#FFEBEE",
+          "cornerRadius": 8,
+          "stroke": {
+            "thickness": 2,
+            "fill": "#C62828"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#1A1A1A",
+            "offset": {
+              "x": 3,
+              "y": 3
+            }
+          },
+          "gap": 10,
+          "padding": [
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "NYTzF",
+              "name": "ErrorIcon",
+              "width": 18,
+              "height": 18,
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#C62828"
+            },
+            {
+              "type": "text",
+              "id": "8FEAH",
+              "name": "ErrorText",
+              "fill": "#C62828",
+              "content": "無效的 QR Code",
+              "fontFamily": "Space Mono",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "zF5Yu",
+          "name": "Toast - Warning (Undo)",
+          "width": "fill_container",
+          "fill": "#FFF3E0",
+          "cornerRadius": 8,
+          "stroke": {
+            "thickness": 2,
+            "fill": "#E65100"
+          },
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#1A1A1A",
+            "offset": {
+              "x": 3,
+              "y": 3
+            }
+          },
+          "gap": 10,
+          "padding": [
+            12,
+            16
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "icon_font",
+              "id": "HdG9n",
+              "name": "WarningIcon",
+              "width": 18,
+              "height": 18,
+              "iconFontFamily": "Material Symbols Rounded",
+              "fill": "#E65100"
+            },
+            {
+              "type": "text",
+              "id": "w4oCp",
+              "name": "WarningText",
+              "fill": "#E65100",
+              "content": "已取消 王小明 的簽到",
+              "fontFamily": "Space Mono",
+              "fontSize": 14,
+              "fontWeight": "600"
+            }
+          ]
         }
       ]
     }

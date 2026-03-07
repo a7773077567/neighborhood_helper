@@ -1,4 +1,4 @@
-import { MapPin } from 'lucide-react'
+import { Copyright } from 'lucide-react'
 import Link from 'next/link'
 
 /* ─────────────────────────────────────────────
@@ -37,94 +37,31 @@ const FOOTER_LINKS = [
  * ───────────────────────────────────────────── */
 export function Footer(): React.ReactElement {
   return (
-    <footer className="flex flex-col items-center gap-3 border-t-2 border-ink-primary bg-surface-footer px-4 py-4 md:h-14 md:flex-row md:justify-between md:gap-0 md:px-6 md:py-0 sticky bottom-0 z-40">
-      {/*
-       * 響應式策略（mobile-first）：
-       *
-       * 手機版（預設）：
-       *   flex-col       → 垂直堆疊
-       *   items-center   → 置中對齊
-       *   gap-3          → 各區塊間距 12px
-       *   px-4 py-4      → 四邊內距 16px
-       *
-       * 桌面版（md:）：
-       *   md:flex-row         → 水平排列
-       *   md:justify-between  → 左右分散
-       *   md:h-20             → 固定高度 80px（對齊 Pencil）
-       *   md:gap-0            → 取消 gap（改用 justify-between 分配空間）
-       *   md:px-6 md:py-0     → 只保留左右內距 24px
-       */}
-
-      {/* ── 左側：品牌標示 ── */}
-      <div className="flex items-center gap-2">
-        {/*
-         * gap-2 = 8px，對齊 Pencil 設計的 gap: 8
-         */}
-        <MapPin className="size-4 text-ink-footer-light" />
-        {/*
-         * size-4 = 16px，對齊 Pencil 的 width/height: 16
-         * text-ink-footer-light → currentColor 變成 #555555
-         */}
+    <footer className="sticky bottom-0 z-40 border-t-2 border-ink-primary bg-surface-footer px-4 py-2.5 md:flex md:h-14 md:items-center md:justify-between md:px-6 md:py-0">
+      {/* ── 手機版：單行精簡 ── */}
+      <div className="flex items-center justify-center gap-1.5 md:justify-start">
+        <Copyright className="size-3.5 shrink-0 text-ink-footer-muted md:hidden" />
         <span className="font-mono text-[13px] text-ink-footer-light">
-          GDG Tainan — 雞婆鄰里互助會
+          {/* 手機版只顯示版權 icon + 年份 + 品牌名，桌面版顯示完整名稱 */}
+          <span className="md:hidden">2026 GDG Tainan</span>
+          <span className="hidden md:inline">GDG Tainan — 雞婆鄰里互助會</span>
         </span>
-        {/*
-         * font-mono → Space Mono（layout.tsx 已設定 --font-mono）
-         * text-[13px] → Pencil 設計的 fontSize: 13
-         *   13px 不在 Tailwind 預設字級裡，所以用 arbitrary value
-         * text-ink-footer-light → #555555
-         */}
       </div>
 
-      {/* ── 右側：連結 + 版權 ── */}
-      <div className="flex flex-col items-center gap-3 md:flex-row md:gap-4">
-        {/*
-         * 這個 div 包住「連結」和「版權」兩個群組。
-         *
-         * 手機版（預設）：
-         *   flex-col      → 連結一行、版權一行（垂直堆疊）
-         *   items-center  → 置中
-         *   gap-3         → 12px（對齊 Pencil 手機版設計 CKnvx 的 gap: 12）
-         *
-         * 桌面版（md:）：
-         *   md:flex-row   → 連結和版權排成一行
-         *   md:gap-4      → 16px（對齊 Pencil 桌面版設計 0PRG0 的 gap: 16）
-         */}
-
-        {/* 導覽連結 */}
-        <div className="flex items-center gap-4">
-          {/*
-           * 連結之間的間距固定 gap-4 = 16px，
-           * 桌面和手機版都是水平排列（「關於我們」和「聯絡方式」永遠在同一行）。
-           */}
-          {FOOTER_LINKS.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[13px] text-ink-footer-light hover:text-ink-primary"
-            >
-              {/*
-               * hover:text-ink-primary → 淺色背景上，hover 時加深提高對比
-               * Pencil 沒定義 hover 狀態，這是合理的互動補充
-               */}
-              {link.label}
-            </Link>
-          ))}
-        </div>
-
-        {/* 版權文字 */}
+      {/* ── 桌面版：右側連結 + 版權 ── */}
+      <div className="hidden items-center gap-4 md:flex">
+        {FOOTER_LINKS.map(link => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="text-[13px] text-ink-footer-light hover:text-ink-primary"
+          >
+            {link.label}
+          </Link>
+        ))}
         <span className="text-[13px] text-ink-footer-muted">
           © 2026
         </span>
-        {/*
-         * text-ink-footer-muted → #8A7E72
-         * 比連結文字更淡，製造視覺層次：
-         *   連結 #555555（要看到、要點）
-         *   版權 #8A7E72（資訊性、不重要）
-         *
-         * 手機版：版權獨立一行（因為外層是 flex-col）
-         * 桌面版：跟連結同一行（因為外層是 md:flex-row）
-         */}
       </div>
     </footer>
   )
